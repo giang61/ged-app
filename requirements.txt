@@ -1,0 +1,3 @@
+streamlit
+ged4p
+networkx
