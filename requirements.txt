@@ -1,3 +1,4 @@
 streamlit
-ged4p
+ged4py
+
 networkx
