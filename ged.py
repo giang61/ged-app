@@ -73,10 +73,24 @@ def load_tree():
 G_full, G_anc, names, search_names, birth_years = load_tree()
 
 # -------- person search --------
+# -------- improved person search --------
 def find_person(query):
-    q = normalize(query)
-    return [pid for pid, name in search_names.items() if q in name]
+    """
+    Return list of PIDs matching the query.
+    Matching is done word-by-word, ignoring accents and case.
+    Results are ranked: names starting with query come first.
+    """
+    q_words = normalize(query).split()
+    matches = []
 
+    for pid, name in search_names.items():
+        n_words = normalize(name).split()
+        if all(word in n_words for word in q_words):
+            matches.append(pid)
+
+    # rank: names starting with query first
+    matches.sort(key=lambda pid: normalize(names[pid]).find(normalize(query)))
+    return matches
 # -------- closest common ancestor using G_anc --------
 def common_ancestor(id1, id2):
     anc1 = nx.ancestors(G_anc, id1) | {id1}
