@@ -1,4 +1,4 @@
 streamlit
 ged4py
-
-networkx
+network
+pyvis
