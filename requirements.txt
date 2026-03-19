@@ -2,3 +2,4 @@ streamlit
 ged4py
 network
 pyvis
+graphviz
