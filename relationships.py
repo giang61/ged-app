@@ -287,17 +287,28 @@ def compute_vietnamese_kinship(ego, target, G_anc, G_full, genders, births,
             dbg("[SUBCASE] cousin child")
             relation = same_generation_cousin_term(G_anc, ego, true_parent, genders, births)
             dbg(f"relation_to_parent={relation}")
-            if tp_birth is not None and ego_birth is not None:
-                if ego_birth < tp_birth:
+            # For cousins, seniority is determined by the PARENTS' birth years
+            # (same logic as same_generation_cousin_term), not ego vs true_parent directly.
+            ego_parent_list = list(G_anc.predecessors(ego))
+            tp_parent_list  = list(G_anc.predecessors(true_parent))
+            ego_parent_birth = births.get(ego_parent_list[0]) if ego_parent_list else None
+            tp_parent_birth  = births.get(tp_parent_list[0])  if tp_parent_list  else None
+            dbg(f"ego_parent_birth={ego_parent_birth}, tp_parent_birth={tp_parent_birth}")
+            if ego_parent_birth is not None and tp_parent_birth is not None:
+                if ego_parent_birth < tp_parent_birth:
+                    # ego's parent is older → ego's side is senior → Bác
                     address = "Bác"
                 else:
+                    # ego's parent is younger → ego is Cô/Chú/Dì/Cậu to true_parent's child
                     address = ("Dì" if ego_gender == "F" else "Cậu") if tp_gender == "F" \
                               else ("Cô" if ego_gender == "F" else "Chú")
             else:
                 if relation and ("Anh" in relation or "Chị" in relation):
-                    address = "Cô" if ego_gender == "F" else "Chú"
+                    # true_parent is older than ego → ego's side is junior → Cô/Chú/Dì/Cậu
+                    address = ("Dì" if ego_gender == "F" else "Cậu") if tp_gender == "F" \
+                              else ("Cô" if ego_gender == "F" else "Chú")
                 else:
-                    address = "Dì" if ego_gender == "F" else "Cậu"
+                    address = "Bác"
 
         final_address = address
         if not is_blood_related(ego, true_parent, G_anc):
