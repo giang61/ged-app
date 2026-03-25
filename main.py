@@ -25,7 +25,7 @@ from relationships import compute_vietnamese_kinship
 def get_gedcom_data():
     return load_gedcom("data/nguyen.ged")
 
-G_full, G_anc, names, genders, birth_years = get_gedcom_data()
+G_full, G_anc, names, genders, birth_years, sib_order = get_gedcom_data()
 
 
 # ----------------------------
@@ -121,7 +121,7 @@ def draw_family_graph(id1, id2, ca, ego_id=None):
     for pid in all_nodes:
         name     = names.get(pid, "Unknown")
         year     = birth_years.get(pid)
-        kin_term = compute_vietnamese_kinship(ego_id, pid, G_anc, G_full, genders, birth_years)
+        kin_term = compute_vietnamese_kinship(ego_id, pid, G_anc, G_full, genders, birth_years, sib_order)
 
         label_parts = [escape(str(name))]
         if year:
@@ -268,7 +268,7 @@ if st.session_state.id1 and st.session_state.id2 and st.button("Find relationshi
                 rel = G_full[p2][p1]["relation"]
             else:
                 rel = "related"
-            kinship = compute_vietnamese_kinship(id1, p2, G_anc, G_full, genders, birth_years, debug=True)
+            kinship = compute_vietnamese_kinship(id1, p2, G_anc, G_full, genders, birth_years, sib_order, debug=True)
             st.write(f"{names.get(p1, p1)} ({rel}) → {names.get(p2, p2)} ({kinship})")
 
         ca = common_ancestor(id1, id2, G_full, G_anc)

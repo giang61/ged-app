@@ -170,6 +170,7 @@ def load_gedcom(file_path):
     names = {}
     genders = {}
     birth_years = {}
+    sib_order = {}   # pid -> int: position among siblings (0 = oldest by file order)
 
     with GedcomReader(file_path) as parser:
 
@@ -213,11 +214,21 @@ def load_gedcom(file_path):
                 G_full.add_edge(father, mother, relation="spouse")
                 G_full.add_edge(mother, father, relation="spouse")
 
+            # Record sibling order from CHIL file position (0 = oldest)
+            for idx, child in enumerate(children):
+                sib_order[child] = idx
+
     # ---------- Merge duplicates ----------
     merge_map = find_duplicates(names, birth_years)
     if merge_map:
         G_full, G_anc, names, genders, birth_years = apply_merge(
             G_full, G_anc, names, genders, birth_years, merge_map
         )
+        # Remap sib_order keys for merged duplicates
+        for dup, canon in merge_map.items():
+            if dup in sib_order:
+                if canon not in sib_order:
+                    sib_order[canon] = sib_order[dup]
+                del sib_order[dup]
 
-    return G_full, G_anc, names, genders, birth_years
+    return G_full, G_anc, names, genders, birth_years, sib_order
