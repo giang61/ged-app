@@ -14,7 +14,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 from ged_parser import load_gedcom
-from graph_utils import blood_anchor, common_ancestor, expand_with_spouses, find_blood_spouse
+from graph_utils import blood_anchor, common_ancestor, expand_with_spouses, find_blood_spouse, find_spouse
 from relationships import compute_vietnamese_kinship
 
 
@@ -52,7 +52,7 @@ def find_person(query):
 # ----------------------------
 # Family graph visualization
 # ----------------------------
-def draw_family_graph(id1, id2, ca, ego_id=None):
+def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlay=None):
     if ego_id is None:
         ego_id = id1
 
@@ -66,24 +66,44 @@ def draw_family_graph(id1, id2, ca, ego_id=None):
         spouse_pairs.append((id1, draw_id1))
     if draw_id2 != id2:
         spouse_pairs.append((id2, draw_id2))
+    # If a spouse_overlay was passed (e.g. Sarah when drawing from Đức Chí),
+    # add them as a side node connected by a dashed line to id1 (their blood spouse).
+    if spouse_overlay and spouse_overlay not in [s for s, _ in spouse_pairs]:
+        spouse_pairs.append((spouse_overlay, id1))
+
+    def find_all_blood_spouses(pid):
+        """Return all spouses of pid who exist in G_anc."""
+        spouses = []
+        for nb in G_full.successors(pid):
+            if G_full.edges[pid, nb].get("relation") == "spouse" and G_anc.has_node(nb):
+                spouses.append(nb)
+        for nb in G_full.predecessors(pid):
+            if G_full.edges[nb, pid].get("relation") == "spouse" and G_anc.has_node(nb):
+                spouses.append(nb)
+        return spouses
 
     def path_from_ca(ca, target):
         try:
             return nx.shortest_path(G_anc, ca, target)
         except (nx.NetworkXNoPath, nx.NodeNotFound):
-            ca_spouse = find_blood_spouse(ca, G_full, G_anc)
-            if ca_spouse:
+            # Try all blood spouses of ca — pick the one with a path to target
+            for ca_spouse in find_all_blood_spouses(ca):
                 try:
                     p = nx.shortest_path(G_anc, ca_spouse, target)
+                    # ca → ca_spouse is a spouse link, register as dashed line
+                    if (ca_spouse, ca) not in [(s, a) for s, a in spouse_pairs] and \
+                       (ca, ca_spouse) not in [(a, s) for s, a in spouse_pairs]:
+                        spouse_pairs.append((ca_spouse, ca))
                     return [ca] + p
                 except (nx.NetworkXNoPath, nx.NodeNotFound):
-                    pass
+                    continue
             return [ca]
 
     path1 = path_from_ca(ca, draw_id1)
     path2 = path_from_ca(ca, draw_id2)
 
     all_nodes = list(dict.fromkeys(path1 + path2))
+    # Always include all spouse overlay nodes
     for spouse_node, _ in spouse_pairs:
         if spouse_node not in all_nodes:
             all_nodes.append(spouse_node)
@@ -95,7 +115,7 @@ def draw_family_graph(id1, id2, ca, ego_id=None):
     for i, pid in enumerate(path2):
         levels[pid] = i
     for spouse_node, anchor_node in spouse_pairs:
-        levels[spouse_node] = levels.get(anchor_node, 1)
+        levels[spouse_node] = levels.get(anchor_node, len(path1) - 1)
 
     # x/y positions
     x_spacing = 220
@@ -105,18 +125,59 @@ def draw_family_graph(id1, id2, ca, ego_id=None):
         x_positions[pid] = -x_spacing
     for pid in path2[1:]:
         x_positions[pid] = x_spacing
+    # Place each married-in/overlay spouse to the left of their blood anchor
     for spouse_node, anchor_node in spouse_pairs:
-        anchor_x = x_positions.get(anchor_node, x_spacing)
-        x_positions[spouse_node] = anchor_x + x_spacing
+        anchor_x = x_positions.get(anchor_node, -x_spacing)
+        x_positions[spouse_node] = anchor_x - x_spacing
     for pid in all_nodes:
         if pid not in x_positions:
             x_positions[pid] = 0
 
     y_positions = {pid: levels.get(pid, 0) * y_spacing for pid in all_nodes}
 
+    # highlight_ids: id1 passed in (blood anchor) + spouse_overlay if present
+    highlight_ids = {id1, id2}
+    if spouse_overlay:
+        highlight_ids.add(spouse_overlay)
+
     # Build vis.js nodes
     vis_nodes = []
-    highlight_ids = {id1, id2}
+
+    ego_gender    = genders.get(ego_id)
+
+    def reverse_term(kin_term, pid):
+        """Return the 'gọi bằng X' address that pid uses toward ego_id."""
+        pid_gender = genders.get(pid)
+        # Extract base term (before any existing parenthetical)
+        base = kin_term.split("(")[0].strip()
+        # ego_gender: how pid addresses ego
+        # pid_gender: used for terms like Anh/Chị where target gender matters
+        table = {
+            "Bố":        "Con trai"   if ego_gender == "M" else "Con gái",
+            "Mẹ":        "Con trai"   if ego_gender == "M" else "Con gái",
+            "Ông":       "Cháu trai"  if ego_gender == "M" else "Cháu gái",
+            "Bà":        "Cháu trai"  if ego_gender == "M" else "Cháu gái",
+            "Cụ ông":    "Chắt trai"  if ego_gender == "M" else "Chắt gái",
+            "Cụ bà":     "Chắt trai"  if ego_gender == "M" else "Chắt gái",
+            "Kỵ ông":    "Chút trai"  if ego_gender == "M" else "Chút gái",
+            "Kỵ bà":     "Chút trai"  if ego_gender == "M" else "Chút gái",
+            "Anh":       "Em trai"    if ego_gender == "M" else "Em",
+            "Chị":       "Em trai"    if ego_gender == "M" else "Em",
+            "Em":        "Anh"        if pid_gender == "M" else "Chị",
+            "Em trai":   "Anh"        if pid_gender == "M" else "Chị",
+            "Bác":       "Cháu trai"  if ego_gender == "M" else "Cháu gái",
+            "Chú":       "Cháu trai"  if ego_gender == "M" else "Cháu gái",
+            "Cô":        "Cháu trai"  if ego_gender == "M" else "Cháu gái",
+            "Cậu":       "Cháu trai"  if ego_gender == "M" else "Cháu gái",
+            "Dì":        "Cháu trai"  if ego_gender == "M" else "Cháu gái",
+            "Con trai":  "Bố"         if ego_gender == "M" else "Mẹ",
+            "Con gái":   "Bố"         if ego_gender == "M" else "Mẹ",
+            "Cháu trai": "Ông"        if ego_gender == "M" else "Bà",
+            "Cháu gái":  "Ông"        if ego_gender == "M" else "Bà",
+            "Chắt trai": "Cụ ông"     if ego_gender == "M" else "Cụ bà",
+            "Chắt gái":  "Cụ ông"     if ego_gender == "M" else "Cụ bà",
+        }
+        return table.get(base)
 
     for pid in all_nodes:
         name     = names.get(pid, "Unknown")
@@ -126,8 +187,19 @@ def draw_family_graph(id1, id2, ca, ego_id=None):
         label_parts = [escape(str(name))]
         if year:
             label_parts.append(f"({year})")
-        if kin_term:
-            label_parts.append(escape(str(kin_term)))
+        if kin_term and kin_term != "Tôi":
+            # If kin_term already contains "gọi bằng", keep it as-is.
+            # Otherwise append the reverse address term.
+            if "gọi bằng" in kin_term:
+                label_parts.append(escape(str(kin_term)))
+            else:
+                rev = reverse_term(kin_term, pid)
+                if rev:
+                    label_parts.append(escape(f"{kin_term} (gọi bằng {rev})"))
+                else:
+                    label_parts.append(escape(str(kin_term)))
+        elif kin_term == "Tôi":
+            label_parts.append("Tôi")
         label = "\n".join(label_parts)
 
         if pid == ca:
@@ -152,9 +224,14 @@ def draw_family_graph(id1, id2, ca, ego_id=None):
     # Build vis.js edges — solid arrows for ancestry
     vis_edges = []
     seen_edges = set()
+    # Collect all spouse pair node sets for quick lookup
+    spouse_edge_pairs = {frozenset([s, a]) for s, a in spouse_pairs}
     for path in [path1, path2]:
         for i in range(len(path) - 1):
             src, dst = path[i], path[i + 1]
+            # Skip edges that are actually spouse links (drawn as dashed below)
+            if frozenset([src, dst]) in spouse_edge_pairs:
+                continue
             if (src, dst) not in seen_edges:
                 seen_edges.add((src, dst))
                 vis_edges.append({
@@ -259,6 +336,18 @@ if st.session_state.id1 and st.session_state.id2 and st.button("Find relationshi
     except nx.NetworkXNoPath:
         st.error("No relationship found")
     else:
+        # If id1 is a married-in spouse with no LCA to id2, re-anchor to their
+        # blood spouse for kinship computation and graph drawing.
+        try:
+            _id1_lca = nx.lowest_common_ancestor(G_anc, id1, id2)
+        except Exception:
+            _id1_lca = None
+        if _id1_lca is None:
+            _anchor = find_blood_spouse(id1, G_full, G_anc)
+            kinship_ego = _anchor if _anchor else id1
+        else:
+            kinship_ego = id1
+
         st.subheader("Relationship Path")
         for i in range(len(path) - 1):
             p1, p2 = path[i], path[i + 1]
@@ -271,12 +360,18 @@ if st.session_state.id1 and st.session_state.id2 and st.button("Find relationshi
             kinship = compute_vietnamese_kinship(id1, p2, G_anc, G_full, genders, birth_years, sib_order, debug=True)
             st.write(f"{names.get(p1, p1)} ({rel}) → {names.get(p2, p2)} ({kinship})")
 
-        ca = common_ancestor(id1, id2, G_full, G_anc)
+        ca = common_ancestor(kinship_ego, id2, G_full, G_anc)
         if ca:
             ca_name  = names.get(ca, ca)
             ca_label = f"{ca_name} ({birth_years[ca]})" if birth_years.get(ca) else ca_name
             st.subheader("Closest Common Ancestor")
             st.write(ca_label)
-            draw_family_graph(id1, id2, ca)
+            # If id1 is a married-in spouse, draw the graph anchored to their
+            # blood spouse (kinship_ego) so paths resolve correctly in G_anc,
+            # but pass id1 as spouse_overlay so they still appear in the graph.
+            if kinship_ego != id1:
+                draw_family_graph(kinship_ego, id2, ca, ego_id=id1, spouse_overlay=id1)
+            else:
+                draw_family_graph(id1, id2, ca, ego_id=id1)
         else:
             st.info("No common ancestor found — cannot draw graph.")

@@ -139,14 +139,14 @@ def common_ancestor(id1, id2, G_full, G_anc):
             spouse = find_blood_spouse(a, G_full, G_anc)
             if spouse:
                 try:
-                    d1 = nx.shortest_path_length(G_anc, spouse, a1)
+                    d1 = nx.shortest_path_length(G_anc, spouse, a1) + 0.5
                 except (nx.NetworkXNoPath, nx.NodeNotFound):
                     pass
         if d2 == float("inf"):
             spouse = find_blood_spouse(a, G_full, G_anc)
             if spouse:
                 try:
-                    d2 = nx.shortest_path_length(G_anc, spouse, a2)
+                    d2 = nx.shortest_path_length(G_anc, spouse, a2) + 0.5
                 except (nx.NetworkXNoPath, nx.NodeNotFound):
                     pass
         return d1 + d2

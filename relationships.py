@@ -4,6 +4,7 @@
 # Pure kinship logic — no UI, no graph structure concerns.
 # Graph traversal helpers are imported from graph_utils.py.
 
+import re
 import networkx as nx
 from graph_utils import is_blood_related, find_spouse
 
@@ -280,27 +281,182 @@ def compute_vietnamese_kinship(ego, target, G_anc, G_full, genders, births,
     # SPOUSE DETECTION
     # -------------------------
     if not skip_spouse:
-        if not is_blood_related(ego, target, G_anc):
-            spouse = find_spouse(target, G_full)
-            if spouse and spouse != ego:
-                if is_blood_related(ego, spouse, G_anc):
-                    dbg(f"[CASE] spouse via edge: {spouse}")
+        # Trigger spouse resolution if ego and target share no *meaningful* common
+        # ancestor. A "foreign" LCA (one that is not an ancestor of the target)
+        # means ego is from a different family tree — treat them as married-in.
+        try:
+            _lca_check = nx.lowest_common_ancestor(G_anc, ego, target)
+        except Exception:
+            _lca_check = None
+
+        # Discard the LCA if it is a foreign node — i.e. it has no path DOWN to
+        # ego in G_anc. A genuine LCA must be an ancestor of ego (path lca→ego exists).
+        # Sarah's parents (@I500@,@I501@) can reach Sarah but NOT Anna, so they get discarded.
+        if _lca_check is not None:
+            try:
+                nx.shortest_path(G_anc, _lca_check, ego)
+            except (nx.NetworkXNoPath, nx.NodeNotFound):
+                _lca_check = None
+
+        _blood = is_blood_related(ego, target, G_anc)
+        print(f"[DIAG] ego={ego} target={target} _lca_check={_lca_check} is_blood={_blood} skip_spouse={skip_spouse}")
+        if not _blood or _lca_check is None:
+            # Look for a spouse OF EGO who is blood-related to target.
+            # e.g. ego=Sarah (married-in), ego_spouse=Đức Thắng (blood member),
+            # then compute Đức Thắng's relation to target and map to in-law term.
+            ego_spouse = find_spouse(ego, G_full)
+            dbg(f"[SPOUSE CHECK] ego={ego}, ego_spouse={ego_spouse}, "
+                f"spouse_in_G_anc={G_anc.has_node(ego_spouse) if ego_spouse else None}, "
+                f"blood_related={is_blood_related(ego_spouse, target, G_anc) if ego_spouse else None}")
+            if ego_spouse and ego_spouse != target:
+                if is_blood_related(ego_spouse, target, G_anc):
+                    dbg(f"[CASE] ego's spouse is blood-related to target: {ego_spouse}")
                     base_relation = compute_vietnamese_kinship(
-                        ego, spouse, G_anc, G_full, genders, births,
-                        sib_order=sib_order, debug=False, skip_spouse=True
+                        ego_spouse, target, G_anc, G_full, genders, births,
+                        sib_order=sib_order, debug=debug, skip_spouse=True
                     )
                     dbg(f"[INFO] base_relation={base_relation}")
-                    mapping = {
-                        "Chú":  "Thím",
-                        "Cậu":  "Mợ",
-                        "Dì":   "Dượng",
-                        "Anh":  "Chị dâu",
-                        "Em":   "Em dâu",
-                        "Chị":  "Anh rể",
-                    }
-                    return mapping.get(base_relation, base_relation)
+                    ego_gender = genders.get(ego)
+                    #   Female ego (wife): husband's relatives get "chồng" suffix
+                    #   Male ego (husband): wife's relatives get "vợ" suffix
+                    if ego_gender == "F":
+                        mapping = {
+                            "Bố":       "Bố chồng",
+                            "Mẹ":       "Mẹ chồng",
+                            "Ông":      "Ông chồng",
+                            "Bà":       "Bà chồng",
+                            "Anh":      "Anh chồng",
+                            "Chị":      "Chị chồng",
+                            "Em":       "Em chồng",
+                            "Em trai":  "Em chồng",
+                            "Chú":      "Chú chồng",
+                            "Cô":       "Cô chồng",
+                            "Bác":      "Bác chồng",
+                            "Cậu":      "Cậu chồng",
+                            "Dì":       "Dì chồng",
+                            "Con trai": "Con trai",
+                            "Con gái":  "Con dâu",
+                            "Cháu trai":"Cháu trai",
+                            "Cháu gái": "Cháu gái",
+                        }
+                    else:
+                        mapping = {
+                            "Bố":       "Bố vợ",
+                            "Mẹ":       "Mẹ vợ",
+                            "Ông":      "Ông vợ",
+                            "Bà":       "Bà vợ",
+                            "Anh":      "Anh vợ",
+                            "Chị":      "Chị vợ",
+                            "Em":       "Em vợ",
+                            "Em trai":  "Em vợ",
+                            "Chú":      "Chú vợ",
+                            "Cô":       "Cô vợ",
+                            "Bác":      "Bác vợ",
+                            "Cậu":      "Cậu vợ",
+                            "Dì":       "Dì vợ",
+                            "Con trai": "Con rể",
+                            "Con gái":  "Con gái",
+                            "Cháu trai":"Cháu trai",
+                            "Cháu gái": "Cháu gái",
+                        }
 
-    dbg(f"\n=== COMPUTE RELATION ===")
+                    # Direct lookup (simple terms like "Bố", "Anh", etc.)
+                    result = mapping.get(base_relation)
+                    if result:
+                        return result
+
+                    # Compound term: "Cháu gái (gọi bằng Cậu)" → "Cháu gái (gọi bằng Mợ)"
+                    # The inner gọi bằng term is an address term — use traditional
+                    # in-law address mappings, NOT the "chồng/vợ" suffix pattern.
+                    if ego_gender == "F":
+                        inlaw_address = {
+                            "Chú":  "Thím",
+                            "Cậu":  "Mợ",
+                            "Bác":  "Bác",
+                            "Cô":   "Cô",
+                            "Dì":   "Dì",
+                            "Anh":  "Chị dâu",
+                            "Chị":  "Anh rể",
+                            "Em":   "Em dâu",
+                        }
+                    else:
+                        inlaw_address = {
+                            "Chú":  "Thím",
+                            "Cậu":  "Mợ",
+                            "Bác":  "Bác",
+                            "Cô":   "Cô",
+                            "Dì":   "Dì",
+                            "Anh":  "Chị dâu",
+                            "Chị":  "Anh rể",
+                            "Em":   "Em rể",
+                        }
+                    m = re.search(r"^(.*?)\s*\(gọi bằng (.+?)\)$", base_relation)
+                    dbg(f"[REGEX] match={m}, groups={m.groups() if m else None}")
+                    if m:
+                        prefix = m.group(1).strip()
+                        inner  = m.group(2).strip()
+                        mapped = inlaw_address.get(inner)
+                        if mapped:
+                            return f"{prefix} (gọi bằng {mapped})"
+
+                    return base_relation
+
+            # Second path: target is the married-in spouse.
+            # Find target's blood spouse, compute ego's relation to that blood spouse,
+            # then convert to the appropriate in-law term from ego's perspective.
+            # e.g. ego=Anna, target=Sarah → target_spouse=Đức Chí
+            #      Anna's relation to Đức Chí = "Cậu" → Sarah is "Mợ" to Anna.
+            target_spouse = find_spouse(target, G_full)
+            dbg(f"[SPOUSE CHECK target] target={target}, target_spouse={target_spouse}, "
+                f"blood_related={is_blood_related(ego, target_spouse, G_anc) if target_spouse else None}")
+            if target_spouse and target_spouse != ego:
+                if is_blood_related(ego, target_spouse, G_anc):
+                    dbg(f"[CASE] target's spouse is blood-related to ego: {target_spouse}")
+                    # What is target_spouse to ego?
+                    base_relation = compute_vietnamese_kinship(
+                        ego, target_spouse, G_anc, G_full, genders, births,
+                        sib_order=sib_order, debug=debug, skip_spouse=True
+                    )
+                    dbg(f"[INFO] base_relation (ego→target_spouse)={base_relation}")
+                    target_gender = genders.get(target)
+                    # Map: "what is target_spouse to ego" → "what is target to ego"
+                    # e.g. target_spouse=Đức Chí is "Cậu" to Anna → Sarah is "Mợ"
+                    if target_gender == "F":
+                        mapping = {
+                            "Bố":   "Mẹ chồng",  # husband's father → his wife=Mẹ chồng
+                            "Mẹ":   "Bố chồng",
+                            "Anh":  "Chị dâu",
+                            "Chị":  "Anh rể",
+                            "Em":   "Em dâu",
+                            "Em trai": "Em dâu",
+                            "Chú":  "Thím",
+                            "Cậu":  "Mợ",
+                            "Bác":  "Bác",
+                            "Cô":   "Cô",
+                            "Dì":   "Dì",
+                            "Con trai": "Con dâu",
+                            "Con gái":  "Con gái",
+                        }
+                    else:
+                        mapping = {
+                            "Bố":   "Bố vợ",
+                            "Mẹ":   "Mẹ vợ",
+                            "Anh":  "Anh vợ",
+                            "Chị":  "Chị vợ",
+                            "Em":   "Em vợ",
+                            "Em trai": "Em vợ",
+                            "Chú":  "Chú vợ",
+                            "Cậu":  "Cậu vợ",
+                            "Bác":  "Bác vợ",
+                            "Cô":   "Cô vợ",
+                            "Dì":   "Dì vợ",
+                            "Con trai": "Con rể",
+                            "Con gái":  "Con gái",
+                        }
+                    result = mapping.get(base_relation)
+                    if result:
+                        return result
+                    return base_relation
     dbg(f"ego={ego}, target={target}")
 
     gender      = genders.get(target)
