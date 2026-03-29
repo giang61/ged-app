@@ -420,38 +420,41 @@ def compute_vietnamese_kinship(ego, target, G_anc, G_full, genders, births,
                     dbg(f"[INFO] base_relation (ego→target_spouse)={base_relation}")
                     target_gender = genders.get(target)
                     # Map: "what is target_spouse to ego" → "what is target to ego"
-                    # e.g. target_spouse=Đức Chí is "Cậu" to Anna → Sarah is "Mợ"
+                    # Rule: vợ/rể suffix ONLY applies to relatives of ego's OWN spouse.
+                    # For other married-in people, use plain seniority terms.
                     if target_gender == "F":
+                        # target is female; target_spouse is her husband (blood relative of ego)
                         mapping = {
-                            "Bố":   "Mẹ chồng",  # husband's father → his wife=Mẹ chồng
-                            "Mẹ":   "Bố chồng",
-                            "Anh":  "Chị dâu",
-                            "Chị":  "Anh rể",
-                            "Em":   "Em dâu",
+                            "Bố":      "Mẹ chồng",
+                            "Mẹ":      "Bố chồng",
+                            "Anh":     "Chị dâu",
+                            "Chị":     "Anh rể",
+                            "Em":      "Em dâu",
                             "Em trai": "Em dâu",
-                            "Chú":  "Thím",
-                            "Cậu":  "Mợ",
-                            "Bác":  "Bác",
-                            "Cô":   "Cô",
-                            "Dì":   "Dì",
-                            "Con trai": "Con dâu",
-                            "Con gái":  "Con gái",
+                            "Chú":     "Thím",
+                            "Cậu":     "Mợ",
+                            "Bác":     "Bác",
+                            "Cô":      "Cô",
+                            "Dì":      "Dì",
+                            "Con trai":"Con dâu",
+                            "Con gái": "Con gái",
                         }
                     else:
+                        # target is male; target_spouse is his wife (blood relative of ego)
+                        # Use plain seniority — no vợ/rể since this is not ego's own spouse's family
                         mapping = {
-                            "Bố":   "Bố vợ",
-                            "Mẹ":   "Mẹ vợ",
-                            "Anh":  "Anh vợ",
-                            "Chị":  "Chị vợ",
-                            "Em":   "Em vợ",
-                            "Em trai": "Em vợ",
-                            "Chú":  "Chú vợ",
-                            "Cậu":  "Cậu vợ",
-                            "Bác":  "Bác vợ",
-                            "Cô":   "Cô vợ",
-                            "Dì":   "Dì vợ",
-                            "Con trai": "Con rể",
-                            "Con gái":  "Con gái",
+                            "Bố":      "Bố vợ",
+                            "Mẹ":      "Mẹ vợ",
+                            "Chị":     "Anh",        # wife is senior (Chị) → husband is Anh
+                            "Em":      "Em",         # wife is junior (Em) → husband is Em
+                            "Em trai": "Em",
+                            "Chú":     "Chú",
+                            "Cậu":     "Cậu",
+                            "Bác":     "Bác",
+                            "Cô":      "Cô",
+                            "Dì":      "Dì",
+                            "Con trai":"Con rể",
+                            "Con gái": "Con gái",
                         }
                     result = mapping.get(base_relation)
                     if result:

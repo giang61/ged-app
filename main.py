@@ -14,7 +14,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 from ged_parser import load_gedcom
-from graph_utils import blood_anchor, common_ancestor, expand_with_spouses, find_blood_spouse, find_spouse
+from graph_utils import blood_anchor, common_ancestor, expand_with_spouses, find_blood_spouse, find_spouse, is_blood_related
 from relationships import compute_vietnamese_kinship
 
 
@@ -66,10 +66,12 @@ def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlay=None):
         spouse_pairs.append((id1, draw_id1))
     if draw_id2 != id2:
         spouse_pairs.append((id2, draw_id2))
-    # If a spouse_overlay was passed (e.g. Sarah when drawing from Đức Chí),
-    # add them as a side node connected by a dashed line to id1 (their blood spouse).
+    # If a spouse_overlay was passed, connect them by dashed line to their blood spouse
     if spouse_overlay and spouse_overlay not in [s for s, _ in spouse_pairs]:
-        spouse_pairs.append((spouse_overlay, id1))
+        overlay_anchor = find_blood_spouse(spouse_overlay, G_full, G_anc)
+        if overlay_anchor is None:
+            overlay_anchor = id1
+        spouse_pairs.append((spouse_overlay, overlay_anchor))
 
     def find_all_blood_spouses(pid):
         """Return all spouses of pid who exist in G_anc."""
@@ -153,6 +155,7 @@ def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlay=None):
         # ego_gender: how pid addresses ego
         # pid_gender: used for terms like Anh/Chị where target gender matters
         table = {
+            # Direct blood relatives
             "Bố":        "Con trai"   if ego_gender == "M" else "Con gái",
             "Mẹ":        "Con trai"   if ego_gender == "M" else "Con gái",
             "Ông":       "Cháu trai"  if ego_gender == "M" else "Cháu gái",
@@ -161,10 +164,10 @@ def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlay=None):
             "Cụ bà":     "Chắt trai"  if ego_gender == "M" else "Chắt gái",
             "Kỵ ông":    "Chút trai"  if ego_gender == "M" else "Chút gái",
             "Kỵ bà":     "Chút trai"  if ego_gender == "M" else "Chút gái",
-            "Anh":       "Em trai"    if ego_gender == "M" else "Em",
-            "Chị":       "Em trai"    if ego_gender == "M" else "Em",
-            "Em":        "Anh"        if pid_gender == "M" else "Chị",
-            "Em trai":   "Anh"        if pid_gender == "M" else "Chị",
+            "Anh":       "Em trai"    if ego_gender == "M" else "Em gái",
+            "Chị":       "Em trai"    if ego_gender == "M" else "Em gái",
+            "Em":        "Anh"        if ego_gender == "M" else "Chị",
+            "Em trai":   "Anh"        if ego_gender == "M" else "Chị",
             "Bác":       "Cháu trai"  if ego_gender == "M" else "Cháu gái",
             "Chú":       "Cháu trai"  if ego_gender == "M" else "Cháu gái",
             "Cô":        "Cháu trai"  if ego_gender == "M" else "Cháu gái",
@@ -176,13 +179,63 @@ def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlay=None):
             "Cháu gái":  "Ông"        if ego_gender == "M" else "Bà",
             "Chắt trai": "Cụ ông"     if ego_gender == "M" else "Cụ bà",
             "Chắt gái":  "Cụ ông"     if ego_gender == "M" else "Cụ bà",
+            # In-law terms — pid calls ego by the reciprocal in-law address
+            "Bố chồng":  "Con dâu",
+            "Mẹ chồng":  "Con dâu",
+            "Bố vợ":     "Con rể",
+            "Mẹ vợ":     "Con rể",
+            "Anh chồng": "Em trai"    if ego_gender == "M" else "Em gái",
+            "Chị chồng": "Em trai"    if ego_gender == "M" else "Em gái",
+            "Anh vợ":    "Em trai"    if ego_gender == "M" else "Em gái",
+            "Chị vợ":    "Em trai"    if ego_gender == "M" else "Em gái",
+            "Em chồng":  "Anh"        if pid_gender == "M" else "Chị",
+            "Em vợ":     "Anh"        if pid_gender == "M" else "Chị",
+            "Chị dâu":   "Em trai"    if ego_gender == "M" else "Em gái",
+            "Anh rể":    "Em trai"    if ego_gender == "M" else "Em gái",
+            "Em dâu":    "Anh"        if pid_gender == "M" else "Chị",
+            "Em rể":     "Anh"        if pid_gender == "M" else "Chị",
+            "Thím":      "Cháu trai"  if ego_gender == "M" else "Cháu gái",
+            "Mợ":        "Cháu trai"  if ego_gender == "M" else "Cháu gái",
+            "Dượng":     "Cháu trai"  if ego_gender == "M" else "Cháu gái",
+            "Chú chồng": "Cháu trai"  if ego_gender == "M" else "Cháu gái",
+            "Cô chồng":  "Cháu trai"  if ego_gender == "M" else "Cháu gái",
+            "Bác chồng": "Cháu trai"  if ego_gender == "M" else "Cháu gái",
+            "Cậu chồng": "Cháu trai"  if ego_gender == "M" else "Cháu gái",
+            "Dì chồng":  "Cháu trai"  if ego_gender == "M" else "Cháu gái",
         }
         return table.get(base)
+
+    # Build set of spouse-only overlay nodes (no blood relation to ego_id)
+    spouse_only_nodes = {s for s, _ in spouse_pairs if not is_blood_related(ego_id, s, G_anc)}
+
+    # Identify ego's direct spouse node for the special "Mình" label
+    ego_direct_spouse = find_spouse(ego_id, G_full)
+
+    def spouse_label(pid):
+        """Return the kinship label for ego's direct spouse."""
+        pid_gender = genders.get(pid)
+        if ego_gender == pid_gender:
+            return "Mình (gọi bằng Mình)"
+        elif ego_gender == "F" and pid_gender == "M":
+            return "Anh (gọi bằng Em / Mình)"
+        elif ego_gender == "M" and pid_gender == "F":
+            return "Em (gọi bằng Anh / Mình)"
+        else:
+            return "Mình (gọi bằng Mình)"
 
     for pid in all_nodes:
         name     = names.get(pid, "Unknown")
         year     = birth_years.get(pid)
-        kin_term = compute_vietnamese_kinship(ego_id, pid, G_anc, G_full, genders, birth_years, sib_order)
+
+        # Special label for ego's direct spouse
+        if pid == ego_direct_spouse:
+            kin_term = spouse_label(pid)
+        else:
+            kin_term = compute_vietnamese_kinship(ego_id, pid, G_anc, G_full, genders, birth_years, sib_order)
+
+        # For pure married-in nodes, suppress only the ambiguous fallback term.
+        if pid in spouse_only_nodes and pid != ego_direct_spouse and kin_term == "Anh/Chị/Em":
+            kin_term = None
 
         label_parts = [escape(str(name))]
         if year:
@@ -336,15 +389,26 @@ if st.session_state.id1 and st.session_state.id2 and st.button("Find relationshi
     except nx.NetworkXNoPath:
         st.error("No relationship found")
     else:
-        # If id1 is a married-in spouse with no LCA to id2, re-anchor to their
-        # blood spouse for kinship computation and graph drawing.
+        # First re-anchor id2 if it is a married-in spouse.
         try:
-            _id1_lca = nx.lowest_common_ancestor(G_anc, id1, id2)
+            _id2_lca = nx.lowest_common_ancestor(G_anc, id1, id2)
+        except Exception:
+            _id2_lca = None
+        if _id2_lca is None:
+            _anchor2 = find_blood_spouse(id2, G_full, G_anc)
+            kinship_target = _anchor2 if _anchor2 else id2
+        else:
+            kinship_target = id2
+
+        # Then re-anchor id1 if it is a married-in spouse,
+        # checking against the already-resolved kinship_target.
+        try:
+            _id1_lca = nx.lowest_common_ancestor(G_anc, id1, kinship_target)
         except Exception:
             _id1_lca = None
         if _id1_lca is None:
-            _anchor = find_blood_spouse(id1, G_full, G_anc)
-            kinship_ego = _anchor if _anchor else id1
+            _anchor1 = find_blood_spouse(id1, G_full, G_anc)
+            kinship_ego = _anchor1 if _anchor1 else id1
         else:
             kinship_ego = id1
 
@@ -360,18 +424,20 @@ if st.session_state.id1 and st.session_state.id2 and st.button("Find relationshi
             kinship = compute_vietnamese_kinship(id1, p2, G_anc, G_full, genders, birth_years, sib_order, debug=True)
             st.write(f"{names.get(p1, p1)} ({rel}) → {names.get(p2, p2)} ({kinship})")
 
-        ca = common_ancestor(kinship_ego, id2, G_full, G_anc)
+        ca = common_ancestor(kinship_ego, kinship_target, G_full, G_anc)
         if ca:
             ca_name  = names.get(ca, ca)
             ca_label = f"{ca_name} ({birth_years[ca]})" if birth_years.get(ca) else ca_name
             st.subheader("Closest Common Ancestor")
             st.write(ca_label)
-            # If id1 is a married-in spouse, draw the graph anchored to their
-            # blood spouse (kinship_ego) so paths resolve correctly in G_anc,
-            # but pass id1 as spouse_overlay so they still appear in the graph.
-            if kinship_ego != id1:
-                draw_family_graph(kinship_ego, id2, ca, ego_id=id1, spouse_overlay=id1)
-            else:
-                draw_family_graph(id1, id2, ca, ego_id=id1)
+            draw_id1     = kinship_ego    if kinship_ego    != id1 else id1
+            draw_id2     = kinship_target if kinship_target != id2 else id2
+            overlay_id1  = id1 if kinship_ego    != id1 else None
+            overlay_id2  = id2 if kinship_target != id2 else None
+            overlay = overlay_id1 or overlay_id2
+            print(f"[DRAW] draw_id1={draw_id1} draw_id2={draw_id2} overlay={overlay} ca={ca}")
+            if overlay:
+                print(f"[DRAW] find_blood_spouse(overlay)={find_blood_spouse(overlay, G_full, G_anc)}")
+            draw_family_graph(draw_id1, draw_id2, ca, ego_id=id1, spouse_overlay=overlay)
         else:
             st.info("No common ancestor found — cannot draw graph.")
