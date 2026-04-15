@@ -112,8 +112,13 @@ def expand_with_spouses(ancestor_set, G_full):
 # -------------------------
 # Common ancestor
 # -------------------------
-def common_ancestor(id1, id2, G_full, G_anc):
-    """Return the closest common ancestor of id1 and id2."""
+def common_ancestor(id1, id2, G_full, G_anc, names=None, birth_years=None):
+    """Return the closest common ancestor of id1 and id2.
+
+    names and birth_years are optional; if provided, they are used to
+    break ties between spouse-pair candidates by preferring the one
+    with known data over an unknown/placeholder.
+    """
     a1 = blood_anchor(id1, G_full, G_anc, reference_pid=id1)
     a2 = blood_anchor(id2, G_full, G_anc, reference_pid=id1)
 
@@ -125,6 +130,24 @@ def common_ancestor(id1, id2, G_full, G_anc):
     common = anc1 & anc2
     if not common:
         return None
+
+    def has_info(pid):
+        """Return True if this person has at least a name and/or birth year."""
+        if names is None and birth_years is None:
+            return True  # no data to judge by, treat as known
+        has_name = bool(names.get(pid, "").strip()) if names else False
+        has_birth = birth_years.get(pid) is not None if birth_years else False
+        return has_name or has_birth
+
+    def is_placeholder(pid):
+        """Return True if the person looks like an unknown/placeholder entry."""
+        if names is None:
+            return False
+        name = names.get(pid, "")
+        # Reuse the same placeholder detection as ged_parser
+        import re
+        clean = re.sub(r"[.? ]", "", name.strip().lower())
+        return len(clean) < 3
 
     def dist(a):
         try:
@@ -149,6 +172,11 @@ def common_ancestor(id1, id2, G_full, G_anc):
                     d2 = nx.shortest_path_length(G_anc, spouse, a2) + 0.5
                 except (nx.NetworkXNoPath, nx.NodeNotFound):
                     pass
-        return d1 + d2
+
+        # Add a tiebreaker penalty for placeholder/unknown persons so
+        # that their spouse (who has real data) is preferred when scores
+        # are otherwise equal.
+        placeholder_penalty = 0.1 if is_placeholder(a) else 0
+        return d1 + d2 + placeholder_penalty
 
     return min(common, key=dist)

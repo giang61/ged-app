@@ -255,12 +255,19 @@ def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlay=None):
             label_parts.append("Tôi")
         label = "\n".join(label_parts)
 
+        # After:
         if pid == ca:
             border, bg = "#cc0000", "#ffcccc"
         elif pid in highlight_ids:
             border, bg = "#0055cc", "#cce5ff"
         else:
-            border, bg = "#cc7700", "#ffe5b4"
+            pid_gender = genders.get(pid)
+            if pid_gender == "M":
+                border, bg = "#1a6b1a", "#d4edda"  # green for males
+            elif pid_gender == "F":
+                border, bg = "#8b2fc9", "#f0d9ff"  # purple for females
+            else:
+                border, bg = "#cc7700", "#ffe5b4"  # original amber for unknown gender
 
         vis_nodes.append({
             "id":    pid,
@@ -424,7 +431,7 @@ if st.session_state.id1 and st.session_state.id2 and st.button("Find relationshi
             kinship = compute_vietnamese_kinship(id1, p2, G_anc, G_full, genders, birth_years, sib_order, debug=True)
             st.write(f"{names.get(p1, p1)} ({rel}) → {names.get(p2, p2)} ({kinship})")
 
-        ca = common_ancestor(kinship_ego, kinship_target, G_full, G_anc)
+        ca = common_ancestor(kinship_ego, kinship_target, G_full, G_anc, names=names, birth_years=birth_years)
         if ca:
             ca_name  = names.get(ca, ca)
             ca_label = f"{ca_name} ({birth_years[ca]})" if birth_years.get(ca) else ca_name
