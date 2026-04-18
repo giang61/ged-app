@@ -11,7 +11,7 @@ from html import escape
 
 import networkx as nx
 import streamlit as st
-import streamlit.components.v1 as components
+import base64
 
 from ged_parser import load_gedcom
 from graph_utils import blood_anchor, common_ancestor, expand_with_spouses, find_blood_spouse, find_spouse, is_blood_related
@@ -52,9 +52,11 @@ def find_person(query):
 # ----------------------------
 # Family graph visualization
 # ----------------------------
-def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlay=None):
+def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlays=None):
     if ego_id is None:
         ego_id = id1
+    if spouse_overlays is None:
+        spouse_overlays = []
 
     # Resolve married-in spouses to their blood anchor
     draw_id1 = blood_anchor(id1, G_full, G_anc, reference_pid=id1)
@@ -66,12 +68,15 @@ def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlay=None):
         spouse_pairs.append((id1, draw_id1))
     if draw_id2 != id2:
         spouse_pairs.append((id2, draw_id2))
-    # If a spouse_overlay was passed, connect them by dashed line to their blood spouse
-    if spouse_overlay and spouse_overlay not in [s for s, _ in spouse_pairs]:
-        overlay_anchor = find_blood_spouse(spouse_overlay, G_full, G_anc)
-        if overlay_anchor is None:
-            overlay_anchor = id1
-        spouse_pairs.append((spouse_overlay, overlay_anchor))
+    # If spouse_overlays were passed, connect each by dashed line to their blood spouse
+    existing_overlays = {s for s, _ in spouse_pairs}
+    for overlay in spouse_overlays:
+        if overlay not in existing_overlays:
+            overlay_anchor = find_blood_spouse(overlay, G_full, G_anc)
+            if overlay_anchor is None:
+                overlay_anchor = id1
+            spouse_pairs.append((overlay, overlay_anchor))
+            existing_overlays.add(overlay)
 
     def find_all_blood_spouses(pid):
         """Return all spouses of pid who exist in G_anc."""
@@ -137,10 +142,8 @@ def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlay=None):
 
     y_positions = {pid: levels.get(pid, 0) * y_spacing for pid in all_nodes}
 
-    # highlight_ids: id1 passed in (blood anchor) + spouse_overlay if present
-    highlight_ids = {id1, id2}
-    if spouse_overlay:
-        highlight_ids.add(spouse_overlay)
+    # highlight_ids: id1, id2 + all spouse overlays
+    highlight_ids = {id1, id2} | set(spouse_overlays)
 
     # Build vis.js nodes
     vis_nodes = []
@@ -324,13 +327,29 @@ def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlay=None):
   <meta charset="utf-8">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <style>
-    body {{ margin: 0; padding: 0; }}
-    #network {{ width: 100%; height: 650px; border: 1px solid #ddd; background: #fff; }}
+    body {{ margin: 0; padding: 0; background: #fff; }}
+    #network {{ width: 100%; height: 600px; border: 1px solid #ddd; background: #fff; }}
+    #pdf-btn {{
+      display: block;
+      width: 100%;
+      margin-top: 6px;
+      padding: 8px;
+      background: #16a34a;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+    }}
+    #pdf-btn:hover {{ background: #15803d; }}
   </style>
 </head>
 <body>
   <div id="network"></div>
+  <button id="pdf-btn">📄 Save graph as PDF</button>
   <script>
     var nodes = new vis.DataSet({nodes_json});
     var edges = new vis.DataSet({edges_json});
@@ -343,11 +362,37 @@ def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlay=None):
     }};
     var network = new vis.Network(container, {{ nodes: nodes, edges: edges }}, options);
     network.fit();
+
+    document.getElementById("pdf-btn").addEventListener("click", function() {{
+      var btn = this;
+      btn.textContent = "⏳ Generating PDF…";
+      btn.disabled = true;
+      html2canvas(document.getElementById("network"), {{
+        backgroundColor: "#ffffff",
+        scale: 2,
+        useCORS: true
+      }}).then(function(canvas) {{
+        var {{ jsPDF }} = window.jspdf;
+        var imgData = canvas.toDataURL("image/png");
+        var imgW = canvas.width;
+        var imgH = canvas.height;
+        var isLandscape = imgW > imgH;
+        var doc = new jsPDF({{ orientation: isLandscape ? "landscape" : "portrait", unit: "px", format: [imgW / 2, imgH / 2] }});
+        doc.setFillColor(255, 255, 255);
+        doc.rect(0, 0, imgW / 2, imgH / 2, "F");
+        doc.addImage(imgData, "PNG", 0, 0, imgW / 2, imgH / 2);
+        doc.save("family_graph.pdf");
+        btn.textContent = "📄 Save graph as PDF";
+        btn.disabled = false;
+      }});
+    }});
   </script>
 </body>
 </html>
 """
-    components.html(html, height=670)
+    encoded = base64.b64encode(html.encode("utf-8")).decode("utf-8")
+    data_uri = f"data:text/html;base64,{encoded}"
+    st.iframe(data_uri, height=690)
 
 
 # ----------------------------
@@ -429,7 +474,8 @@ if st.session_state.id1 and st.session_state.id2 and st.button("Find relationshi
             else:
                 rel = "related"
             kinship = compute_vietnamese_kinship(id1, p2, G_anc, G_full, genders, birth_years, sib_order, debug=True)
-            st.write(f"{names.get(p1, p1)} ({rel}) → {names.get(p2, p2)} ({kinship})")
+            line = f"{names.get(p1, p1)} ({rel}) → {names.get(p2, p2)} ({kinship})"
+            st.write(line)
 
         ca = common_ancestor(kinship_ego, kinship_target, G_full, G_anc, names=names, birth_years=birth_years)
         if ca:
@@ -437,14 +483,15 @@ if st.session_state.id1 and st.session_state.id2 and st.button("Find relationshi
             ca_label = f"{ca_name} ({birth_years[ca]})" if birth_years.get(ca) else ca_name
             st.subheader("Closest Common Ancestor")
             st.write(ca_label)
-            draw_id1     = kinship_ego    if kinship_ego    != id1 else id1
-            draw_id2     = kinship_target if kinship_target != id2 else id2
-            overlay_id1  = id1 if kinship_ego    != id1 else None
-            overlay_id2  = id2 if kinship_target != id2 else None
-            overlay = overlay_id1 or overlay_id2
-            print(f"[DRAW] draw_id1={draw_id1} draw_id2={draw_id2} overlay={overlay} ca={ca}")
-            if overlay:
-                print(f"[DRAW] find_blood_spouse(overlay)={find_blood_spouse(overlay, G_full, G_anc)}")
-            draw_family_graph(draw_id1, draw_id2, ca, ego_id=id1, spouse_overlay=overlay)
+            draw_id1 = kinship_ego    if kinship_ego    != id1 else id1
+            draw_id2 = kinship_target if kinship_target != id2 else id2
+            overlays = []
+            if kinship_ego    != id1: overlays.append(id1)
+            if kinship_target != id2: overlays.append(id2)
+            print(f"[DRAW] draw_id1={draw_id1} draw_id2={draw_id2} overlays={overlays} ca={ca}")
+            for ov in overlays:
+                print(f"[DRAW] find_blood_spouse({ov})={find_blood_spouse(ov, G_full, G_anc)}")
+            draw_family_graph(draw_id1, draw_id2, ca, ego_id=id1, spouse_overlays=overlays)
         else:
             st.info("No common ancestor found — cannot draw graph.")
+
