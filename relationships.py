@@ -365,8 +365,8 @@ def compute_vietnamese_kinship(ego, target, G_anc, G_full, genders, births,
                     if result:
                         return result
 
-                    # Compound term: "Cháu gái (gọi bằng Cậu)" → "Cháu gái (gọi bằng Mợ)"
-                    # The inner gọi bằng term is an address term — use traditional
+                    # Compound term: "Cháu gái (gọi tôi bằng Cậu)" → "Cháu gái (gọi tôi bằng Mợ)"
+                    # The inner gọi tôi bằng term is an address term — use traditional
                     # in-law address mappings, NOT the "chồng/vợ" suffix pattern.
                     if ego_gender == "F":
                         inlaw_address = {
@@ -390,14 +390,14 @@ def compute_vietnamese_kinship(ego, target, G_anc, G_full, genders, births,
                             "Chị":  "Anh rể",
                             "Em":   "Em rể",
                         }
-                    m = re.search(r"^(.*?)\s*\(gọi bằng (.+?)\)$", base_relation)
+                    m = re.search(r"^(.*?)\s*\(gọi tôi bằng (.+?)\)$", base_relation)
                     dbg(f"[REGEX] match={m}, groups={m.groups() if m else None}")
                     if m:
                         prefix = m.group(1).strip()
                         inner  = m.group(2).strip()
                         mapped = inlaw_address.get(inner)
                         if mapped:
-                            return f"{prefix} (gọi bằng {mapped})"
+                            return f"{prefix} (gọi tôi bằng {mapped})"
 
                     return base_relation
 
@@ -624,8 +624,8 @@ def compute_vietnamese_kinship(ego, target, G_anc, G_full, genders, births,
         if not is_blood_related(ego, true_parent, G_anc):
             final_address = convert_to_inlaw(address, tp_gender)
 
-        dbg(f"[FINAL] {base} (gọi bằng {final_address})")
-        return f"{base} (gọi bằng {final_address})"
+        dbg(f"[FINAL] {base} (gọi tôi bằng {final_address})")
+        return f"{base} (gọi tôi bằng {final_address})"
 
     # Ancestors
     if gen_diff <= -2:

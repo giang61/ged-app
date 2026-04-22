@@ -11,7 +11,7 @@ from html import escape
 
 import networkx as nx
 import streamlit as st
-import base64
+import streamlit.components.v1 as components
 
 from ged_parser import load_gedcom
 from graph_utils import blood_anchor, common_ancestor, expand_with_spouses, find_blood_spouse, find_spouse, is_blood_related
@@ -52,11 +52,9 @@ def find_person(query):
 # ----------------------------
 # Family graph visualization
 # ----------------------------
-def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlays=None):
+def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlay=None):
     if ego_id is None:
         ego_id = id1
-    if spouse_overlays is None:
-        spouse_overlays = []
 
     # Resolve married-in spouses to their blood anchor
     draw_id1 = blood_anchor(id1, G_full, G_anc, reference_pid=id1)
@@ -68,15 +66,12 @@ def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlays=None):
         spouse_pairs.append((id1, draw_id1))
     if draw_id2 != id2:
         spouse_pairs.append((id2, draw_id2))
-    # If spouse_overlays were passed, connect each by dashed line to their blood spouse
-    existing_overlays = {s for s, _ in spouse_pairs}
-    for overlay in spouse_overlays:
-        if overlay not in existing_overlays:
-            overlay_anchor = find_blood_spouse(overlay, G_full, G_anc)
-            if overlay_anchor is None:
-                overlay_anchor = id1
-            spouse_pairs.append((overlay, overlay_anchor))
-            existing_overlays.add(overlay)
+    # If a spouse_overlay was passed, connect them by dashed line to their blood spouse
+    if spouse_overlay and spouse_overlay not in [s for s, _ in spouse_pairs]:
+        overlay_anchor = find_blood_spouse(spouse_overlay, G_full, G_anc)
+        if overlay_anchor is None:
+            overlay_anchor = id1
+        spouse_pairs.append((spouse_overlay, overlay_anchor))
 
     def find_all_blood_spouses(pid):
         """Return all spouses of pid who exist in G_anc."""
@@ -142,8 +137,10 @@ def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlays=None):
 
     y_positions = {pid: levels.get(pid, 0) * y_spacing for pid in all_nodes}
 
-    # highlight_ids: id1, id2 + all spouse overlays
-    highlight_ids = {id1, id2} | set(spouse_overlays)
+    # highlight_ids: id1 passed in (blood anchor) + spouse_overlay if present
+    highlight_ids = {id1, id2}
+    if spouse_overlay:
+        highlight_ids.add(spouse_overlay)
 
     # Build vis.js nodes
     vis_nodes = []
@@ -151,7 +148,7 @@ def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlays=None):
     ego_gender    = genders.get(ego_id)
 
     def reverse_term(kin_term, pid):
-        """Return the 'gọi bằng X' address that pid uses toward ego_id."""
+        """Return the 'gọi tôi bằng X' address that pid uses toward ego_id."""
         pid_gender = genders.get(pid)
         # Extract base term (before any existing parenthetical)
         base = kin_term.split("(")[0].strip()
@@ -183,28 +180,49 @@ def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlays=None):
             "Chắt trai": "Cụ ông"     if ego_gender == "M" else "Cụ bà",
             "Chắt gái":  "Cụ ông"     if ego_gender == "M" else "Cụ bà",
             # In-law terms — pid calls ego by the reciprocal in-law address
-            "Bố chồng":  "Con dâu",
-            "Mẹ chồng":  "Con dâu",
-            "Bố vợ":     "Con rể",
-            "Mẹ vợ":     "Con rể",
-            "Anh chồng": "Em trai"    if ego_gender == "M" else "Em gái",
-            "Chị chồng": "Em trai"    if ego_gender == "M" else "Em gái",
-            "Anh vợ":    "Em trai"    if ego_gender == "M" else "Em gái",
-            "Chị vợ":    "Em trai"    if ego_gender == "M" else "Em gái",
-            "Em chồng":  "Anh"        if pid_gender == "M" else "Chị",
-            "Em vợ":     "Anh"        if pid_gender == "M" else "Chị",
-            "Chị dâu":   "Em trai"    if ego_gender == "M" else "Em gái",
-            "Anh rể":    "Em trai"    if ego_gender == "M" else "Em gái",
-            "Em dâu":    "Anh"        if pid_gender == "M" else "Chị",
-            "Em rể":     "Anh"        if pid_gender == "M" else "Chị",
-            "Thím":      "Cháu trai"  if ego_gender == "M" else "Cháu gái",
-            "Mợ":        "Cháu trai"  if ego_gender == "M" else "Cháu gái",
-            "Dượng":     "Cháu trai"  if ego_gender == "M" else "Cháu gái",
-            "Chú chồng": "Cháu trai"  if ego_gender == "M" else "Cháu gái",
-            "Cô chồng":  "Cháu trai"  if ego_gender == "M" else "Cháu gái",
-            "Bác chồng": "Cháu trai"  if ego_gender == "M" else "Cháu gái",
-            "Cậu chồng": "Cháu trai"  if ego_gender == "M" else "Cháu gái",
-            "Dì chồng":  "Cháu trai"  if ego_gender == "M" else "Cháu gái",
+            # Parent-in-law level
+            "Bố chồng": "Con dâu",
+            "Mẹ chồng": "Con dâu",
+            "Bố vợ": "Con rể",
+            "Mẹ vợ": "Con rể",
+            # Grandparent-in-law level
+            # vợ-side: ego is the husband → always Cháu rể
+            "Ông vợ": "Cháu rể",
+            "Bà vợ": "Cháu rể",
+            # chồng-side: ego is the wife → always Cháu dâu
+            "Ông chồng": "Cháu dâu",
+            "Bà chồng": "Cháu dâu",
+            # Aunt/uncle-in-law level
+            # vợ-side: ego is the husband → always Cháu rể
+            "Chú vợ": "Cháu rể" if ego_gender == "M" else "Cháu dâu",
+            "Thím vợ": "Cháu rể" if ego_gender == "M" else "Cháu dâu",
+            "Bác vợ": "Cháu rể" if ego_gender == "M" else "Cháu dâu",
+            "Cô vợ": "Cháu rể" if ego_gender == "M" else "Cháu dâu",
+            "Cậu vợ": "Cháu rể" if ego_gender == "M" else "Cháu dâu",
+            "Mợ vợ": "Cháu rể" if ego_gender == "M" else "Cháu dâu",
+            "Dì vợ": "Cháu rể" if ego_gender == "M" else "Cháu dâu",
+            "Dượng vợ": "Cháu rể" if ego_gender == "M" else "Cháu dâu",
+            # chồng-side: ego is the wife → always Cháu dâu
+            "Chú chồng": "Cháu dâu" if ego_gender == "F" else "Cháu rể",
+            "Cô chồng": "Cháu dâu" if ego_gender == "F" else "Cháu rể",
+            "Bác chồng": "Cháu dâu" if ego_gender == "F" else "Cháu rể",
+            "Cậu chồng": "Cháu dâu" if ego_gender == "F" else "Cháu rể",
+            "Dì chồng": "Cháu dâu" if ego_gender == "F" else "Cháu rể",
+            # Sibling-in-law level
+            "Anh chồng": "Em dâu" if ego_gender == "F" else "Em rể",
+            "Chị chồng": "Em dâu" if ego_gender == "F" else "Em rể",
+            "Anh vợ": "Em rể" if ego_gender == "M" else "Em dâu",
+            "Chị vợ": "Em rể" if ego_gender == "M" else "Em dâu",
+            "Em chồng": "Chị dâu" if ego_gender == "F" else "Anh rể",
+            "Em vợ": "Anh rể" if ego_gender == "M" else "Chị dâu",
+            "Chị dâu": "Em rể" if ego_gender == "M" else "Em dâu",
+            "Anh rể": "Em dâu" if ego_gender == "F" else "Em rể",
+            "Em dâu": "Anh rể" if ego_gender == "M" else "Chị dâu",
+            "Em rể": "Chị dâu" if ego_gender == "F" else "Anh rể",
+            # Spouses of blood aunts/uncles
+            "Thím": "Cháu trai" if ego_gender == "M" else "Cháu gái",
+            "Mợ": "Cháu trai" if ego_gender == "M" else "Cháu gái",
+            "Dượng": "Cháu trai" if ego_gender == "M" else "Cháu gái",
         }
         return table.get(base)
 
@@ -218,13 +236,13 @@ def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlays=None):
         """Return the kinship label for ego's direct spouse."""
         pid_gender = genders.get(pid)
         if ego_gender == pid_gender:
-            return "Mình (gọi bằng Mình)"
+            return "Mình (gọi tôi bằng Mình)"
         elif ego_gender == "F" and pid_gender == "M":
-            return "Anh (gọi bằng Em / Mình)"
+            return "Anh (gọi tôi bằng Em / Mình)"
         elif ego_gender == "M" and pid_gender == "F":
-            return "Em (gọi bằng Anh / Mình)"
+            return "Em (gọi tôi bằng Anh / Mình)"
         else:
-            return "Mình (gọi bằng Mình)"
+            return "Mình (gọi tôi bằng Mình)"
 
     for pid in all_nodes:
         name     = names.get(pid, "Unknown")
@@ -244,14 +262,14 @@ def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlays=None):
         if year:
             label_parts.append(f"({year})")
         if kin_term and kin_term != "Tôi":
-            # If kin_term already contains "gọi bằng", keep it as-is.
+            # If kin_term already contains "gọi tôi bằng", keep it as-is.
             # Otherwise append the reverse address term.
-            if "gọi bằng" in kin_term:
+            if "gọi tôi bằng" in kin_term:
                 label_parts.append(escape(str(kin_term)))
             else:
                 rev = reverse_term(kin_term, pid)
                 if rev:
-                    label_parts.append(escape(f"{kin_term} (gọi bằng {rev})"))
+                    label_parts.append(escape(f"{kin_term} (gọi tôi bằng {rev})"))
                 else:
                     label_parts.append(escape(str(kin_term)))
         elif kin_term == "Tôi":
@@ -327,29 +345,13 @@ def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlays=None):
   <meta charset="utf-8">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <style>
-    body {{ margin: 0; padding: 0; background: #fff; }}
-    #network {{ width: 100%; height: 600px; border: 1px solid #ddd; background: #fff; }}
-    #pdf-btn {{
-      display: block;
-      width: 100%;
-      margin-top: 6px;
-      padding: 8px;
-      background: #16a34a;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-size: 14px;
-      cursor: pointer;
-    }}
-    #pdf-btn:hover {{ background: #15803d; }}
+    body {{ margin: 0; padding: 0; }}
+    #network {{ width: 100%; height: 650px; border: 1px solid #ddd; background: #fff; }}
   </style>
 </head>
 <body>
   <div id="network"></div>
-  <button id="pdf-btn">📄 Save graph as PDF</button>
   <script>
     var nodes = new vis.DataSet({nodes_json});
     var edges = new vis.DataSet({edges_json});
@@ -362,37 +364,11 @@ def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlays=None):
     }};
     var network = new vis.Network(container, {{ nodes: nodes, edges: edges }}, options);
     network.fit();
-
-    document.getElementById("pdf-btn").addEventListener("click", function() {{
-      var btn = this;
-      btn.textContent = "⏳ Generating PDF…";
-      btn.disabled = true;
-      html2canvas(document.getElementById("network"), {{
-        backgroundColor: "#ffffff",
-        scale: 2,
-        useCORS: true
-      }}).then(function(canvas) {{
-        var {{ jsPDF }} = window.jspdf;
-        var imgData = canvas.toDataURL("image/png");
-        var imgW = canvas.width;
-        var imgH = canvas.height;
-        var isLandscape = imgW > imgH;
-        var doc = new jsPDF({{ orientation: isLandscape ? "landscape" : "portrait", unit: "px", format: [imgW / 2, imgH / 2] }});
-        doc.setFillColor(255, 255, 255);
-        doc.rect(0, 0, imgW / 2, imgH / 2, "F");
-        doc.addImage(imgData, "PNG", 0, 0, imgW / 2, imgH / 2);
-        doc.save("family_graph.pdf");
-        btn.textContent = "📄 Save graph as PDF";
-        btn.disabled = false;
-      }});
-    }});
   </script>
 </body>
 </html>
 """
-    encoded = base64.b64encode(html.encode("utf-8")).decode("utf-8")
-    data_uri = f"data:text/html;base64,{encoded}"
-    st.iframe(data_uri, height=690)
+    components.html(html, height=670)
 
 
 # ----------------------------
@@ -474,8 +450,7 @@ if st.session_state.id1 and st.session_state.id2 and st.button("Find relationshi
             else:
                 rel = "related"
             kinship = compute_vietnamese_kinship(id1, p2, G_anc, G_full, genders, birth_years, sib_order, debug=True)
-            line = f"{names.get(p1, p1)} ({rel}) → {names.get(p2, p2)} ({kinship})"
-            st.write(line)
+            st.write(f"{names.get(p1, p1)} ({rel}) → {names.get(p2, p2)} ({kinship})")
 
         ca = common_ancestor(kinship_ego, kinship_target, G_full, G_anc, names=names, birth_years=birth_years)
         if ca:
@@ -483,15 +458,14 @@ if st.session_state.id1 and st.session_state.id2 and st.button("Find relationshi
             ca_label = f"{ca_name} ({birth_years[ca]})" if birth_years.get(ca) else ca_name
             st.subheader("Closest Common Ancestor")
             st.write(ca_label)
-            draw_id1 = kinship_ego    if kinship_ego    != id1 else id1
-            draw_id2 = kinship_target if kinship_target != id2 else id2
-            overlays = []
-            if kinship_ego    != id1: overlays.append(id1)
-            if kinship_target != id2: overlays.append(id2)
-            print(f"[DRAW] draw_id1={draw_id1} draw_id2={draw_id2} overlays={overlays} ca={ca}")
-            for ov in overlays:
-                print(f"[DRAW] find_blood_spouse({ov})={find_blood_spouse(ov, G_full, G_anc)}")
-            draw_family_graph(draw_id1, draw_id2, ca, ego_id=id1, spouse_overlays=overlays)
+            draw_id1     = kinship_ego    if kinship_ego    != id1 else id1
+            draw_id2     = kinship_target if kinship_target != id2 else id2
+            overlay_id1  = id1 if kinship_ego    != id1 else None
+            overlay_id2  = id2 if kinship_target != id2 else None
+            overlay = overlay_id1 or overlay_id2
+            print(f"[DRAW] draw_id1={draw_id1} draw_id2={draw_id2} overlay={overlay} ca={ca}")
+            if overlay:
+                print(f"[DRAW] find_blood_spouse(overlay)={find_blood_spouse(overlay, G_full, G_anc)}")
+            draw_family_graph(draw_id1, draw_id2, ca, ego_id=id1, spouse_overlay=overlay)
         else:
             st.info("No common ancestor found — cannot draw graph.")
-

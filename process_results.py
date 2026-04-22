@@ -29,6 +29,16 @@ Matching logic (mirrors find_new_names.py v4):
   - Strong: all qualifying tokens match both ways (≤0 extras each side)
   - Weak:   surname matches + some overlap, ≤1 extra token each side
   - New:    no surname match, or no qualifying given-name overlap
+
+Changes (v6):
+  - Alias removal (prefix guard): "Quang Trung Nguyễn Huệ" tokens are
+    stripped only when (a) all four tokens co-occur AND (b) other tokens
+    remain after removal — i.e. the alias precedes another real name.
+    A cell whose entire content is the alias is left untouched.
+  - Reviews subset promotion: after re-matching, any review row whose token
+    set (after alias removal) is a complete subset of a GED name's token set
+    — or vice versa — is promoted directly to matches (Strong), regardless
+    of word order.
 """
 
 import re
@@ -68,7 +78,6 @@ STATUS_COLORS = {
     NEW:    "FFC7CE",
 }
 
-
 # ═══════════════════════════════════════════════════════════════════════════════
 # 1. NAME CLEANING  (from clean_names.py)
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -104,17 +113,57 @@ def split_by_codes(cell: str) -> list:
 # ═══════════════════════════════════════════════════════════════════════════════
 
 def strip_accents(s: str) -> str:
+    """Return accent-stripped, lower-cased version of s."""
     return "".join(
         c for c in unicodedata.normalize("NFD", s)
         if unicodedata.category(c) != "Mn"
-    ).lower()
+    ).lower()   # .lower() ensures full case-insensitivity (feature #2)
 
 def clean_word(w: str) -> str:
     return w.strip(".,;:!?\"'»«()[]–—")
 
 def token_set(name: str) -> set:
+    """
+    Tokenise *name* into a set of normalised (accent-stripped, lower-cased)
+    tokens, filtering out single-character noise.
+    Case-insensitivity is guaranteed by strip_accents() calling .lower().
+    """
     return {strip_accents(clean_word(t)) for t in name.split()
             if len(clean_word(t)) > 1}
+
+def remove_alias_tokens(tokens: set) -> set:
+    """
+    Feature #1 — remove tokens belonging to the alias "Quang Trung Nguyễn Huệ"
+    only when they appear as a *prefix* to another name, i.e. when other tokens
+    remain after removal.
+
+    Two guards are applied before any token is stripped:
+      • All tokens of the alias phrase must be present in the set (so a lone
+        "nguyen" in an unrelated name is never touched).
+      • At least one non-alias token must remain after removal (so a cell
+        whose *entire* content is the alias itself is left intact — it is a
+        real name, not a prefix).
+    """
+    result = set(tokens)
+    for alias_tokens in _ALIAS_TOKEN_SETS:
+        if alias_tokens.issubset(result):
+            remainder = result - alias_tokens
+            if remainder:          # only strip when something else follows
+                result = remainder
+    return result
+
+# ── Alias constants (defined here so strip_accents() is already available) ───
+_ALIAS_PHRASES_RAW = [
+    "Quang Trung Nguyễn Huệ",   # removed only when all four tokens co-occur
+]
+_ALIAS_TOKEN_SETS = [
+    frozenset(strip_accents(w) for w in phrase.split())
+    for phrase in _ALIAS_PHRASES_RAW
+]
+_ALIAS_PHRASES = [   # normalised strings for display in Summary sheet
+    " ".join(strip_accents(w) for w in phrase.split())
+    for phrase in _ALIAS_PHRASES_RAW
+]
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -138,8 +187,10 @@ def load_ged_names(ged_path: Path) -> list:
             "full":            full,
             "given":           given,
             "surname":         surname,
+            # token sets are already lower-cased via strip_accents()
             "_given_tokens":   token_set(given),
             "_surname_tokens": token_set(surname),
+            "_all_tokens":     token_set(full),   # used by order-independent fallback
         })
     return people
 
@@ -155,7 +206,7 @@ def build_common_given_tokens(ged_people: list, threshold: float) -> set:
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# 4. MATCHING  (mirrors find_new_names.py v4)
+# 4. MATCHING  (mirrors find_new_names.py v4 + new features)
 # ═══════════════════════════════════════════════════════════════════════════════
 
 def _score_pair(pdf_given: set, ged_given: set) -> str | None:
@@ -170,20 +221,110 @@ def _score_pair(pdf_given: set, ged_given: set) -> str | None:
         return WEAK
     return None
 
+def _score_flat(pdf_all: set, ged_all: set) -> str | None:
+    """
+    Feature #3 — order-independent fallback.
+    Compare the *full* token sets (all words of the name, regardless of which
+    are given vs surname) after removing alias tokens from both sides.
+
+    Scoring mirrors the surname-anchored logic:
+      • Strong  — sets are equal (every token matched, no extras)
+      • Weak    — symmetric difference ≤ 2 tokens total (≤1 each side)
+    """
+    pdf_clean = remove_alias_tokens(pdf_all)
+    ged_clean = remove_alias_tokens(ged_all)
+
+    if not pdf_clean or not ged_clean:
+        return None
+    if not (pdf_clean & ged_clean):
+        return None
+
+    pdf_extra = pdf_clean - ged_clean
+    ged_extra = ged_clean - pdf_clean
+    if not pdf_extra and not ged_extra:
+        return STRONG
+    if len(pdf_extra) <= 1 and len(ged_extra) <= 1:
+        return WEAK
+    return None
+
+def _is_subset_match(pdf_name: str, ged_people: list) -> dict | None:
+    """
+    Subset promotion check (feature — reviews → matches).
+
+    After alias removal, if *either* token set is a subset of the other
+    (in either direction), the names are considered a confirmed match and
+    promoted to Strong.  The best (largest intersection) GED candidate is
+    returned.
+
+    Returns {"status": STRONG, "best_match": <ged full name>} on success,
+    or None if no subset relationship is found.
+    """
+    pdf_tok = remove_alias_tokens(token_set(pdf_name))
+    if not pdf_tok:
+        return None
+
+    best_person = None
+    best_overlap = 0
+
+    for p in ged_people:
+        ged_tok = remove_alias_tokens(p["_all_tokens"])
+        if not ged_tok:
+            continue
+        # Either set fully contained in the other → confirmed match
+        if pdf_tok.issubset(ged_tok) or ged_tok.issubset(pdf_tok):
+            overlap = len(pdf_tok & ged_tok)
+            if overlap > best_overlap:
+                best_overlap = overlap
+                best_person = p
+
+    if best_person:
+        return {"status": STRONG, "best_match": best_person["full"]}
+    return None
+
 def find_best_match(pdf_name: str, ged_people: list, common_given: set) -> dict:
-    pdf_tok = token_set(pdf_name)
+    """
+    Returns the best match dict {"status": ..., "best_match": ...}.
+
+    Pass 1 — surname-anchored (original logic, with alias removal):
+      Tokens from known aliases are stripped from the PDF name before matching
+      so that "Nguyen Hue" or "Quang Trung" noise does not block a real match.
+
+    Pass 2 — flat / order-independent fallback (feature #3):
+      If Pass 1 found nothing, compare full token sets ignoring word order.
+      This catches names where given/surname split differs between the PDF
+      source and the GED file.
+    """
+    pdf_tok = token_set(pdf_name)              # already lower-cased
+    pdf_tok_clean = remove_alias_tokens(pdf_tok)  # feature #1
+
     best_status = None
     best_person = None
 
+    # ── Pass 1: surname-anchored ──────────────────────────────────────────────
     for p in ged_people:
-        if not (pdf_tok & p["_surname_tokens"]):
+        if not (pdf_tok_clean & p["_surname_tokens"]):
             continue
-        pdf_given_q = pdf_tok - p["_surname_tokens"] - common_given
+        pdf_given_q = pdf_tok_clean - p["_surname_tokens"] - common_given
         ged_given_q = p["_given_tokens"] - common_given
         tier = _score_pair(pdf_given_q, ged_given_q)
         if tier is None:
             continue
         if best_status is None or (tier == STRONG and best_status == WEAK):
+            best_status = tier
+            best_person = p
+        if best_status == STRONG:
+            break
+
+    if best_status == STRONG:
+        return {"status": best_status, "best_match": best_person["full"]}
+
+    # ── Pass 2: order-independent flat fallback ───────────────────────────────
+    for p in ged_people:
+        tier = _score_flat(pdf_tok, p["_all_tokens"])
+        if tier is None:
+            continue
+        # Prefer Pass-1 weak over Pass-2 weak (surname anchor is more reliable)
+        if best_status is None or (tier == STRONG and best_status != STRONG):
             best_status = tier
             best_person = p
         if best_status == STRONG:
@@ -246,14 +387,16 @@ def write_final_excel(matches_df, reviews_df, new_adds_df, output_path: Path,
     ws_sum.column_dimensions["B"].width = 14
 
     common_str = ", ".join(sorted(common_given)) or "(none)"
+    alias_str  = ", ".join(f'"{p}"' for p in _ALIAS_PHRASES)
     for ri, (label, val) in enumerate([
-        ("Names in GED database",                        ged_count),
+        ("Names in GED database",                                   ged_count),
         ("", ""),
-        (f"✅  matches   (strong match, no action needed)", len(matches_df)),
-        (f"⚠️   reviews   (weak match, verify manually)",   len(reviews_df)),
-        (f"🔴  new_adds  (no match, add to GED)",           len(new_adds_df)),
+        (f"✅  matches   (strong match, no action needed)",          len(matches_df)),
+        (f"⚠️   reviews   (weak match, verify manually)",            len(reviews_df)),
+        (f"🔴  new_adds  (no match, add to GED)",                    len(new_adds_df)),
         ("", ""),
         (f"Common given tokens excluded (>{COMMON_THRESHOLD:.0%} of GED)", common_str),
+        ("Alias phrases removed before matching",                    alias_str),
     ], 3):
         ws_sum.cell(row=ri, column=1, value=label)
         ws_sum.cell(row=ri, column=2, value=val)
@@ -301,8 +444,14 @@ def main():
         print(f"⚠️   Multiple .ged files found — using: {ged_path.name}")
 
     print(f"\n{'='*62}")
-    print("  Genealogy Results Processor")
+    print("  Genealogy Results Processor  (v6)")
     print(f"{'='*62}")
+    print(f"  Features active:")
+    print(f"    • Alias removal  : {', '.join(repr(p) for p in _ALIAS_PHRASES_RAW)}")
+    print(f"    •                  (removed only when all tokens co-occur)")
+    print(f"    • Case-insensitive comparison enforced throughout")
+    print(f"    • Order-independent flat-token fallback matching")
+    print(f"    • Reviews subset promotion (either direction) → matches")
 
     # ── Step 1: Load results.xlsx ─────────────────────────────────────────────
     print(f"\n[1/5] Loading {RESULTS_FILE.name}...")
@@ -352,7 +501,6 @@ def main():
     weak_clean = expand_and_clean(weak_df)
     new_clean  = expand_and_clean(new_df)
 
-    expanded_count = (len(weak_clean) - len(weak_df)) + (len(new_clean) - len(new_df))
     print(f"      {len(weak_df)} weak → {len(weak_clean)} rows after cleaning "
           f"(+{len(weak_clean)-len(weak_df)} from splits)")
     print(f"      {len(new_df)} new  → {len(new_clean)} rows after cleaning "
@@ -371,9 +519,7 @@ def main():
             match = find_best_match(str(row[name_col]), ged_people, common_given)
             new_statuses.append(match["status"])
             new_best_match.append(match["best_match"])
-        results[status_col]   = new_statuses
-        # Update best_match column if it exists, otherwise create it
-        match_col = "Best GED match" if "Best GED match" in results.columns else status_col
+        results[status_col] = new_statuses
         if "Best GED match" in results.columns:
             results["Best GED match"] = new_best_match
         return results
@@ -393,22 +539,53 @@ def main():
     w_strong, w_weak, w_new = split_by_status(weak_rematched)
     n_strong, n_weak, n_new = split_by_status(new_rematched)
 
-    # Final buckets
-    # matches  = original strong + anything promoted to strong after cleaning
-    # reviews  = remaining weak
-    # new_adds = remaining new
-    matches_df  = pd.concat([strong_df, w_strong, n_strong], ignore_index=True)
-    reviews_df  = pd.concat([w_weak,    n_weak],             ignore_index=True)
-    new_adds_df = pd.concat([w_new,     n_new],              ignore_index=True)
+    # Combine weak survivors into reviews before subset promotion
+    reviews_candidate = pd.concat([w_weak, n_weak], ignore_index=True)
 
-    # Sort each sheet by name column for readability
+    # ── Subset promotion: reviews → matches ───────────────────────────────────
+    # For every remaining review row, check whether either token set is a
+    # subset of the other (after alias removal).  If so, treat it as a Strong
+    # match regardless of the ≤1-extra-token threshold used earlier.
+    if not reviews_candidate.empty:
+        promoted_mask = []
+        promoted_statuses   = []
+        promoted_best_match = []
+        for _, row in reviews_candidate.iterrows():
+            result = _is_subset_match(str(row[name_col]), ged_people)
+            if result:
+                promoted_mask.append(True)
+                promoted_statuses.append(result["status"])
+                promoted_best_match.append(result["best_match"])
+            else:
+                promoted_mask.append(False)
+                promoted_statuses.append(row[status_col])
+                promoted_best_match.append(
+                    row.get("Best GED match", "") if "Best GED match" in row.index else ""
+                )
+
+        reviews_candidate = reviews_candidate.copy()
+        reviews_candidate[status_col] = promoted_statuses
+        if "Best GED match" in reviews_candidate.columns:
+            reviews_candidate["Best GED match"] = promoted_best_match
+
+        subset_promoted = sum(promoted_mask)
+        print(f"      {subset_promoted} review(s) promoted to Strong via subset match")
+    else:
+        subset_promoted = 0
+
+    # Re-split after subset promotion
+    rev_strong, rev_weak, _ = split_by_status(reviews_candidate)
+
+    matches_df  = pd.concat([strong_df, w_strong, n_strong, rev_strong], ignore_index=True)
+    reviews_df  = rev_weak.copy().reset_index(drop=True)
+    new_adds_df = pd.concat([w_new, n_new], ignore_index=True)
+
     for df_ref in [matches_df, reviews_df, new_adds_df]:
         if not df_ref.empty and name_col in df_ref.columns:
             df_ref.sort_values(name_col, inplace=True)
             df_ref.reset_index(drop=True, inplace=True)
 
-    # Stats on promotions
-    promoted = len(w_strong) + len(n_strong)
+    promoted = len(w_strong) + len(n_strong) + subset_promoted
     print(f"      {promoted} names promoted to Strong after cleaning")
     print(f"\n      Final counts:")
     print(f"        ✅  matches:  {len(matches_df)}")
