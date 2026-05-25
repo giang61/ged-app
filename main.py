@@ -6,6 +6,7 @@
 # Kinship terms:     relationships.py
 
 import json
+import sys
 import unicodedata
 from html import escape
 
@@ -21,9 +22,12 @@ from relationships import compute_vietnamese_kinship
 # ----------------------------
 # Load GEDCOM
 # ----------------------------
+DEFAULT_GED = "data/nguyen.ged"
+
 @st.cache_resource
 def get_gedcom_data():
-    return load_gedcom("data/nguyen.ged")
+    ged_path = sys.argv[1] if len(sys.argv) > 1 else DEFAULT_GED
+    return load_gedcom(ged_path)
 
 G_full, G_anc, names, genders, birth_years, sib_order = get_gedcom_data()
 
@@ -348,9 +352,29 @@ def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlay=None):
   <style>
     body {{ margin: 0; padding: 0; }}
     #network {{ width: 100%; height: 650px; border: 1px solid #ddd; background: #fff; }}
+    #print-btn {{
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 999;
+  padding: 6px 14px;
+  background: #ffe5b4;
+  color: #7a4500;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}}
+#print-btn:hover {{ background: #ffd080; }}
+    @media print {{
+      #print-btn {{ display: none; }}
+      body {{ margin: 0; }}
+      #network {{ height: 100vh; border: none; }}
+    }}
   </style>
 </head>
-<body>
+<body style="position:relative;">
+  <button id="print-btn" onclick="window.print()">🖨 Print</button>
   <div id="network"></div>
   <script>
     var nodes = new vis.DataSet({nodes_json});
@@ -374,48 +398,95 @@ def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlay=None):
 # ----------------------------
 # Streamlit UI
 # ----------------------------
-st.title("Genealogy Explorer")
-st.subheader("Select two people to find their relationship")
+
+# Language selection
+STRINGS = {
+    "English": {
+        "title":        "Genealogy Explorer",
+        "subtitle":     "Select two people to find their relationship",
+        "person1":      "Person 1 (full first names preferred)",
+        "person2":      "Person 2 (full first names preferred)",
+        "select1":      "Select Person 1",
+        "select2":      "Select Person 2",
+        "no_match1":    "No match found for Person 1.",
+        "no_match2":    "No match found for Person 2.",
+        "find_btn":     "Find relationship",
+        "no_path":      "No relationship found",
+        "rel_path":     "First Cousins",
+        "paternal":     "Paternal side",
+        "maternal":     "Maternal side",
+        "no_cousins":   "No cousins found.",
+        "common_anc":   "Closest Common Ancestor",
+        "no_ancestor":  "No common ancestor found — cannot draw graph.",
+    },
+    "Tiếng Việt": {
+        "title":        "Tra Cứu Gia Phả",
+        "subtitle":     "Chọn hai người trong họ để tìm mối quan hệ",
+        "person1":      "Người 1 (ưu tiên tên gọi)",
+        "person2":      "Người 2 (ưu tiên tên gọi)",
+        "select1":      "Chọn Người 1",
+        "select2":      "Chọn Người 2",
+        "no_match1":    "Không tìm được người 1.",
+        "no_match2":    "Không tìm được người 2.",
+        "find_btn":     "Tìm mối quan hệ",
+        "no_path":      "Không tìm được mối quan hệ",
+        "rel_path":     "Anh Chị Em Họ",
+        "paternal":     "Họ nội",
+        "maternal":     "Họ ngoại",
+        "no_cousins":   "Không có anh chị em họ.",
+        "common_anc":   "Cụ Tổ chung gần nhất của cả hai người",
+        "no_ancestor":  "Không tìm được cụ Tổ chung — không thể vẽ sơ đồ.",
+    },
+}
+
+col_title, col_lang = st.columns([4, 1])
+with col_lang:
+    lang = st.radio("🌐", list(STRINGS.keys()), horizontal=True, label_visibility="collapsed")
+T = STRINGS[lang]
+
+with col_title:
+    st.title(T["title"])
+st.subheader(T["subtitle"])
 
 for key in ["id1", "id2"]:
     if key not in st.session_state:
         st.session_state[key] = None
 
 # Person 1
-name1_input = st.text_input("Person 1")
+name1_input = st.text_input(T["person1"])
 if name1_input:
     matches1 = find_person(name1_input)
     if matches1:
         options1 = [f"{names[p]} ({birth_years[p]})" if birth_years[p] else names[p]
                     for p in matches1]
-        sel1 = st.selectbox("Select Person 1", options1)
+        sel1 = st.selectbox(T["select1"], options1)
         st.session_state.id1 = matches1[options1.index(sel1)]
     else:
-        st.warning("No match found for Person 1.")
+        st.warning(T["no_match1"])
         st.session_state.id1 = None
 
 # Person 2
-name2_input = st.text_input("Person 2")
+name2_input = st.text_input(T["person2"])
 if name2_input:
     matches2 = find_person(name2_input)
     if matches2:
         options2 = [f"{names[p]} ({birth_years[p]})" if birth_years[p] else names[p]
                     for p in matches2]
-        sel2 = st.selectbox("Select Person 2", options2)
+        sel2 = st.selectbox(T["select2"], options2)
         st.session_state.id2 = matches2[options2.index(sel2)]
     else:
-        st.warning("No match found for Person 2.")
+        st.warning(T["no_match2"])
         st.session_state.id2 = None
 
 # Find relationship
-if st.session_state.id1 and st.session_state.id2 and st.button("Find relationship"):
+if st.session_state.id1 and st.session_state.id2 and st.button(T["find_btn"]):
     id1 = st.session_state.id1
     id2 = st.session_state.id2
 
     try:
         path = nx.shortest_path(G_full.to_undirected(), id1, id2)
     except nx.NetworkXNoPath:
-        st.error("No relationship found")
+        st.error(T["no_path"])
     else:
         # First re-anchor id2 if it is a married-in spouse.
         try:
@@ -440,23 +511,57 @@ if st.session_state.id1 and st.session_state.id2 and st.button("Find relationshi
         else:
             kinship_ego = id1
 
-        st.subheader("Relationship Path")
-        for i in range(len(path) - 1):
-            p1, p2 = path[i], path[i + 1]
-            if G_full.has_edge(p1, p2):
-                rel = G_full[p1][p2]["relation"]
-            elif G_full.has_edge(p2, p1):
-                rel = G_full[p2][p1]["relation"]
+        # --- First cousins (children of ego's parents' siblings) ---
+        def get_first_cousins(ego, side_gender):
+            cousins = []
+            ego_parents = list(G_anc.predecessors(ego))
+            side_parent = next(
+                (p for p in ego_parents if genders.get(p) == side_gender), None
+            )
+            if side_parent is None:
+                return cousins
+            grandparents = list(G_anc.predecessors(side_parent))
+            aunts_uncles = set()
+            for gp in grandparents:
+                for child in G_anc.successors(gp):
+                    if child != side_parent:
+                        aunts_uncles.add(child)
+            for au in aunts_uncles:
+                for cousin in G_anc.successors(au):
+                    cousins.append(cousin)
+            cousins.sort(key=lambda p: (birth_years.get(p) is None, birth_years.get(p)))
+            return cousins
+
+        def fmt_cousin(pid):
+            name = names.get(pid, pid)
+            year = birth_years.get(pid)
+            return f"{name} ({year})" if year else name
+
+        paternal_cousins = get_first_cousins(id1, "M")
+        maternal_cousins = get_first_cousins(id1, "F")
+
+        st.subheader(T["rel_path"])
+        col_pat, col_mat = st.columns(2)
+        with col_pat:
+            st.markdown(f"**{T['paternal']}**")
+            if paternal_cousins:
+                for c in paternal_cousins:
+                    st.write(fmt_cousin(c))
             else:
-                rel = "related"
-            kinship = compute_vietnamese_kinship(id1, p2, G_anc, G_full, genders, birth_years, sib_order, debug=True)
-            st.write(f"{names.get(p1, p1)} ({rel}) → {names.get(p2, p2)} ({kinship})")
+                st.write(T["no_cousins"])
+        with col_mat:
+            st.markdown(f"**{T['maternal']}**")
+            if maternal_cousins:
+                for c in maternal_cousins:
+                    st.write(fmt_cousin(c))
+            else:
+                st.write(T["no_cousins"])
 
         ca = common_ancestor(kinship_ego, kinship_target, G_full, G_anc, names=names, birth_years=birth_years)
         if ca:
             ca_name  = names.get(ca, ca)
             ca_label = f"{ca_name} ({birth_years[ca]})" if birth_years.get(ca) else ca_name
-            st.subheader("Closest Common Ancestor")
+            st.subheader(T["common_anc"])
             st.write(ca_label)
             draw_id1     = kinship_ego    if kinship_ego    != id1 else id1
             draw_id2     = kinship_target if kinship_target != id2 else id2
@@ -468,4 +573,4 @@ if st.session_state.id1 and st.session_state.id2 and st.button("Find relationshi
                 print(f"[DRAW] find_blood_spouse(overlay)={find_blood_spouse(overlay, G_full, G_anc)}")
             draw_family_graph(draw_id1, draw_id2, ca, ego_id=id1, spouse_overlay=overlay)
         else:
-            st.info("No common ancestor found — cannot draw graph.")
+            st.info(T["no_ancestor"])
