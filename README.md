@@ -1,4 +1,5 @@
 This app is to figure out the relationship between 2 people in my ged db
-streamlit run main.py -- ./data/mygedfile.ged
+streamlit run tree_nguyen
+streamlit run tree_duongchau
 
 find_new_names and process_results are post processing scripts to identify new additions / mismatches between the genealogy pdf and the .ged.  clean_names.py has been incorporated into process results.
