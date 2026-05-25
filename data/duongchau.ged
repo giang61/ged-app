@@ -1,0 +1,7988 @@
+0 HEAD
+1 SOUR Geneanet
+2 NAME GeneWeb
+2 VERS 7.0.0
+2 CORP Geneanet
+3 ADDR https://www.geneanet.org/
+2 DATA phocohanoi.gwb
+1 DATE 23 MAY 2026
+2 TIME 12:22:29
+1 FILE base.ged.tmp
+1 GEDC
+2 VERS 5.5.1
+2 FORM LINEAGE-LINKED
+1 CHAR UTF-8
+2 SOUR
+3 PAGE geneweb wiki notes: notes
+0 @I1@ INDI
+1 NAME Hữu Chấn /Nguyễn/
+1 SEX M
+1 BIRT
+2 DATE 01 JAN 1919
+2 PLAC Đông Tảo Đông, Hưng Yên, Việt Nam
+1 DEAT
+2 DATE 27 DEC 1999
+2 PLAC Naperville, Illinois, USA
+1 OCCU Chánh sở Bộ Tư Pháp, Sàigòn, Việt Nam
+1 FAMC @F1@
+1 FAMS @F2@
+0 @I2@ INDI
+1 NAME Thị Nguyệt /Trần/
+1 SEX F
+1 BIRT
+2 DATE 23 OCT 1928
+2 PLAC Hà Nội, Việt Nam
+1 DEAT
+2 DATE 25 AUG 2010
+2 PLAC Fountain Valley, CA, USA
+1 OCCU Housewife before 1975, and she worked as clerk at AT&T , Naperville, IL, USA
+1 FAMC @F3@
+1 FAMS @F2@
+0 @I3@ INDI
+1 NAME Phạm /Thị Hồng Phước/
+1 SEX F
+1 BIRT
+2 DATE 01 JUN 1960
+1 FAMC @F4@
+1 FAMS @F5@
+0 @I4@ INDI
+1 NAME Hữu Nghi /Nguyễn/
+1 SEX M
+1 BIRT
+2 PLAC Làng Đông Tảo Đông, tỉnh Hưng Yên, Việt Nam
+1 DEAT
+2 DATE 1919
+2 PLAC Làng Đông Tảo Đông, tỉnh Hưng Yên, Việt Nam
+1 OCCU Teacher
+1 FAMC @F6@
+1 FAMS @F1@
+0 @I5@ INDI
+1 NAME Thị Nhất /Phạm/
+1 SEX F
+1 DEAT
+2 DATE 1945
+2 PLAC Làng Đông Tảo Đông, tỉnh Hưng Yên, Việt Nam
+1 OCCU Housedwife
+1 FAMS @F1@
+0 @I6@ INDI
+1 NAME Văn Thìn /Trần/
+1 NAME Pháp  danh: Thiên  Long
+1 SEX M
+1 BIRT
+2 DATE 1890
+2 PLAC Nam Định, Vietnam
+1 DEAT
+2 DATE 21 APR 1973
+2 PLAC Saigon, Vietnam
+1 OCCU Công chức Tòa Án Hải Phòng
+1 FAMC @F7@
+1 FAMS @F8@
+1 FAMS @F3@
+1 NOTE Divorced his first wife after had a son named Trần Vĩnh Quý, borned 191
+2 CONC 7.
+0 @I7@ INDI
+1 NAME Thị Tĩnh /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1895
+2 PLAC Hưng Yên, Việt Nam
+2 NOTE Lived at 44 Hàng Điếu
+1 DEAT
+2 DATE 23 DEC 1980
+2 PLAC Saigon, Vietnam
+1 OCCU Owned a shop selling kitchen utensils at  44  Hàng Gai, Phố Cổ, Hà Nội until she immigrated to Saigon in 1954
+1 FAMC @F9@
+1 FAMS @F3@
+0 @I8@ INDI
+1 NAME Thu Hương /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 23 DEC 1951
+2 PLAC Hanoi, VietNam
+1 OCCU Pharmacist
+1 FAMC @F2@
+1 FAMS @F10@
+0 @I9@ INDI
+1 NAME Vân Anh /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 02 MAR 1954
+2 PLAC Hanoi, Vietnam
+2 NOTE Never married
+1 DEAT
+2 DATE 25 AUG 1982
+2 PLAC Lisle, Illinois, USA
+2 SOUR Train accident
+1 OCCU Computer Sciences Engineer
+1 FAMC @F2@
+0 @I10@ INDI
+1 NAME Dương Long /Nguyễn/
+1 SEX M
+1 BIRT
+2 DATE 26 JUN 1955
+2 PLAC Nhatrang, VietNam
+1 OCCU Attorney-at-Law
+1 FAMC @F2@
+1 FAMS @F11@
+0 @I11@ INDI
+1 NAME Quỳnh Hương /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 07 MAR 1957
+2 PLAC Nhatrang, VietNam
+2 NOTE Never married
+1 OCCU Computer Sciences Engineer
+1 FAMC @F2@
+0 @I12@ INDI
+1 NAME Thiên Hương /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 09 FEB 1959
+2 PLAC Nhatrang, VietNam
+1 OCCU Pharmacist
+1 FAMC @F2@
+1 FAMS @F12@
+0 @I13@ INDI
+1 NAME Anh Đào /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 05 APR 1961
+2 PLAC Nhatrang, VietNam
+1 OCCU Nurse, RN.
+1 FAMC @F2@
+1 FAMS @F13@
+0 @I14@ INDI
+1 NAME Jim /Sylora/
+1 SEX M
+1 BIRT
+2 DATE 27 NOV 1962
+2 PLAC Chicago, Illinois, USA
+1 OCCU Urologist
+1 FAMS @F12@
+0 @I15@ INDI
+1 NAME Andrew (Xuân Lâm) /Sylora/
+1 SEX M
+1 BIRT
+2 DATE 06 FEB 1992
+2 PLAC Chicago, IL, USA
+1 OCCU Attorney-at-Law
+1 FAMC @F12@
+0 @I16@ INDI
+1 NAME Rachael (Nguyệt Nga) /Sylora/
+1 SEX F
+1 BIRT
+2 DATE 16 APR 1993
+2 PLAC Minneapolis, MN, USA
+1 OCCU MBA at Columbia University, Market Manager at Google.
+1 FAMC @F12@
+0 @I17@ INDI
+1 NAME Phong Phú /Võ/
+1 SEX M
+1 BIRT
+2 DATE 13 SEP 1958
+2 PLAC Cần Thơ, Việt Nam
+1 OCCU Electrical Engineer
+1 FAMS @F13@
+0 @I18@ INDI
+1 NAME Phong Dinh /Võ/
+1 SEX M
+1 BIRT
+2 DATE 20 NOV 1982
+2 PLAC Whiting, IN, USA
+1 OCCU MBA, Manager at Space X, CA
+1 FAMC @F13@
+0 @I19@ INDI
+1 NAME Phong Thắng /Võ/
+1 SEX M
+1 BIRT
+2 DATE 11 JAN 1989
+2 PLAC Naperville, IL, USA
+1 OCCU Marketing Manager
+1 FAMC @F13@
+0 @I20@ INDI
+1 NAME Tố Uyên /Võ/
+1 SEX F
+1 BIRT
+2 DATE 25 JUN 1992
+2 PLAC Naperville, IL, USA
+1 OCCU Marketing Manager
+1 FAMC @F13@
+1 FAMS @F14@
+0 @I21@ INDI
+1 NAME Phong Vinh /Võ/
+1 SEX M
+1 BIRT
+2 DATE 02 SEP 1996
+2 PLAC Aurora, IL, USA
+1 OCCU Electrical engineer
+1 FAMC @F13@
+0 @I22@ INDI
+1 NAME Thị Mến /Ngô/
+1 SEX F
+1 BIRT
+2 DATE 1955
+2 PLAC Huế, VietNam
+1 OCCU Housewife
+1 FAMS @F11@
+0 @I23@ INDI
+1 NAME Anh Tuấn /Nguyễn/
+1 SEX M
+1 BIRT
+2 DATE 1975
+2 PLAC Orange, CA, USA
+1 EVEN
+2 TYPE Change name
+2 SOUR Christian Cadeo
+1 OCCU Entrepeneur in Singapore
+1 FAMC @F11@
+1 FAMS @F15@
+0 @I24@ INDI
+1 NAME Anh Khôi /Nguyễn/
+1 SEX M
+1 BIRT
+2 DATE 1991
+2 PLAC Mission Viejo, CA, USA
+1 OCCU Psychology therapist
+1 FAMC @F11@
+0 @I25@ INDI
+1 NAME Ngọc Danh /Phan/
+1 SEX M
+1 BIRT
+2 DATE 01 APR 1949
+2 PLAC Quảng Bình, Việt Nam
+1 OCCU Second lieutenent Air traffic controller with VN airforce before 1975. Civil engineer
+1 FAMS @F10@
+0 @I26@ INDI
+1 NAME Đỗ Quyên /Phan/
+1 SEX F
+1 BIRT
+2 DATE 25 JAN 1982
+2 PLAC Naperville, IL, Usa Shi, Oita, Japan
+1 OCCU Pharmacist
+1 FAMC @F10@
+1 FAMS @F16@
+0 @I27@ INDI
+1 NAME Lam Duy /Phan/
+1 SEX M
+1 BIRT
+2 DATE 14 MAR 1985
+2 PLAC Union City, CA, USA
+1 OCCU Orthopedics at Kaiser permanente
+1 FAMC @F10@
+1 FAMS @F17@
+0 @I28@ INDI
+1 NAME Christopher /Wong/
+1 SEX M
+1 BIRT
+2 DATE 1982
+2 PLAC California
+1 OCCU Nephrologist
+1 FAMS @F16@
+0 @I29@ INDI
+1 NAME Audrey Thiên Xuân /Wong/
+1 SEX F
+1 BIRT
+2 DATE 04 AUG 2016
+2 PLAC Walnut, CA, USA
+1 FAMC @F16@
+0 @I30@ INDI
+1 NAME Sabrina Minh Châu /Wong/
+1 SEX F
+1 BIRT
+2 DATE 15 JAN 2018
+2 PLAC Walnut, CA , USA
+1 FAMC @F16@
+0 @I31@ INDI
+1 NAME Elizabeth Lan Anh /Wong/
+1 SEX F
+1 BIRT
+2 DATE 28 MAY 2020
+2 PLAC Walnut , CA, USA
+1 FAMC @F16@
+0 @I32@ INDI
+1 NAME Crystal /Cadeo/
+1 SEX F
+1 FAMS @F15@
+0 @I33@ INDI
+1 NAME Hayden /Cadeo/
+1 SEX M
+1 FAMC @F15@
+0 @I34@ INDI
+1 NAME Ly-An /Nguyển/
+1 SEX F
+1 BIRT
+2 DATE 1989
+2 PLAC Westminster, CA, USA
+1 OCCU Nurse, NP.
+1 FAMS @F17@
+0 @I35@ INDI
+1 NAME Emmett Lam Sơn /Phan/
+1 SEX M
+1 BIRT
+2 DATE 04 JUN 2020
+2 PLAC Orange Hills, CA, USA
+1 FAMC @F17@
+0 @I36@ INDI
+1 NAME Emma Mỹ Lệ /Phan/
+1 SEX F
+1 BIRT
+2 DATE 24 OCT 2022
+2 PLAC Orange Hills, CA, USA
+1 FAMC @F17@
+0 @I37@ INDI
+1 NAME Hữu Giáp /Nguyễn/
+1 SEX M
+1 BIRT
+2 DATE 1900
+2 PLAC Hưng Yên, Việt Nam
+1 DEAT
+2 DATE 1972
+2 PLAC Saigon, VietNam
+1 OCCU Tham tá ở Tòa án Hà Nội
+1 FAMC @F1@
+1 FAMS @F18@
+1 FAMS @F19@
+0 @I38@ INDI
+1 NAME Thị Dậu /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1909
+2 PLAC Hanoi, Vietnam
+1 DEAT
+2 DATE 2021
+2 PLAC Saigon, Hanoi
+1 OCCU Housewife
+1 FAMS @F18@
+0 @I39@ INDI
+1 NAME Thị Vĩnh /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1909
+1 DEAT
+2 DATE 1946
+2 PLAC Làng Đông Tảo Đông, tỉnh Hưng Yên, Việt Nam
+1 OCCU Housewife
+1 FAMC @F1@
+1 FAMS @F20@
+0 @I40@ INDI
+1 NAME Thiện Hải /Trần/
+1 SEX M
+1 BIRT
+2 DATE 09 DEC 1929
+2 PLAC Hanoi, VietNam
+1 DEAT
+2 DATE 14 OCT 2016
+2 PLAC Fullerton, CA USA
+2 SOUR Complications of ESRD on hemodialysis
+1 OCCU Attorney-at-Law
+1 FAMC @F3@
+1 FAMS @F21@
+0 @I41@ INDI
+1 NAME Thị Ngọc Dung /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 09 AUG 1938
+2 PLAC Ben Tre, Vietnam
+1 OCCU Professor at Quốc Gia Hành Chánh, Saigon, Vietnam
+1 FAMS @F21@
+0 @I42@ INDI
+1 NAME Thiện Vinh Vincent /Trần/
+1 SEX M
+1 BIRT
+2 DATE 04 JAN 1967
+2 PLAC Saigon, Vietnam
+1 OCCU Attorney-at-Law
+1 FAMC @F21@
+1 FAMS @F22@
+0 @I43@ INDI
+1 NAME Thiện Phú Michael /Trần/
+1 SEX M
+1 BIRT
+2 DATE 03 JAN 1968
+2 PLAC Saigon, Vietnam
+1 OCCU M.D., Endocrinologist
+1 FAMC @F21@
+1 FAMS @F23@
+0 @I44@ INDI
+1 NAME Thiện Thắng Tommy /Trần/
+1 SEX M
+1 BIRT
+2 DATE 30 AUG 1969
+2 PLAC Saigon, Vietnam
+1 OCCU Internal Medicine doctor
+1 FAMC @F21@
+1 FAMS @F24@
+0 @I45@ INDI
+1 NAME Thiện Cường Jerry /Trần/
+1 SEX M
+1 BIRT
+2 DATE 27 OCT 1970
+2 PLAC Saigon, Vietnam
+1 OCCU Endocrine medical office administrator
+1 FAMC @F21@
+0 @I46@ INDI
+1 NAME Thiện Dũng Jimmy /Trần/
+1 SEX M
+1 BIRT
+2 DATE 27 OCT 1970
+2 PLAC Saigon, Vietnam
+1 OCCU Family Doctor at Kaiser Permanente, CA
+1 FAMC @F21@
+1 FAMS @F25@
+0 @I47@ INDI
+1 NAME Thục Đoan /Trần/
+1 SEX F
+1 BIRT
+2 DATE 24 MAR 1968
+2 PLAC Saigon, Vietnam
+1 OCCU Dentist
+1 FAMS @F22@
+0 @I48@ INDI
+1 NAME Thiện  Tôn Brian /Trần/
+1 SEX M
+1 BIRT
+2 DATE 06 FEB 1996
+2 PLAC San Jose, CA, USA
+1 OCCU Dentist
+1 FAMC @F22@
+0 @I49@ INDI
+1 NAME Thiên Kim Michelle /Trần/
+1 SEX F
+1 BIRT
+2 DATE 01 NOV 1999
+2 PLAC San Jose, CA, USA
+1 FAMC @F22@
+0 @I50@ INDI
+1 NAME Thiên Mai Caitlyn /Trần/
+1 SEX F
+1 BIRT
+2 DATE 07 JUL 2023
+2 PLAC San Jose, CA, USA
+1 OCCU BS Psychology
+1 FAMC @F22@
+0 @I51@ INDI
+1 NAME Chen (Erica) /Jing/
+1 SEX F
+1 BIRT
+2 DATE 14 DEC 1968
+2 PLAC Shanghai, China
+1 OCCU Pharmacist
+1 FAMC @F26@
+1 FAMS @F23@
+0 @I52@ INDI
+1 NAME Thiện Tiến Andrew /Trần/
+1 SEX M
+1 BIRT
+2 DATE 22 FEB 2002
+2 PLAC Downey, CA, USA
+1 FAMC @F23@
+0 @I53@ INDI
+1 NAME Thiên Lan Brianna /Trần/
+1 SEX F
+1 BIRT
+2 DATE 16 SEP 2003
+2 PLAC Downey, CA, USA
+1 FAMC @F23@
+0 @I54@ INDI
+1 NAME Minh Thư Mindy /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 22 NOV 1971
+2 PLAC Saigon, Vietnam
+1 OCCU Accountant
+1 FAMS @F24@
+0 @I55@ INDI
+1 NAME Thiện An Jason /Trần/
+1 SEX M
+1 BIRT
+2 DATE 04 APR 2006
+2 PLAC Las Vegas, NV, USA
+1 FAMC @F24@
+0 @I56@ INDI
+1 NAME Thiên Nga Daisy /Trần/
+1 SEX F
+1 BIRT
+2 DATE 03 MAR 2008
+2 PLAC Las Vegas, Nevada, USA
+1 FAMC @F24@
+0 @I57@ INDI
+1 NAME Thị Nhung Diana /Trần/
+1 SEX F
+1 BIRT
+2 DATE 11 JUL 1974
+2 PLAC Saigon, Vietnam
+1 OCCU Ob-Gyn
+1 FAMS @F25@
+0 @I58@ INDI
+1 NAME Thiên Thuỷ Hà Sophia /Trần/
+1 SEX F
+1 BIRT
+2 DATE 11 OCT 2008
+2 PLAC Rancho Cucamonga, CA USA
+1 FAMC @F25@
+0 @I59@ INDI
+1 NAME Thiên Thanh Lea /Trần/
+1 SEX F
+1 BIRT
+2 DATE 26 OCT 2011
+2 PLAC Rancho Cucamonga, CA, USA
+1 FAMC @F25@
+0 @I60@ INDI
+1 NAME Thị Ngọc Trâm /Trần/
+1 SEX F
+1 BIRT
+2 DATE 16 JAN 1931
+2 PLAC Hanoi, Vietnam
+1 DEAT
+2 DATE 04 MAY 2016
+2 PLAC Naperville, IL, USA
+1 OCCU Teacher
+1 FAMC @F3@
+1 FAMS @F27@
+0 @I61@ INDI
+1 NAME Thị Xuân Dung /Trần/
+1 SEX F
+1 BIRT
+2 DATE 1932
+2 PLAC Hanoi, Vietnam
+1 OCCU Clerk
+1 FAMC @F3@
+1 FAMS @F28@
+0 @I62@ INDI
+1 NAME Thị Diễm Trang /Trần/
+1 SEX F
+1 BIRT
+2 DATE 25 FEB 1935
+2 PLAC Hanoi, Vietnam
+1 DEAT
+2 DATE 27 MAY 2024
+2 PLAC Walawala, WA, Usa
+1 FAMC @F3@
+1 FAMS @F29@
+0 @I63@ INDI
+1 NAME Thị Ngọc Diệp /Trần/
+1 SEX F
+1 BIRT
+2 DATE 1936
+1 DEAT
+2 DATE 08 APR 2020
+2 PLAC San Jose, CA USA
+1 OCCU Homemaker
+1 FAMC @F3@
+0 @I64@ INDI
+1 NAME Thị Xuân Oanh /Trần/
+1 SEX F
+1 BIRT
+2 DATE 1937
+2 PLAC Hanoi, Vietnam
+1 DEAT
+2 DATE 30 MAR 2022
+2 PLAC San Jose, CA USA
+1 OCCU Secretary at IBM
+1 FAMC @F3@
+1 FAMS @F30@
+0 @I65@ INDI
+1 NAME Đại Bảng /Trần/
+1 SEX M
+1 BIRT
+2 DATE 1939
+1 DEAT
+2 DATE 1972
+2 SOUR Killed during war
+1 OCCU Second Lieutenant at VN infantry
+1 FAMC @F3@
+1 FAMS @F31@
+0 @I66@ INDI
+1 NAME Gia Ngữ /Lê/
+1 SEX M
+1 BIRT
+2 DATE 27 JUN 1932
+2 PLAC Phủ Lỷ, Nam Định, Vietnam
+1 DEAT
+2 DATE 06 MAY 2024
+2 PLAC San Jose, CA, USA
+1 OCCU Teacher
+1 FAMS @F27@
+0 @I67@ INDI
+1 NAME Hưng Việt /Lê/
+1 SEX M
+1 BIRT
+2 DATE 16 MAR 1967
+2 PLAC Saigon, Vietnam
+1 FAMC @F27@
+0 @I68@ INDI
+1 NAME Thanh Phong /Lê/
+1 SEX M
+1 BIRT
+2 DATE 27 APR 1968
+2 PLAC Saigon, Vietnam
+1 FAMC @F27@
+1 FAMS @F32@
+0 @I69@ INDI
+1 NAME Tuấn Khanh /Lê/
+1 SEX M
+1 BIRT
+2 DATE 02 AUG 1969
+2 PLAC Saigon, Vietnam
+1 OCCU Pharmacist
+1 FAMC @F27@
+0 @I70@ INDI
+1 NAME Lan Phương /Lê/
+1 SEX F
+1 BIRT
+2 DATE 13 JUL 1972
+2 PLAC Saigon, VietNam
+1 OCCU Pharmacist
+1 FAMC @F27@
+1 FAMS @F33@
+0 @I71@ INDI
+1 NAME Hiệp /Đoàn/
+1 SEX M
+1 BIRT
+2 PLAC Saigon, Vietnam
+1 FAMC @F28@
+0 @I72@ INDI
+1 NAME Hùng /Đoàn/
+1 SEX M
+1 BIRT
+2 PLAC Saigon, Vietnam
+1 FAMC @F28@
+0 @I73@ INDI
+1 NAME Ngọc Đại /Vũ/
+1 SEX M
+1 BIRT
+2 DATE 04 JUN 1938
+2 PLAC Hanoi, Vietnam
+1 DEAT
+2 DATE 24 JUL 2021
+2 PLAC Salem, OR, USA
+1 FAMS @F29@
+0 @I74@ INDI
+1 NAME Ngọc Quang /Vũ/
+1 SEX M
+1 BIRT
+2 DATE 01 JAN 1963
+2 PLAC Saigon, Vietnam
+1 OCCU Software engineer for Boeing
+1 FAMC @F29@
+1 FAMS @F34@
+0 @I75@ INDI
+1 NAME Anh Thư /Vũ/
+1 SEX F
+1 BIRT
+2 DATE 12 MAY 1964
+2 PLAC Saigon, Vietnam
+1 FAMC @F29@
+1 FAMS @F35@
+0 @I76@ INDI
+1 NAME Ngọc Minh /Vũ/
+1 SEX M
+1 BIRT
+2 DATE 25 FEB 1966
+2 PLAC Saigon, Vietnam
+1 OCCU Acupuncturist
+1 FAMC @F29@
+1 FAMS @F36@
+0 @I77@ INDI
+1 NAME Khánh Nhương /Nguyễn/
+1 SEX M
+1 BIRT
+2 DATE 1936
+2 PLAC Hanoi, Vietnam
+1 OCCU Lietenant colonel VN airforce
+1 FAMS @F30@
+0 @I78@ INDI
+1 NAME Mai Anh /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1973
+2 PLAC Saigon, Vietnam
+1 OCCU Pharmacist
+1 FAMC @F30@
+1 FAMS @F37@
+0 @I79@ INDI
+1 NAME KIm Anh /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 08 NOV 1979
+2 PLAC San Jose, San Jose, CA, USA
+1 FAMC @F30@
+1 FAMS @F38@
+0 @I80@ INDI
+1 NAME Ron /Gerardo/
+1 SEX M
+1 OCCU Pharmacist
+1 FAMS @F37@
+0 @I81@ INDI
+1 NAME Raymond /Gerardo/
+1 SEX M
+1 FAMC @F37@
+0 @I82@ INDI
+1 NAME Jeffrey /Gerardo/
+1 SEX M
+1 FAMC @F37@
+0 @I83@ INDI
+1 NAME Thị Hương /Lai/
+1 SEX F
+1 BIRT
+2 PLAC Vietnam
+1 OCCU Housewifw
+1 FAMS @F31@
+0 @I84@ INDI
+1 NAME Thị Thuý Loan /Trần/
+1 SEX F
+1 BIRT
+2 DATE 1966
+2 PLAC Saigon, Vietnam
+1 FAMC @F31@
+0 @I85@ INDI
+1 NAME Đại Giao /Trần/
+1 SEX M
+1 BIRT
+2 DATE 1968
+1 FAMC @F31@
+0 @I86@ INDI
+1 NAME Bảo Tiên /Nguyễn/
+1 SEX F
+1 FAMS @F32@
+1 NOTE Divorced
+0 @I87@ INDI
+1 NAME Duy Khang /Lê/
+1 SEX M
+1 BIRT
+2 DATE 19 AUG 2011
+2 PLAC San Jose, CA USA
+1 FAMC @F32@
+0 @I88@ INDI
+1 NAME Thiên Trang /Lê/
+1 SEX F
+1 BIRT
+2 DATE 31 DEC 2019
+2 PLAC San Jose, CA, USA
+1 FAMC @F32@
+0 @I89@ INDI
+1 NAME Tolly Andy /Tsiamas/
+1 SEX M
+1 BIRT
+2 DATE 26 MAR 1975
+2 PLAC USA
+1 FAMS @F33@
+0 @I90@ INDI
+1 NAME Andy Tolly /Tsiamas/
+1 SEX M
+1 BIRT
+2 DATE 19 OCT 2009
+2 PLAC Naperville, IL, USA
+1 FAMC @F33@
+0 @I91@ INDI
+1 NAME Ernie /Wong/
+1 SEX M
+1 BIRT
+2 PLAC USA
+1 OCCU Self employed
+1 FAMS @F38@
+0 @I92@ INDI
+1 NAME London /Wong/
+1 SEX M
+1 BIRT
+2 PLAC Pasadena, USA
+1 FAMC @F38@
+0 @I93@ INDI
+1 NAME Parker /Wong/
+1 SEX M
+1 BIRT
+2 PLAC Pasadena, CA, USA
+1 FAMC @F38@
+0 @I94@ INDI
+1 NAME Mỹ Hạnh /Võ/
+1 SEX F
+1 BIRT
+2 DATE 22 NOV 1963
+2 PLAC Saigon, Vietnam
+1 OCCU Nurse
+1 FAMS @F34@
+0 @I95@ INDI
+1 NAME Mỹ Hân Natasha /Vũ/
+1 SEX F
+1 BIRT
+2 DATE 23 NOV 1993
+2 PLAC Seattle, WA, USA
+1 FAMC @F34@
+1 FAMS @F39@
+0 @I96@ INDI
+1 NAME Ngọc Anh Alexander /Vũ/
+1 SEX M
+1 BIRT
+2 DATE 23 NOV 1996
+2 PLAC Seattle, WA, USA
+1 FAMC @F34@
+0 @I97@ INDI
+1 NAME Mỹ Kim Hillary /Vũ/
+1 SEX F
+1 BIRT
+2 DATE 27 AUG 2003
+2 PLAC Seattle, WA, USA
+1 FAMC @F34@
+0 @I98@ INDI
+1 NAME Erick Ivan /Rivera/
+1 SEX M
+1 BIRT
+2 DATE 13 MAR 1997
+2 PLAC USA
+1 FAMS @F39@
+0 @I99@ INDI
+1 NAME Azaria Mỹ Quỳnh /Rivera/
+1 SEX F
+1 BIRT
+2 DATE 18 SEP 2020
+2 PLAC Seattle, WA, USA
+1 FAMC @F39@
+0 @I100@ INDI
+1 NAME Ân /Võ/
+1 SEX M
+1 BIRT
+2 DATE 03 AUG 1961
+2 PLAC Vietnam
+1 FAMS @F35@
+0 @I101@ INDI
+1 NAME Trần Anh Vũ Kristoffer /Võ/
+1 SEX M
+1 BIRT
+2 DATE 17 JAN 1992
+2 PLAC Portland, OR, USA
+1 FAMC @F35@
+0 @I102@ INDI
+1 NAME Diễm Châu Ashley /Võ/
+1 SEX F
+1 BIRT
+2 DATE 19 DEC 1997
+2 PLAC Portland, OR, USA
+1 OCCU Physician Assistant
+1 FAMC @F35@
+0 @I103@ INDI
+1 NAME Minh Phượng Alani /Võ/
+1 SEX F
+1 BIRT
+2 DATE 11 MAY 2001
+2 PLAC Portland, OR, USA
+1 OCCU Pharmacist
+1 FAMC @F35@
+1 FAMS @F40@
+0 @I104@ INDI
+1 NAME Bích Dung /Quách/
+1 SEX F
+1 BIRT
+2 DATE 12 NOV 1989
+2 PLAC Bến Tre , Vietnam
+1 FAMS @F36@
+0 @I105@ INDI
+1 NAME Tài Henrick Edward /Vũ/
+1 SEX M
+1 BIRT
+2 DATE 04 OCT 2003
+2 PLAC Walawala, WA, USA
+1 FAMC @F36@
+0 @I106@ INDI
+1 NAME Lộc Karl Mitchell /Vũ/
+1 SEX M
+1 BIRT
+2 DATE 15 DEC 2008
+2 PLAC Walawala, WA, USA
+1 FAMC @F36@
+0 @I107@ INDI
+1 NAME Trí Bạn /Lưu/
+1 SEX M
+1 BIRT
+2 DATE 1911
+2 PLAC Vietnam
+1 DEAT
+2 DATE 1994
+2 PLAC Đông Tảo Đông, Hưng Yên, Việt Nam
+1 FAMS @F20@
+1 FAMS @F41@
+0 @I108@ INDI
+1 NAME Trí Tỉnh /Lưu/
+1 SEX M
+1 BIRT
+2 DATE 1936
+2 PLAC Đông Tảo Đông, Hưng Yên, Việt Nam
+1 DEAT
+2 DATE 2021
+2 PLAC Đông Tảo Đông, Hưng Yên, Việt Nam
+1 FAMC @F20@
+1 FAMS @F42@
+0 @I109@ INDI
+1 NAME Thị Lê /Lưu/
+1 SEX F
+1 BIRT
+2 DATE 1942
+2 PLAC Đông Tảo Đông, Hưng Yên, Việt Nam
+1 DEAT
+2 DATE 2025
+2 PLAC Đông Tảo Đông, Hưng Yên, Việt Nam
+1 FAMC @F20@
+1 FAMS @F43@
+0 @I110@ INDI
+1 NAME Thị Bình /Lưu/
+1 SEX F
+1 BIRT
+2 DATE 1945
+2 PLAC Đông Tảo Đông, Hưng Yên, Việt Nam
+1 FAMC @F20@
+1 FAMS @F44@
+0 @I111@ INDI
+1 NAME Trí Xay /Lưu/
+1 SEX M
+1 BIRT
+2 DATE 11 SEP 1946
+2 PLAC Đông Tảo Đông, Hưng Yên, Việt Nam
+1 OCCU Farmer
+1 FAMC @F20@
+1 FAMS @F45@
+0 @I112@ INDI
+1 NAME Thị Tuất /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1910
+2 PLAC Hanoi, Vietnam
+1 DEAT
+2 DATE 2000
+2 PLAC Hà Nội, Việt Nam
+1 OCCU Housewife
+1 FAMS @F19@
+0 @I113@ INDI
+1 NAME Thị Bích Hồng /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1948
+2 PLAC Hanoi, Vietnam
+1 FAMC @F19@
+0 @I114@ INDI
+1 NAME Hữu Quang /Nguyễn/
+1 SEX M
+1 BIRT
+2 DATE 1952
+2 PLAC Hanoi, Vietnam
+1 FAMC @F19@
+0 @I115@ INDI
+1 NAME Hữu Đạt /Nguyễn/
+1 SEX M
+1 BIRT
+2 DATE 1954
+2 PLAC Hanoi, Vietnam
+1 OCCU Transportation engineer
+1 FAMC @F19@
+0 @I116@ INDI
+1 NAME Hường Liên /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1940
+2 PLAC Hanoi, Vietnam
+1 OCCU Teacher
+1 FAMC @F18@
+0 @I117@ INDI
+1 NAME Hữu Hoan /Nguyễn/
+1 SEX M
+1 BIRT
+2 DATE 1943
+2 PLAC Hanoi Vietnam
+1 OCCU Dentist
+1 FAMC @F18@
+0 @I118@ INDI
+1 NAME Thị Hồng Loan /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1942
+2 PLAC Hanoi, Vietnam
+1 DEAT Y
+1 FAMC @F18@
+0 @I119@ INDI
+1 NAME Hữu Thành /Nguyễn/
+1 SEX M
+1 BIRT
+2 DATE 1950
+2 PLAC Hanoi, Vietnam
+1 DEAT
+2 DATE 1972
+2 PLAC Saigon, Vietnam
+2 SOUR Killed during VN war
+1 FAMC @F18@
+0 @I120@ INDI
+1 NAME Thị Kim Lân /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1947
+2 PLAC Hanoi, Vietnam
+1 OCCU Teacher
+1 FAMC @F18@
+1 FAMS @F46@
+0 @I121@ INDI
+1 NAME Hữu Tiến /Nguyễn/
+1 SEX M
+1 BIRT
+2 DATE 1953
+2 PLAC Hanoi, Vietnam
+1 OCCU Dentist
+1 FAMC @F18@
+0 @I122@ INDI
+1 NAME Thiện Minh /Trần/
+2 NICK Ba Giai
+1 SEX M
+1 BIRT
+2 DATE 1933
+2 PLAC Hanoi, Vietnam
+1 DEAT
+2 DATE 1934
+2 PLAC Hanoi, Vietnam
+1 FAMC @F3@
+0 @I123@ INDI
+1 NAME Harry /Millers/
+1 SEX M
+1 BIRT
+2 PLAC USA
+1 FAMS @F14@
+0 @I124@ INDI
+1 NAME Sinh Côn /Phạm/
+1 SEX M
+1 BIRT
+2 PLAC Ngọc Cục, Nam Định, Vietnam
+1 DEAT
+2 DATE 07 DEC 2007
+2 PLAC Lowell, MI, USA
+1 FAMS @F4@
+0 @I125@ INDI
+1 NAME Kim Loan /Đỗ/
+1 SEX F
+1 BIRT
+2 DATE 01 MAR 1926
+2 PLAC Tương Nam, Nam Định, Vietnam
+1 DEAT
+2 DATE 19 OCT 2019
+2 PLAC Lowell, MI, USA
+1 OCCU Housewife
+1 FAMS @F4@
+0 @I126@ INDI
+1 NAME Nhật Minh /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 14 MAY 1865
+1 DEAT
+2 DATE 24 AUG 1925
+2 PLAC Thôn Phúc Miễu, xã Hoà Phong, huyện Mỹ Hào
+1 FAMC @F47@
+1 FAMS @F9@
+1 NOTE aka  Phạm Văn Thanh tự là Tuấn Hữu, hiệu Đôn Mẫn
+2 CONT Current  altar  is  at  10  Hàng  Điều  Hà nội
+0 @I127@ INDI
+1 NAME Thị Dàn /Lê/
+1 SEX F
+1 BIRT
+2 DATE 1865
+2 PLAC Hanoi, VietNam
+1 DEAT
+2 DATE 23 JUN 1952
+2 PLAC Thôn Phúc Miễu, xã Hoà Phong, huyện Mỹ Hào, Vietnam
+1 FAMS @F9@
+0 @I128@ INDI
+1 NAME Hữu Lai /Nguyễn/
+1 SEX M
+1 BIRT
+2 DATE 1849
+2 SOUR Làng Đông Tảo Đông, tỉnh Hưng Yên, Việt Nam
+1 DEAT
+2 DATE 1932
+2 PLAC Làng Đông Tảo Đông, tỉnh Hưng Yên, Việt Nam
+1 FAMS @F6@
+0 @I129@ INDI
+1 NAME Xuan-Lu /Jing/
+1 SEX M
+1 BIRT
+2 DATE 29 JAN 1924
+1 DEAT
+2 DATE 2019
+2 PLAC California, USA
+1 FAMS @F26@
+0 @I130@ INDI
+1 NAME Huifen /Xu/
+1 SEX F
+1 BIRT
+2 DATE 11 AUG 1930
+1 DEAT
+2 DATE 12 MAY 2024
+2 PLAC Fullerton, CA USA
+2 SOUR Colon cancer
+1 FAMS @F26@
+0 @I131@ INDI
+1 NAME Luke /Parrish/
+1 SEX M
+1 BIRT
+2 DATE 29 MAY 2001
+1 FAMS @F40@
+0 @I132@ INDI
+1 NAME Thị Hồng Phước /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 01 JUN 1960
+2 PLAC Thị Nghè, Việt Nam
+1 OCCU Attorney-at-Law
+1 FAMS @F48@
+1 FAMS @F49@
+0 @I133@ INDI
+1 NAME Dương Châu /Nguyễn/
+1 SEX M
+1 BIRT
+2 DATE 05 MAR 1953
+2 PLAC Hà Nội Việt Nam
+1 OCCU Oral & Maxillofacial Surgeon
+1 FAMC @F2@
+1 FAMS @F49@
+0 @I134@ INDI
+1 NAME Thị  Đắc /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1890
+2 PLAC Hanoi, VietNam
+1 DEAT Y
+1 OCCU Housewife
+1 FAMC @F9@
+1 FAMS @F50@
+0 @I135@ INDI
+1 NAME Văn  Định /Quách/
+1 SEX M
+1 BIRT
+2 DATE 1888
+1 DEAT
+2 PLAC Saigon, Saigon, VietNam
+1 FAMS @F50@
+0 @I136@ INDI
+1 NAME Thị  Nội /Quách/
+1 SEX F
+1 BIRT
+2 DATE 1917
+2 PLAC Hà Nội, Việt Nam
+1 DEAT
+2 DATE 27 JAN 1931
+2 PLAC Hanoi, VietNam
+1 FAMC @F50@
+0 @I137@ INDI
+1 NAME Văn Nghi /Quách/
+1 SEX M
+1 BIRT
+2 DATE 1914
+1 DEAT
+2 DATE 04 JAN 2000
+2 PLAC Québec, Canada
+1 FAMC @F50@
+1 FAMS @F51@
+0 @I138@ INDI
+1 NAME Thị  Hiếu /Phan/
+1 SEX F
+1 DEAT Y
+1 FAMS @F51@
+0 @I139@ INDI
+1 NAME Thị Yến Nga /Quách/
+1 SEX F
+1 DEAT Y
+1 FAMC @F51@
+1 FAMS @F52@
+0 @I140@ INDI
+1 NAME Thị  Hợi /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1911
+1 DEAT
+2 DATE 29 JUN 1996
+2 PLAC Phúc  Miễu, Mỹ  Hào, Hưng  Yênn, VietNam
+1 FAMC @F9@
+1 FAMS @F53@
+0 @I141@ INDI
+1 NAME Thế  Thuật /Đỗ/
+1 SEX M
+1 BIRT
+2 DATE 10 OCT 1909
+1 DEAT
+2 DATE 07 MAY 1975
+2 PLAC Phúc  Miễu, Mỹ  Hào, Hưng  Yênn, VietNam
+1 FAMS @F53@
+0 @I142@ INDI
+1 NAME Thị  Hiền /Đỗ/
+1 SEX F
+1 BIRT
+2 DATE 26 OCT 1936
+1 DEAT
+2 DATE 01 JUL 1987
+2 PLAC Phúc  Miễu, Mỹ  Hào, Hưng  Yênn, VietNam
+1 FAMC @F53@
+0 @I143@ INDI
+1 NAME Thế  Cường /Đỗ/
+1 SEX M
+1 BIRT
+2 DATE 09 APR 1938
+1 FAMC @F53@
+0 @I144@ INDI
+1 NAME Thề  Hưng /Đỗ/
+1 SEX M
+1 BIRT
+2 DATE 09 SEP 1940
+1 OCCU Engineer
+1 FAMC @F53@
+1 FAMS @F54@
+0 @I145@ INDI
+1 NAME Thị  Kim /Đỗ/
+1 SEX F
+1 BIRT
+2 DATE 12 FEB 1943
+1 FAMC @F53@
+1 FAMS @F55@
+0 @I146@ INDI
+1 NAME Thế  Kháng /Đỗ/
+1 SEX M
+1 BIRT
+2 DATE 06 MAR 1946
+1 OCCU Engineer
+1 FAMC @F53@
+1 FAMS @F56@
+0 @I147@ INDI
+1 NAME Thế  Ước /Đỗ/
+1 SEX M
+1 BIRT
+2 DATE 14 JUL 1949
+1 OCCU Engineer
+1 FAMC @F53@
+1 FAMS @F57@
+0 @I148@ INDI
+1 NAME Thế  Bảo /Đỗ/
+1 SEX M
+1 BIRT
+2 DATE 06 SEP 1952
+1 OCCU Professor  in Foreign Language
+1 FAMC @F53@
+1 FAMS @F58@
+0 @I149@ INDI
+1 NAME Thị  Chỉnh /Đỗ/
+1 SEX F
+1 BIRT
+2 DATE 19 MAR 1955
+1 OCCU Professor  in  Foreign  Language
+1 FAMC @F53@
+1 FAMS @F59@
+0 @I150@ INDI
+1 NAME Thị  Lang /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 13 OCT 1951
+1 FAMS @F54@
+0 @I151@ INDI
+1 NAME Xuân  Hoà /Đỗ/
+1 SEX M
+1 BIRT
+2 DATE 06 NOV 1975
+1 OCCU Engineer
+1 FAMC @F54@
+0 @I152@ INDI
+1 NAME Thị  Kim  Dung /Đỗ/
+1 SEX F
+1 BIRT
+2 DATE 13 OCT 1977
+1 FAMC @F54@
+0 @I153@ INDI
+1 NAME Thị  Kim  Oanh /Đỗ/
+1 SEX F
+1 BIRT
+2 DATE 22 NOV 1981
+1 FAMC @F54@
+0 @I154@ INDI
+1 NAME Sỹ  Hào /Nguyễn/
+1 SEX M
+1 BIRT
+2 DATE 1938
+1 DEAT
+2 DATE 06 JAN 1976
+2 PLAC Saigonn, VietNam
+1 OCCU Engineer
+1 FAMS @F55@
+0 @I155@ INDI
+1 NAME Thị  Thu  Hương /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1969
+1 FAMC @F55@
+0 @I156@ INDI
+1 NAME Quốc  Bình /Nguyễn/
+1 SEX M
+1 BIRT
+2 DATE 1973
+1 FAMC @F55@
+0 @I157@ INDI
+1 NAME Thị  Minh  Tâm /Hoàng/
+1 SEX F
+1 BIRT
+2 DATE 17 MAR 1951
+1 FAMS @F56@
+0 @I158@ INDI
+1 NAME Thị  Ngọc  Hồi /Đỗ/
+1 SEX F
+1 BIRT
+2 DATE 07 JUN 1952
+1 OCCU Engineer
+1 FAMS @F57@
+0 @I159@ INDI
+1 NAME Thị  Hồng  Hạnh /Đỗ/
+1 SEX F
+1 BIRT
+2 DATE 04 JAN 1978
+1 FAMC @F57@
+0 @I160@ INDI
+1 NAME Thề  Thắng /Đỗ/
+1 SEX M
+1 BIRT
+2 DATE 11 APR 1983
+1 FAMC @F57@
+0 @I161@ INDI
+1 NAME Thị  Kim  Nhung /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1956
+1 FAMS @F58@
+0 @I162@ INDI
+1 NAME Anh  Tuấn /Đỗ/
+1 SEX M
+1 BIRT
+2 DATE 19 SEP 1982
+1 FAMC @F58@
+0 @I163@ INDI
+1 NAME Thị  Phương  Hoa /Đỗ/
+1 SEX F
+1 BIRT
+2 DATE 28 AUG 1995
+1 FAMC @F58@
+0 @I164@ INDI
+1 NAME Kiếm  Bảo /Kỳ/
+1 SEX M
+1 OCCU Engineer  in  geology
+1 FAMS @F59@
+0 @I165@ INDI
+1 NAME Quang  Vinh /Kỳ/
+1 SEX M
+1 BIRT
+2 DATE 13 OCT 1983
+1 FAMC @F59@
+0 @I166@ INDI
+1 NAME Tuyết  Mai /Kỳ/
+1 SEX F
+1 BIRT
+2 DATE 21 SEP 1988
+1 FAMC @F59@
+0 @I167@ INDI
+1 NAME Hữu  Lượng /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1893
+2 NOTE Lived at 13 Hàng Điếu
+1 DEAT
+2 DATE 20 JUL 1963
+1 FAMC @F9@
+1 FAMS @F60@
+1 FAMS @F61@
+0 @I168@ INDI
+1 NAME Thị  Lục /Lê/
+1 SEX F
+1 BIRT
+2 DATE 1904
+1 DEAT Y
+1 FAMS @F60@
+0 @I169@ INDI
+1 NAME Thị Yến /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1975
+1 FAMS @F62@
+0 @I170@ INDI
+1 NAME Hoài  Linh /Lưu/
+1 SEX M
+1 FAMC @F62@
+0 @I171@ INDI
+1 NAME Lan  Anh /Lưu/
+1 SEX F
+1 FAMC @F62@
+0 @I172@ INDI
+1 NAME Hoài  Sơn /Lưu/
+1 SEX M
+1 FAMC @F62@
+0 @I173@ INDI
+1 NAME Hoài  Phương /Lưu/
+1 SEX F
+1 FAMC @F62@
+0 @I174@ INDI
+1 NAME Hoài  Văn /Lưu/
+1 SEX M
+1 FAMC @F62@
+0 @I175@ INDI
+1 NAME Hoài  Vĩnh /Lưu/
+1 SEX M
+1 FAMC @F62@
+0 @I176@ INDI
+1 NAME Hoài  Bắc /Lưu/
+1 SEX M
+1 FAMC @F62@
+0 @I177@ INDI
+1 NAME Hữu  Huấn /Phạm/
+1 NAME Quách  Văn  Huấn.
+1 SEX M
+1 BIRT
+2 DATE 1932
+2 NOTE He  was  adopted  at  birth  by his father's  older  sister, Mrs. Phạm 
+3 CONC  Thị Đắc, and  changed  his  name  to  Quách  Văn  Huấn.  His  birth  c
+3 CONC ertificate  at  birth  was  Phạm  Hữu  Cường
+1 DEAT
+2 PLAC Louisiana, USA
+1 FAMC @F60@
+1 FAMS @F63@
+0 @I178@ INDI
+1 NAME Thị  Trường /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1934
+1 DEAT Y
+1 OCCU Teacher
+1 FAMS @F63@
+0 @I179@ INDI
+1 NAME Thị  Kim  Thu /Quách/
+1 SEX F
+1 FAMC @F63@
+0 @I180@ INDI
+1 NAME Thị  Kim  Thuý /Quách/
+1 SEX F
+1 FAMC @F63@
+0 @I181@ INDI
+1 NAME Văn  Hưng /Quách/
+1 SEX M
+1 FAMC @F63@
+0 @I182@ INDI
+1 NAME Thị  Kim  Thoa /Quách/
+1 SEX F
+1 FAMC @F63@
+0 @I183@ INDI
+1 NAME Thị  Kim  Hằng /Quách/
+1 SEX F
+1 FAMC @F63@
+0 @I184@ INDI
+1 NAME Hữu  Hiệp /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 15 AUG 1939
+2 NOTE Lives at 13 Hàng Điếu
+1 OCCU Engineer
+1 FAMC @F60@
+1 FAMS @F64@
+0 @I185@ INDI
+1 NAME Thị  Vinh /Đoàn/
+1 SEX F
+1 BIRT
+2 DATE 1950
+1 FAMS @F64@
+0 @I186@ INDI
+1 NAME Thanh  Sơn /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 20 JUN 1975
+1 OCCU Architect
+1 FAMC @F64@
+1 FAMS @F65@
+0 @I187@ INDI
+1 NAME Thanh  Nam /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 23 FEB 1978
+1 OCCU Engineer
+1 FAMC @F64@
+0 @I188@ INDI
+1 NAME Kim  Phượng /Lê/
+1 SEX F
+1 BIRT
+2 DATE 1975
+1 OCCU Professor  in  English
+1 FAMS @F65@
+0 @I189@ INDI
+1 NAME Lê  Trung /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 2001
+1 FAMC @F65@
+0 @I190@ INDI
+1 NAME Hữu  Toàn /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1945
+2 PLAC Hanoii, VietNam
+1 DEAT
+2 DATE 1995
+2 PLAC Hanoii, VietNam
+1 FAMC @F60@
+1 FAMS @F66@
+0 @I191@ INDI
+1 NAME Thị  Ninh /Dương/
+1 SEX F
+1 BIRT
+2 DATE 1946
+1 FAMS @F66@
+0 @I192@ INDI
+1 NAME Thanh  Tùng /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1971
+1 OCCU Engineer
+1 FAMC @F66@
+0 @I193@ INDI
+1 NAME Thu Hà /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1972
+1 OCCU Reporter
+1 FAMC @F66@
+0 @I194@ INDI
+1 NAME Quỳnh  Nga /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1979
+1 FAMC @F66@
+0 @I195@ INDI
+1 NAME Hữu Quỳ /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1950
+1 OCCU Engineer
+1 FAMC @F60@
+1 FAMS @F67@
+0 @I196@ INDI
+1 NAME Thị  Thanh  Nhã /Cao/
+1 SEX F
+1 BIRT
+2 DATE 1950
+1 FAMS @F67@
+0 @I197@ INDI
+1 NAME Thị Quỳnh  Nga /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1981
+0 @I198@ INDI
+1 NAME Hồng  Kiên /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1985
+1 FAMC @F67@
+0 @I199@ INDI
+1 NAME Thị  Bì /Bùi/
+1 SEX F
+1 DEAT Y
+1 FAMS @F61@
+0 @I200@ INDI
+1 NAME Hữu  Tường /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1935
+1 FAMC @F61@
+0 @I201@ INDI
+1 NAME Hữu Thiều /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1938
+2 PLAC Hanoii, VietNam
+1 DEAT
+2 DATE 1990
+2 PLAC Hanoii, Vietnam
+1 FAMC @F61@
+1 FAMS @F68@
+0 @I202@ INDI
+1 NAME Thị  Nhẫn /Lê/
+1 SEX F
+1 FAMS @F68@
+0 @I203@ INDI
+1 NAME Thu  Thảo /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1982
+2 PLAC Hanoii, Vietnam
+1 FAMC @F68@
+0 @I204@ INDI
+1 NAME Thanh  Ngân /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1988
+2 PLAC Hanoii, Vietnam
+1 FAMC @F68@
+0 @I205@ INDI
+1 NAME Hữu Khánh /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 26 MAY 1898
+2 PLAC Hanoi, Vietnam
+1 DEAT
+2 DATE 15 MAY 1969
+2 PLAC Phúc Miễu, Hòa Phong
+1 FAMC @F9@
+1 FAMS @F69@
+1 FAMS @F70@
+0 @I206@ INDI
+1 NAME Thị Hòa /Giang/
+1 SEX F
+1 DEAT
+2 DATE 29 NOV 1974
+2 PLAC Phúc Miễu, Hòa Phong
+1 FAMS @F69@
+0 @I207@ INDI
+1 NAME Bích Thuận /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 28 FEB 1936
+2 PLAC Vietnam
+1 OCCU Accountant
+1 FAMC @F69@
+1 FAMS @F71@
+0 @I208@ INDI
+1 NAME Tứ Khải /Đào/
+1 SEX M
+1 BIRT
+2 DATE 1914
+2 PLAC Vietnam
+1 DEAT
+2 DATE 01 DEC 1987
+2 PLAC Văn Điển, Vietnam
+1 OCCU Director of National Museum of History at Hanoi
+1 FAMS @F71@
+0 @I209@ INDI
+1 NAME Hữu Khang /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1920
+2 PLAC Vietnam
+1 DEAT Y
+1 BURI
+2 DATE 11 MAR 1987
+2 PLAC Phúc Miễu, Hòa Phong
+1 FAMC @F69@
+1 FAMS @F72@
+1 FAMS @F73@
+0 @I210@ INDI
+1 NAME Thị Nhung /Nguyễn/
+1 SEX F
+1 FAMS @F72@
+0 @I211@ INDI
+1 NAME Quang Trung /Phạm/
+1 SEX M
+1 FAMC @F72@
+0 @I212@ INDI
+1 NAME Kim Liên /Phùng/
+1 SEX F
+1 BIRT
+2 DATE 23 AUG 1906
+1 DEAT Y
+1 FAMS @F70@
+0 @I213@ INDI
+1 NAME Bích Ngọc /Phạm/
+2 NICK Phạm Minh Châu
+1 SEX F
+1 BIRT
+2 DATE 20 DEC 1936
+2 PLAC Hanoi, Vietnam
+1 FAMC @F70@
+1 FAMS @F74@
+0 @I214@ INDI
+1 NAME Trung Hải /Trần/
+1 SEX M
+1 BIRT
+2 DATE 30 JUN 1938
+2 PLAC Nam Dinh, Vietnam
+1 FAMS @F74@
+0 @I215@ INDI
+1 NAME Nhật Dương /Trần/
+1 SEX M
+1 BIRT
+2 DATE 27 JUL 1960
+2 PLAC Hanoi, Vietnam
+1 FAMC @F74@
+0 @I216@ INDI
+1 NAME Thị Đại /Bùi/
+1 SEX F
+1 BIRT
+2 DATE 1943
+2 PLAC Vietnam
+1 FAMS @F73@
+0 @I217@ INDI
+1 NAME Thị Tâm /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1961
+2 PLAC Hanoi, Vietnam
+1 FAMC @F73@
+0 @I218@ INDI
+1 NAME Thị Tuyết /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1965
+2 PLAC Hà Nội, Việt Nam
+1 FAMC @F73@
+0 @I219@ INDI
+1 NAME Quang Chình /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1957
+2 PLAC Hà Nội, Việt Nam
+1 FAMC @F73@
+0 @I220@ INDI
+1 NAME Quang Thành /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1959
+2 PLAC Hà Nội, Việt Nam
+1 FAMC @F73@
+0 @I221@ INDI
+1 NAME Hữu Liêm /Phạm/
+1 SEX M
+1 DEAT
+2 DATE 1945
+2 PLAC Hà Nội, Việt Nam
+1 FAMC @F69@
+0 @I222@ INDI
+1 NAME Bích Trinh /Phạm/
+2 SURN Ngà
+1 SEX F
+1 BIRT
+2 DATE 01 MAR 1939
+2 PLAC Hà Nội, Việt Nam
+1 OCCU Teacher
+1 FAMC @F70@
+1 FAMS @F75@
+0 @I223@ INDI
+1 NAME Xuân Phúc /Thành/
+1 SEX M
+1 BIRT
+2 DATE 12 JUN 1932
+2 PLAC Hà Nội, Việt Nam
+1 FAMS @F75@
+0 @I224@ INDI
+1 NAME Xuân Dũng /Thành/
+1 SEX M
+1 BIRT
+2 DATE 08 MAR 1958
+2 PLAC Hà Nội, Việt Nam
+1 FAMC @F75@
+0 @I225@ INDI
+1 NAME Thư Thuỷ /Thành/
+1 SEX F
+1 BIRT
+2 DATE 26 OCT 1959
+2 PLAC Hà Nội, Việt Nam
+1 FAMC @F75@
+0 @I226@ INDI
+1 NAME Bích Vân /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 28 APR 1940
+2 PLAC Hà Nội, Việt Nam
+1 OCCU Teacher
+1 FAMC @F70@
+1 FAMS @F76@
+0 @I227@ INDI
+1 NAME Kỳ Tu /Trịnh/
+1 SEX M
+1 FAMS @F76@
+0 @I228@ INDI
+1 NAME Kỳ Phong /Trịnh/
+1 SEX M
+1 BIRT
+2 PLAC Hà Nội, Việt Nam
+1 FAMC @F76@
+0 @I229@ INDI
+1 NAME Kỳ Nam /Trịnh/
+1 SEX M
+1 BIRT
+2 PLAC Hà Nội, Việt Nam
+1 FAMC @F76@
+0 @I230@ INDI
+1 NAME Thị Tú Anh /Trịnh/
+1 SEX F
+1 BIRT
+2 PLAC Hà Nội, Việt Nam
+1 FAMC @F76@
+0 @I231@ INDI
+1 NAME Bích Hằng /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 11 OCT 1941
+2 PLAC Hà Nội, Việt Nam
+1 FAMC @F70@
+1 FAMS @F77@
+0 @I232@ INDI
+1 NAME Tấn Vinh /Nguyễn/
+1 SEX M
+1 FAMS @F77@
+0 @I233@ INDI
+1 NAME Thị Vân Anh /Nguyễn/
+1 SEX F
+1 FAMC @F77@
+0 @I234@ INDI
+1 NAME Quốc Chiến /Nguyễn/
+1 SEX M
+1 BIRT
+2 PLAC Hà Nội, Việt Nam
+1 FAMC @F77@
+0 @I235@ INDI
+1 NAME Bích Thoa /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 02 JUN 1947
+2 PLAC Hà Nội, Việt Nam
+1 FAMC @F70@
+0 @I236@ INDI
+1 NAME Bích Phương /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 02 FEB 1948
+2 PLAC Hà Nội, Việt Nam
+1 FAMC @F70@
+1 FAMS @F78@
+0 @I237@ INDI
+1 NAME Văn Tịch /Phùng/
+1 SEX M
+1 FAMS @F78@
+0 @I238@ INDI
+1 NAME Thuý Hà /Phùng/
+1 SEX F
+1 BIRT
+2 PLAC Hà Nội, Việt Nam
+1 FAMC @F78@
+0 @I239@ INDI
+1 NAME Anh Tuấn /Phùng/
+1 SEX M
+1 BIRT
+2 PLAC Hanoi, VietNam
+1 FAMC @F78@
+0 @I240@ INDI
+1 NAME Hữu Quỳnh /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 01 DEC 1944
+2 PLAC Hà Nội, Việt Nam
+1 FAMC @F70@
+1 FAMS @F79@
+0 @I241@ INDI
+1 NAME Thị An /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 10 FEB 1951
+2 PLAC Hà Nội, Việt Nam
+1 FAMS @F79@
+0 @I242@ INDI
+1 NAME Hồng Giang /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 07 JAN 1978
+2 PLAC Hà Nội, Việt Nam
+1 FAMC @F79@
+0 @I243@ INDI
+1 NAME Hồng Việt /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 18 JUL 1980
+2 PLAC Hà Nội, Việt Nam
+1 FAMC @F79@
+0 @I244@ INDI
+1 NAME Hữu Hùng /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 15 MAY 1949
+2 PLAC Hà Nội, Việt Nam
+1 FAMC @F70@
+1 FAMS @F80@
+0 @I245@ INDI
+1 NAME Thị Hường /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 01 DEC 1951
+2 PLAC Hanoi, VietNam
+1 FAMS @F80@
+0 @I246@ INDI
+1 NAME Hồng Sơn /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 05 SEP 1983
+2 PLAC Hà Nội, Việt Nam
+1 FAMC @F80@
+0 @I247@ INDI
+1 NAME Hữu Độ /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1899
+2 PLAC Hanoi, VietNam
+2 NOTE Lived at 14-16 Hàng Điếu
+1 DEAT Y
+1 FAMC @F9@
+1 FAMS @F81@
+0 @I248@ INDI
+1 NAME Thị Thư /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1899
+2 PLAC Vietnam
+1 DEAT Y
+1 FAMS @F81@
+0 @I249@ INDI
+1 NAME Hữu Loan /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1926
+2 PLAC Hanoi, VietNam
+1 DEAT
+2 DATE 1945
+2 PLAC Hà Nội, Việt Nam
+1 FAMC @F81@
+0 @I250@ INDI
+1 NAME Hữu Thi /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1932
+2 PLAC Hà Nội, Việt Nam
+1 DEAT Y
+1 OCCU Medical Doctor
+1 FAMC @F81@
+0 @I251@ INDI
+1 NAME Hữu Khải /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1935
+2 PLAC Hà Nội, Việt Nam
+1 DEAT Y
+1 FAMC @F81@
+0 @I252@ INDI
+1 NAME Hữu Luân /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1937
+2 PLAC Hà Nội, Việt Nam
+1 DEAT Y
+1 FAMC @F81@
+0 @I253@ INDI
+1 NAME Hữu Chì /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1906
+2 PLAC Hanoi, VietNam
+1 DEAT
+2 DATE 11 JAN 1930
+2 PLAC Hà Nội, Việt Nam
+1 FAMC @F9@
+1 FAMS @F82@
+1 FAMS @F83@
+0 @I254@ INDI
+1 NAME Thị Nhỡ /Nguyễn/
+1 SEX F
+1 DEAT Y
+1 FAMS @F82@
+0 @I255@ INDI
+1 NAME Thị Nhu /Nguyễn/
+1 SEX F
+1 DEAT Y
+1 FAMS @F83@
+0 @I256@ INDI
+1 NAME Hữu Bình /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 06 OCT 1923
+2 PLAC Hà Nội, Việt Nam
+1 DEAT Y
+1 FAMC @F83@
+1 FAMS @F84@
+0 @I257@ INDI
+1 NAME Thị Linh Tâm /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1933
+2 PLAC Vĩnh Long, Vietnam
+1 FAMS @F84@
+0 @I258@ INDI
+1 NAME Thị An /Phạm/
+1 SEX F
+1 DEAT Y
+1 FAMC @F9@
+1 FAMS @F85@
+0 @I259@ INDI
+1 NAME Văn Bưu /Trần/
+1 SEX M
+1 DEAT Y
+1 OCCU Veterinair in Cambodia
+1 FAMS @F85@
+0 @I260@ INDI
+1 NAME Cửu Long /Trần/
+1 SEX M
+1 BIRT
+2 PLAC Cambodia
+1 FAMC @F85@
+0 @I261@ INDI
+1 NAME Quý Ly /Trần/
+1 SEX M
+1 BIRT
+2 PLAC Cambodia
+1 DEAT Y
+1 FAMC @F85@
+0 @I262@ INDI
+1 NAME Kim Biên /Trần/
+1 SEX M
+1 BIRT
+2 PLAC Cambodia
+1 FAMC @F85@
+0 @I263@ INDI
+1 NAME Nam Vang /Trần/
+1 SEX M
+1 BIRT
+2 PLAC Cambodia
+1 FAMC @F85@
+0 @I264@ INDI
+1 NAME Thị Giang /Trần/
+1 SEX F
+1 BIRT
+2 PLAC Cambodia
+1 FAMC @F85@
+0 @I265@ INDI
+1 NAME Mai Lan /Trần/
+1 SEX F
+1 BIRT
+2 PLAC Cambodia
+1 FAMC @F85@
+0 @I266@ INDI
+1 NAME Văn Georges /Trần/
+1 SEX M
+1 BIRT
+2 PLAC Cambodia
+1 FAMC @F85@
+0 @I267@ INDI
+1 NAME Nhật Tân /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 18 JUL 1817
+1 DEAT
+2 DATE 04 AUG 1897
+2 PLAC Vietnam
+1 FAMC @F86@
+1 FAMS @F47@
+0 @I268@ INDI
+1 NAME Thị Bôi /Phan/
+1 SEX F
+1 DEAT
+2 DATE 03 MAY 1909
+2 PLAC Vietnam
+1 FAMS @F47@
+0 @I269@ INDI
+1 NAME Thị Túc /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 17 MAR 1842
+1 DEAT
+2 PLAC Láng Thượng
+1 FAMC @F47@
+1 FAMS @F87@
+0 @I270@ INDI
+1 NAME Thị Bình /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 09 MAR 1853
+1 DEAT Y
+1 FAMC @F47@
+1 FAMS @F88@
+0 @I271@ INDI
+1 NAME Nhật Vĩnh /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 27 OCT 1843
+1 DEAT Y
+1 FAMC @F47@
+1 FAMS @F89@
+0 @I272@ INDI
+1 NAME Nhật Thái /Phạm/
+1 NAME Phạm Văn Chất
+1 SEX M
+1 BIRT
+2 DATE 19 JUL 1854
+1 DEAT Y
+1 OCCU Oriental medicine doctor
+1 FAMC @F47@
+1 FAMS @F90@
+1 FAMS @F91@
+1 FAMS @F92@
+0 @I273@ INDI
+1 NAME Thị Khéo /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1939
+1 FAMS @F42@
+0 @I274@ INDI
+1 NAME Văn Vọt /Nguyễn/
+1 SEX M
+1 BIRT
+2 DATE 1942
+1 FAMS @F43@
+0 @I275@ INDI
+1 NAME Đạt Tráng /Nguyên/
+1 SEX M
+1 BIRT
+2 DATE 1945
+1 FAMS @F44@
+0 @I276@ INDI
+1 NAME Thị Chúc /Nguyên/
+1 SEX F
+1 BIRT
+2 DATE 08 APR 1949
+2 PLAC Đông Tảo Đông, Hưng Yên, Việt Nam
+1 FAMS @F45@
+0 @I277@ INDI
+1 NAME Trí Sưa /Lưu/
+1 SEX M
+1 BIRT
+2 DATE 27 JAN 1971
+2 PLAC Đông Tảo Đông, Hưng Yên, Việt Nam
+1 FAMC @F45@
+1 FAMS @F62@
+1 FAMS @F93@
+0 @I278@ INDI
+1 NAME Thị Thuý /Lê/
+1 SEX F
+1 BIRT
+2 DATE 1974
+1 FAMS @F93@
+0 @I279@ INDI
+1 NAME Thị Xinh /Lưu/
+1 SEX F
+1 BIRT
+2 DATE 04 JAN 1972
+2 PLAC Đông Tảo Đông, Hưng Yên, Việt Nam
+1 FAMC @F45@
+1 FAMS @F94@
+0 @I280@ INDI
+1 NAME Như Tuấn /Nguyên/
+1 SEX M
+1 BIRT
+2 DATE 1969
+2 PLAC Đông Tảo Đông, Hưng Yên, Việt Nam
+1 FAMS @F94@
+0 @I281@ INDI
+1 NAME Trí Lộc /Lưu/
+1 SEX M
+1 BIRT
+2 DATE 02 DEC 1974
+2 PLAC Đông Tảo Đông, Hưng Yên, Việt Nam
+1 FAMC @F45@
+1 FAMS @F95@
+0 @I282@ INDI
+1 NAME Thị Thơ /Lê/
+1 SEX F
+1 BIRT
+2 DATE 1976
+1 FAMS @F95@
+0 @I283@ INDI
+1 NAME Trí Linh /Lưu/
+1 SEX M
+1 BIRT
+2 DATE 25 SEP 1975
+2 PLAC Đông Tảo Đông, Hưng Yên, Việt Nam
+1 FAMC @F45@
+1 FAMS @F96@
+0 @I284@ INDI
+1 NAME Thị Thắm /Nguyên/
+1 SEX F
+1 BIRT
+2 DATE 1976
+1 FAMS @F96@
+0 @I285@ INDI
+1 NAME Thị Thảo /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1921
+1 DEAT
+2 DATE 2011
+2 PLAC Đông Tảo Đông, Hưng Yên, Việt Nam
+1 FAMS @F41@
+0 @I286@ INDI
+1 NAME Quang Sản /Trần/
+1 SEX M
+1 BIRT
+2 DATE 1943
+2 PLAC Vietnam
+1 DEAT
+2 PLAC Ohio, USA
+1 FAMS @F46@
+0 @I287@ INDI
+1 NAME Bảo Quân /Trần/
+1 SEX M
+1 BIRT
+2 DATE 1981
+2 PLAC Saigon, VietNam
+1 FAMC @F46@
+0 @I288@ INDI
+1 NAME Hồng Ân /Trần/
+1 SEX F
+1 BIRT
+2 DATE 1982
+2 PLAC Saigon, Vietnam
+1 OCCU Attorney-at-Law
+1 FAMC @F46@
+0 @I289@ INDI
+1 NAME Văn Tuấn /Quách/
+1 SEX M
+1 FAMC @F51@
+1 FAMS @F97@
+0 @I290@ INDI
+1 NAME Văn Dũng /Quách/
+1 SEX M
+1 FAMC @F51@
+1 FAMS @F98@
+0 @I291@ INDI
+1 NAME Văn Vũ /Quách/
+1 SEX M
+1 DEAT
+2 DATE 2024
+1 FAMC @F51@
+1 FAMS @F99@
+0 @I292@ INDI
+1 NAME Thị Minh Khuê /Quách/
+1 SEX F
+1 BIRT
+2 DATE 1950
+1 FAMC @F51@
+0 @I293@ INDI
+1 NAME Thị Phương Mai /Quách/
+1 SEX F
+1 BIRT
+2 DATE 1952
+1 FAMC @F51@
+1 FAMS @F100@
+0 @I294@ INDI
+1 NAME Dịch Thăng /Quách/
+1 SEX M
+1 BIRT
+2 DATE 1954
+1 DEAT Y
+1 FAMC @F51@
+1 FAMS @F101@
+0 @I295@ INDI
+1 NAME Mạnh Đạt /Quách/
+1 SEX M
+1 BIRT
+2 DATE 1955
+1 FAMC @F51@
+1 FAMS @F102@
+0 @I296@ INDI
+1 NAME Thị Phương Liên /Quách/
+1 SEX F
+1 BIRT
+2 DATE 1956
+1 FAMC @F51@
+1 FAMS @F103@
+0 @I297@ INDI
+1 NAME Trọng Phát /Quách/
+1 SEX M
+1 BIRT
+2 DATE 1957
+1 FAMC @F51@
+1 FAMS @F104@
+0 @I298@ INDI
+1 NAME Thị Thẻ /Nguyễn/
+1 SEX F
+1 DEAT Y
+1 FAMS @F90@
+0 @I299@ INDI
+1 NAME Thị Khuyến /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1882
+1 DEAT
+2 PLAC Phong Triều, Vietnam
+1 FAMC @F90@
+1 FAMS @F105@
+0 @I300@ INDI
+1 NAME Văn Bích /Nguyễn/
+1 SEX M
+1 DEAT Y
+1 FAMS @F105@
+0 @I301@ INDI
+1 NAME Văn Chung /Nguyễn/
+1 SEX M
+1 FAMC @F105@
+0 @I302@ INDI
+1 NAME Văn Hụệ /Nguyễn/
+1 SEX M
+1 DEAT
+2 PLAC Phong Triều, Vietnam
+1 FAMC @F105@
+0 @I303@ INDI
+1 NAME Văn Thứ /Nguyễn/
+1 SEX M
+1 FAMC @F105@
+1 FAMS @F106@
+0 @I304@ INDI
+1 NAME Thị Tuệ /Nguyễn/
+1 SEX F
+1 FAMC @F105@
+1 FAMS @F107@
+0 @I305@ INDI
+1 NAME Thị Khương /Nguyễn/
+1 SEX F
+1 FAMS @F106@
+0 @I306@ INDI
+1 NAME Đình Phương /Nguyễn/
+1 SEX M
+1 FAMC @F106@
+0 @I307@ INDI
+1 NAME Thị Kim Oanh /Nguyễn/
+1 SEX F
+1 FAMC @F106@
+0 @I308@ INDI
+1 NAME Thị Kim Hoàn /Nguyễn/
+1 SEX F
+1 FAMC @F106@
+0 @I309@ INDI
+1 NAME Thị Kim Nhung /Nguyễn/
+1 SEX F
+1 FAMC @F106@
+0 @I310@ INDI
+1 NAME Cung /Nguyễn/
+1 SEX M
+1 BIRT
+2 DATE 1911
+1 FAMS @F107@
+0 @I311@ INDI
+1 NAME Thị Thuận /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1934
+1 FAMC @F107@
+0 @I312@ INDI
+1 NAME Thị Kim Dung /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1936
+1 FAMC @F107@
+0 @I313@ INDI
+1 NAME Thị Mai Phương /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1938
+1 FAMC @F107@
+0 @I314@ INDI
+1 NAME Thanh Hà /Nguyễn/
+1 SEX M
+1 BIRT
+2 DATE 1942
+1 FAMC @F107@
+0 @I315@ INDI
+1 NAME Minh Hồ /Nguyễn/
+1 SEX M
+1 BIRT
+2 DATE 1945
+1 FAMC @F107@
+0 @I316@ INDI
+1 NAME Thị Mỹ /Lê/
+1 SEX F
+1 BIRT
+2 DATE 1853
+1 DEAT
+2 DATE 08 AUG 1912
+2 PLAC Phong Triều, Vietnam
+1 FAMS @F91@
+0 @I317@ INDI
+1 NAME Thị Tốn /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 13 JUL 1888
+1 DEAT Y
+1 FAMC @F91@
+1 FAMS @F108@
+0 @I318@ INDI
+1 NAME Thị Hưởng /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 08 MAR 1891
+1 DEAT Y
+1 FAMC @F91@
+1 FAMS @F109@
+0 @I319@ INDI
+1 NAME Mai /Nguyễn/
+1 SEX M
+1 DEAT Y
+1 FAMS @F108@
+0 @I320@ INDI
+1 NAME Hoè /Nguyễn/
+1 SEX M
+1 BIRT
+2 DATE 1905
+1 FAMC @F108@
+1 FAMS @F110@
+0 @I321@ INDI
+1 NAME Điều /Nguyễn/
+1 SEX M
+1 BIRT
+2 DATE 1907
+1 FAMC @F108@
+1 FAMS @F111@
+0 @I322@ INDI
+1 NAME Dung /Nguyễn/
+1 SEX M
+1 BIRT
+2 DATE 1911
+1 FAMC @F108@
+1 FAMS @F112@
+0 @I323@ INDI
+1 NAME Lương /Nguyễn/
+1 SEX M
+1 BIRT
+2 DATE 1913
+1 FAMC @F108@
+1 FAMS @F113@
+0 @I324@ INDI
+1 NAME Kim Cống /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1918
+1 FAMC @F108@
+1 FAMS @F114@
+0 @I325@ INDI
+1 NAME Thị Bích Trà /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1920
+1 FAMC @F108@
+1 FAMS @F115@
+0 @I326@ INDI
+1 NAME Thị Tỳ /Cung/
+1 SEX F
+1 FAMS @F110@
+0 @I327@ INDI
+1 NAME Thị Thư /Nguyễn/
+1 SEX F
+1 FAMC @F110@
+0 @I328@ INDI
+1 NAME Thị Ái Nhi /Nguyễn/
+1 SEX F
+1 FAMC @F110@
+0 @I329@ INDI
+1 NAME Khải /Nguyễn/
+1 SEX M
+1 FAMC @F110@
+0 @I330@ INDI
+1 NAME Cầu /Nguyễn/
+1 SEX M
+1 FAMC @F110@
+0 @I331@ INDI
+1 NAME Thắng /Nguyễn/
+1 SEX M
+1 FAMC @F110@
+0 @I332@ INDI
+1 NAME Cung /Nguyễn/
+1 SEX M
+1 FAMC @F110@
+0 @I333@ INDI
+1 NAME Thị Diệu Hằng /Bùi/
+1 SEX F
+1 FAMS @F111@
+0 @I334@ INDI
+1 NAME Bằng /Nguyễn/
+1 SEX M
+1 FAMC @F111@
+0 @I335@ INDI
+1 NAME Hưu /Nguyễn/
+1 SEX M
+1 FAMC @F111@
+0 @I336@ INDI
+1 NAME Dũng /Nguyễn/
+1 SEX M
+1 FAMC @F111@
+0 @I337@ INDI
+1 NAME Thị Tú Liên /Nguyễn/
+1 SEX F
+1 FAMC @F111@
+0 @I338@ INDI
+1 NAME Thị Băng Thanh /Nguyễn/
+1 SEX F
+1 FAMC @F111@
+0 @I339@ INDI
+1 NAME Thị Vĩnh /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1919
+1 FAMS @F112@
+0 @I340@ INDI
+1 NAME Trường /Nguyễn/
+1 SEX M
+1 BIRT
+2 DATE 1940
+1 FAMC @F112@
+0 @I341@ INDI
+1 NAME Tuãn /Nguyễn/
+1 SEX M
+1 BIRT
+2 DATE 1941
+1 FAMC @F112@
+0 @I342@ INDI
+1 NAME Kim Đĩnh /Bùi/
+1 SEX F
+1 BIRT
+2 DATE 1915
+1 DEAT
+2 DATE 1962
+2 PLAC Saigon, VietNam
+1 FAMS @F113@
+0 @I343@ INDI
+1 NAME Thị Minh Thu /Nguyễn/
+1 SEX F
+1 FAMC @F113@
+0 @I344@ INDI
+1 NAME Lân /Nguyễn/
+1 SEX M
+1 FAMC @F113@
+0 @I345@ INDI
+1 NAME Hải /Nguyễn/
+1 SEX M
+1 FAMC @F113@
+0 @I346@ INDI
+1 NAME Minh Hà /Nguyễn/
+1 SEX F
+1 FAMC @F113@
+0 @I347@ INDI
+1 NAME Minh Nguyệt /Nguyễn/
+1 SEX F
+1 FAMC @F113@
+0 @I348@ INDI
+1 NAME Anh /Nguyễn/
+1 SEX M
+1 FAMC @F113@
+0 @I349@ INDI
+1 NAME Văn Văn /Nguyễn/
+1 SEX M
+1 BIRT
+2 DATE 1915
+1 FAMS @F114@
+0 @I350@ INDI
+1 NAME Cường /Nguyễn/
+1 SEX M
+1 FAMC @F114@
+0 @I351@ INDI
+1 NAME Thị Ngọc Bích /Nguyễn/
+1 SEX F
+1 FAMC @F114@
+0 @I352@ INDI
+1 NAME Thị Ngọc Loan /Nguyễn/
+1 SEX F
+1 FAMC @F114@
+0 @I353@ INDI
+1 NAME Gia Trinh /Đinh/
+1 SEX M
+1 FAMS @F115@
+0 @I354@ INDI
+1 NAME Thị Phương Anh /Đinh/
+1 SEX F
+1 FAMC @F115@
+0 @I355@ INDI
+1 NAME Thị Bích Vân /Đinh/
+1 SEX F
+1 FAMC @F115@
+0 @I356@ INDI
+1 NAME Quang Cư /Phạm/
+1 SEX M
+1 DEAT Y
+1 FAMS @F109@
+0 @I357@ INDI
+1 NAME Quang Lễ /Phạm/
+1 SEX M
+1 DEAT
+2 DATE 1945
+2 PLAC Phong Triều, Vietnam
+2 SOUR Killed in the war
+1 FAMC @F109@
+0 @I358@ INDI
+1 NAME Văn Khôi /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 02 DEC 1923
+1 FAMC @F109@
+1 FAMS @F116@
+0 @I359@ INDI
+1 NAME Thị Toàn /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 04 SEP 1922
+1 FAMC @F109@
+1 FAMS @F117@
+0 @I360@ INDI
+1 NAME Thị Sâm /Đỗ/
+1 SEX F
+1 BIRT
+2 DATE 27 JAN 1925
+1 FAMS @F116@
+0 @I361@ INDI
+1 NAME Kỳ Sơn /Phạm/
+1 SEX M
+1 FAMC @F116@
+0 @I362@ INDI
+1 NAME Hữu Lâm /Phạm/
+1 SEX M
+1 FAMC @F116@
+0 @I363@ INDI
+1 NAME Ngọc Anh /Phạm/
+1 SEX F
+1 FAMC @F116@
+0 @I364@ INDI
+1 NAME Kim Oanh /Phạm/
+1 SEX F
+1 FAMC @F116@
+0 @I365@ INDI
+1 NAME Đình Nguyên /Phạm/
+1 SEX M
+1 FAMC @F116@
+0 @I366@ INDI
+1 NAME Văn Khiêm /Trịnh/
+1 SEX M
+1 OCCU Medical doctor
+1 FAMS @F117@
+0 @I367@ INDI
+1 NAME Ngọc Tú /Trịnh/
+1 SEX F
+1 FAMC @F117@
+0 @I368@ INDI
+1 NAME Trí Tín /Trịnh/
+1 SEX M
+1 FAMC @F117@
+0 @I369@ INDI
+1 NAME Thị Tới /Lục/
+1 SEX F
+1 DEAT Y
+1 FAMS @F92@
+0 @I370@ INDI
+1 NAME Thị Quỹ /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 28 OCT 1902
+1 DEAT Y
+1 FAMC @F92@
+1 FAMS @F118@
+0 @I371@ INDI
+1 NAME Thị Khuê /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 25 APR 1911
+1 DEAT Y
+1 FAMC @F92@
+1 FAMS @F119@
+0 @I372@ INDI
+1 NAME Văn Đoàn /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 23 MAR 1907
+2 NOTE Leaved at 13 Hảng Điếu
+1 DEAT Y
+1 FAMC @F92@
+1 FAMS @F120@
+1 FAMS @F121@
+1 FAMS @F122@
+0 @I373@ INDI
+1 NAME Văn Đắc /Nguyễn/
+1 SEX M
+1 DEAT Y
+1 OCCU Veterinian
+1 FAMS @F118@
+0 @I374@ INDI
+1 NAME Thị Viên /Nguyễn/
+1 SEX F
+1 FAMC @F118@
+0 @I375@ INDI
+1 NAME Thị Thìn /Nguyễn/
+1 SEX F
+1 FAMC @F118@
+0 @I376@ INDI
+1 NAME Văn Chi /Nguyễn/
+1 SEX M
+1 FAMC @F118@
+0 @I377@ INDI
+1 NAME Văn Khải /Vũ/
+1 SEX M
+1 DEAT Y
+1 FAMS @F119@
+0 @I378@ INDI
+1 NAME Thị Vỹ /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 01 JAN 1906
+1 DEAT
+2 DATE 23 DEC 2000
+1 FAMS @F120@
+0 @I379@ INDI
+1 NAME Văn Đông /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 18 JUL 1933
+2 PLAC Hà Nội, Việt Nam
+1 OCCU Teacher in Russian
+1 FAMC @F120@
+1 FAMS @F123@
+1 FAMS @F124@
+0 @I380@ INDI
+1 NAME Thị Xuân Diệp /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 15 MAR 1949
+1 FAMC @F120@
+0 @I381@ INDI
+1 NAME Thị Yến /Nguyễn/
+1 SEX F
+1 DEAT Y
+1 FAMS @F121@
+0 @I382@ INDI
+1 NAME Thị Trang /Phạm/
+1 SEX F
+1 FAMC @F121@
+0 @I383@ INDI
+1 NAME Thị Đoan /Phạm/
+1 SEX F
+1 FAMC @F121@
+0 @I384@ INDI
+1 NAME Thị Nguyên /Phạm/
+1 SEX F
+1 FAMC @F121@
+0 @I385@ INDI
+1 NAME Văn Dương /Phạm/
+1 SEX M
+1 FAMC @F121@
+0 @I386@ INDI
+1 NAME Văn Đài /Phạm/
+1 SEX M
+1 FAMC @F121@
+0 @I387@ INDI
+1 NAME Văn Thông /Phạm/
+1 SEX M
+1 FAMC @F121@
+0 @I388@ INDI
+1 NAME Thị Bình /Bạch/
+1 SEX F
+1 BIRT
+2 DATE 01 FEB 1936
+1 DEAT
+2 DATE 26 JUL 1970
+2 PLAC Hà Nội, Việt Nam
+1 FAMS @F123@
+0 @I389@ INDI
+1 NAME Thị  Thu  Hương /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 26 JUL 1970
+1 FAMC @F123@
+1 FAMS @F125@
+0 @I390@ INDI
+1 NAME Văn Dũng /Lê/
+1 SEX M
+1 BIRT
+2 DATE 1952
+1 FAMS @F125@
+0 @I391@ INDI
+1 NAME Thị Tường /Từ/
+1 SEX F
+1 BIRT
+2 DATE 1946
+1 FAMS @F124@
+0 @I392@ INDI
+1 NAME Hồng Đức /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 02 JAN 1986
+1 FAMC @F124@
+0 @I393@ INDI
+1 NAME Thị Bát /Nguyễn/
+1 SEX F
+1 DEAT Y
+1 FAMS @F122@
+0 @I394@ INDI
+1 NAME Thị Dung /Phạm/
+1 SEX F
+1 FAMC @F122@
+0 @I395@ INDI
+1 NAME Văn Mai /Nguyễn/
+1 SEX M
+1 DEAT Y
+1 FAMS @F88@
+0 @I396@ INDI
+1 NAME Thị Khuê /Trần/
+1 NAME Pháp danh: Diệu  Thành
+1 SEX F
+1 BIRT
+2 DATE 1878
+2 PLAC Hanoi, VietNam
+1 DEAT
+2 DATE 10 JUL 1967
+2 PLAC Saigon, VietNam
+1 FAMC @F7@
+0 @I397@ INDI
+1 NAME Thị Thảo /Nguyễn/
+1 SEX F
+1 DEAT
+2 PLAC Phong Triều, Vietnam
+1 FAMS @F89@
+0 @I398@ INDI
+1 NAME Thị Viễn /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 03 JUL 1865
+2 PLAC Hanoi, VietNam
+1 DEAT
+2 DATE 1965
+2 PLAC Phong Triều, Vietnam
+1 FAMC @F89@
+0 @I399@ INDI
+1 NAME Nhật Cửu /Phạm/
+2 GIVN Phạm Văn Thủ
+2 SURN Phạm
+1 SEX M
+1 BIRT
+2 DATE 09 MAR 1872
+2 PLAC Hanoi, VietNam
+1 DEAT
+2 DATE 19 JUN 1947
+2 PLAC Phong Triều, Vietnam
+1 OCCU Head of Hàng Điếu district
+1 FAMC @F89@
+1 FAMS @F126@
+0 @I400@ INDI
+1 NAME Thị Kiểm /Phạm/
+1 SEX F
+1 DEAT Y
+1 FAMS @F126@
+0 @I401@ INDI
+1 NAME Thị Kính /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 17 JAN 1897
+1 DEAT
+2 DATE 01 JAN 1985
+2 PLAC Phúc  Miễu, Mỹ  Hào, Hưng  Yênn, VietNam
+1 FAMC @F126@
+0 @I402@ INDI
+1 NAME Thị Hiếu /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 07 JAN 1900
+1 DEAT
+2 DATE 14 JAN 1991
+2 PLAC Phúc  Miễu, Mỹ  Hào, Hưng  Yênn, VietNam
+1 FAMC @F126@
+0 @I403@ INDI
+1 NAME Thị Ninh /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 30 SEP 1902
+1 DEAT
+2 DATE 11 FEB 1992
+2 PLAC Phúc  Miễu, Mỹ  Hào, Hưng  Yênn, VietNam
+1 FAMC @F126@
+0 @I404@ INDI
+1 NAME Thị Thọ /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 25 DEC 1904
+2 PLAC Hanoi, Vietnam
+1 DEAT
+2 PLAC Phong Triều, Vietnam
+1 FAMC @F126@
+1 FAMS @F127@
+0 @I405@ INDI
+1 NAME Văn Khuê /Nguyễn/
+1 SEX M
+1 DEAT Y
+1 FAMS @F127@
+0 @I406@ INDI
+1 NAME Kim Hồng /Nguyễn/
+1 SEX F
+1 FAMC @F127@
+0 @I407@ INDI
+1 NAME Hưng /Nguyễn/
+1 SEX M
+1 FAMC @F127@
+0 @I408@ INDI
+1 NAME Ngân /Nguyễn/
+1 SEX F
+1 FAMC @F127@
+0 @I409@ INDI
+1 NAME Đăng Khoa /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 02 JUN 1914
+2 NOTE Resided at 8 Hàng Điếu
+1 DEAT Y
+1 FAMC @F126@
+1 FAMS @F128@
+0 @I410@ INDI
+1 NAME Thị Mai /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 20 AUG 1922
+2 PLAC Hanoi, VietNam
+1 DEAT
+2 DATE 26 OCT 1983
+2 PLAC Phúc  Miễu, Mỹ  Hào, Hưng  Yênn, VietNam
+1 FAMS @F128@
+0 @I411@ INDI
+1 NAME Thị Ngọc Hậu /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 14 JAN 1946
+2 PLAC Hanoi, VietNam
+1 FAMC @F128@
+0 @I412@ INDI
+1 NAME Đức Hiền /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 08 DEC 1942
+1 FAMC @F128@
+1 FAMS @F129@
+1 FAMS @F130@
+0 @I413@ INDI
+1 NAME Thị Hoa /Lưu/
+1 SEX F
+1 BIRT
+2 DATE 19 DEC 1949
+1 FAMS @F129@
+0 @I414@ INDI
+1 NAME Bích Hạnh /Phạm/
+1 SEX F
+1 FAMC @F128@
+0 @I415@ INDI
+1 NAME Thuý Huyền /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 23 SEP 1971
+2 PLAC Hanoi, VietNam
+1 FAMC @F129@
+0 @I416@ INDI
+1 NAME Đức Hưng /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 17 JUN 1973
+2 PLAC Hanoi, VietNam
+1 FAMC @F129@
+0 @I417@ INDI
+1 NAME Đức Hiên /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 08 DEC 1976
+1 FAMC @F129@
+0 @I418@ INDI
+1 NAME Thị Mai /Nguyễn/
+1 SEX F
+1 FAMS @F130@
+0 @I419@ INDI
+1 NAME Đình Hào /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1954
+2 PLAC Hanoi, VietNam
+1 FAMC @F130@
+0 @I420@ INDI
+1 NAME Thị Hoa /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1956
+2 PLAC Hanoi, VietNam
+1 FAMC @F130@
+0 @I421@ INDI
+1 NAME Thị Dung /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1958
+2 PLAC Hanoi, VietNam
+1 FAMC @F130@
+0 @I422@ INDI
+1 NAME Thị Hương /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1960
+2 PLAC Hanoi, VietNam
+1 FAMC @F130@
+0 @I423@ INDI
+1 NAME Xuân Trạch /Nguyễn/
+1 SEX M
+1 DEAT
+2 PLAC Làng Cót, Hưng Yên
+1 FAMS @F87@
+0 @I424@ INDI
+1 NAME Thị Điều /Nguyễn/
+1 SEX F
+1 DEAT
+2 DATE 13 NOV 1950
+2 PLAC Quỳnh Mai, Hanoi
+1 FAMC @F87@
+1 FAMS @F131@
+0 @I425@ INDI
+1 NAME Trọng Bảo /Nguyễn/
+1 SEX M
+1 DEAT
+2 DATE 08 OCT 1908
+2 PLAC Láng Thượng Sinh, Vietanam
+1 FAMS @F131@
+0 @I426@ INDI
+1 NAME Thị Thiều /Nguyễn/
+1 SEX F
+1 BIRT
+2 PLAC Quỳnh Lôi
+2 SOUR Death at age of 16
+1 FAMC @F131@
+0 @I427@ INDI
+1 NAME Trọng Tăng /Nguyễn/
+1 SEX M
+1 BIRT
+2 DATE 19 AUG 1892
+1 DEAT Y
+1 FAMC @F131@
+1 FAMS @F132@
+1 FAMS @F133@
+1 FAMS @F134@
+1 FAMS @F135@
+0 @I428@ INDI
+1 NAME Thị Nhườn /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1895
+2 PLAC Hanoi, Vietnam
+1 DEAT
+2 DATE 10 FEB 1917
+2 PLAC Hanoi, VietNam
+1 FAMS @F132@
+0 @I429@ INDI
+1 NAME Thị Vượng /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1895
+1 DEAT Y
+1 FAMS @F133@
+0 @I430@ INDI
+1 NAME Thị Thang /Vũ/
+1 SEX F
+1 BIRT
+2 DATE 1908
+1 DEAT Y
+1 FAMS @F134@
+0 @I431@ INDI
+1 NAME Thị Khoa /Lê/
+1 SEX F
+1 BIRT
+2 DATE 14 JUN 1914
+2 PLAC Hanoi, VietNam
+1 DEAT Y
+1 FAMS @F135@
+0 @I432@ INDI
+1 NAME Xuân Tảo /Nguyễn/
+1 SEX M
+1 BIRT
+2 PLAC Hanoi, VietNam
+1 DEAT
+2 SOUR Làng Hướng Dương, Vietnam
+1 FAMC @F132@
+1 FAMS @F136@
+1 FAMS @F137@
+1 FAMS @F138@
+1 FAMS @F139@
+0 @I433@ INDI
+1 NAME Thị Lan /Nguyễn/
+1 SEX F
+1 DEAT
+2 PLAC Tứ Kỳ, Hải Dương
+1 FAMS @F136@
+0 @I434@ INDI
+1 NAME Thị Đằng /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1889
+2 PLAC Hanoi, VietNam
+1 DEAT Y
+1 FAMC @F136@
+1 FAMS @F140@
+0 @I435@ INDI
+1 NAME Xuân Phồn /Nguyễn/
+1 SEX M
+1 FAMC @F136@
+1 FAMS @F141@
+0 @I436@ INDI
+1 NAME Xuân Phiên /Nguyễn/
+1 SEX M
+1 FAMC @F136@
+1 FAMS @F142@
+0 @I437@ INDI
+1 NAME Xuân Quán /Nguyễn/
+1 SEX M
+1 FAMC @F136@
+1 FAMS @F143@
+0 @I438@ INDI
+1 NAME Xuân Uẩn /Nguyễn/
+1 SEX M
+1 FAMC @F136@
+1 FAMS @F144@
+0 @I439@ INDI
+1 NAME Xuân Lục /Dương/
+1 SEX M
+1 DEAT
+2 DATE 1934
+2 PLAC Hanoi, VietNam
+1 FAMS @F140@
+0 @I440@ INDI
+1 NAME Thị Tâm /Nguyễn/
+1 SEX F
+1 FAMS @F141@
+0 @I441@ INDI
+1 NAME Thị Tý /Nguyễn/
+1 SEX F
+1 FAMS @F142@
+0 @I442@ INDI
+1 NAME Thị Thao /Nguyễn/
+1 SEX F
+1 FAMS @F143@
+0 @I443@ INDI
+1 NAME Thị Nhan /Vũ/
+1 SEX F
+1 FAMS @F144@
+0 @I444@ INDI
+1 NAME Thị Sách /Chu/
+1 SEX F
+1 DEAT Y
+1 FAMS @F137@
+0 @I445@ INDI
+1 NAME Thị Diễm /Nguyễn/
+1 SEX F
+1 FAMC @F137@
+1 FAMS @F145@
+0 @I446@ INDI
+1 NAME Đức Quang /Lai/
+1 SEX M
+1 FAMS @F145@
+0 @I447@ INDI
+1 NAME Thị Quý /Quách/
+1 SEX F
+1 DEAT Y
+1 FAMS @F138@
+0 @I448@ INDI
+1 NAME Xuân Du /Nguyễn/
+1 SEX M
+1 DEAT
+2 SOUR Death at age of 16
+1 FAMC @F138@
+0 @I449@ INDI
+1 NAME Thị Vy /Nguyễn/
+1 SEX F
+1 FAMC @F138@
+1 FAMS @F146@
+0 @I450@ INDI
+1 NAME Văn Phan /Nguyễn/
+1 SEX M
+1 FAMS @F146@
+0 @I451@ INDI
+1 NAME Thị Nhiễu /Nguyễn/
+1 SEX F
+1 DEAT
+2 PLAC Vĩnh Bảo, Vietnam
+1 FAMS @F139@
+0 @I452@ INDI
+1 NAME Thị Khê /Nguyễn/
+1 SEX F
+1 FAMC @F139@
+0 @I453@ INDI
+1 NAME Thị Khuê /Nguyễn/
+1 SEX F
+1 FAMC @F139@
+0 @I454@ INDI
+1 NAME Xuân Phái /Nguyễn/
+1 SEX M
+1 FAMC @F133@
+1 FAMS @F147@
+1 FAMS @F148@
+1 FAMS @F149@
+0 @I455@ INDI
+1 NAME Thị Hoà /Lê/
+1 SEX F
+1 FAMS @F147@
+0 @I456@ INDI
+1 NAME Thị Nhàn /Trần/
+1 SEX F
+1 FAMS @F148@
+0 @I457@ INDI
+1 NAME Thị Nguỵệt /Trà/
+1 SEX F
+1 FAMS @F149@
+0 @I458@ INDI
+1 NAME Xuân Chiêm /Nguyễn/
+1 SEX M
+1 FAMC @F133@
+1 FAMS @F150@
+0 @I459@ INDI
+1 NAME Thị Tý /Nguyễn/
+1 SEX F
+1 FAMS @F150@
+0 @I460@ INDI
+1 NAME Xuân Dũng /Nguyễn/
+1 SEX M
+1 FAMC @F150@
+0 @I461@ INDI
+1 NAME Thị Đông /Nguyễn/
+1 SEX F
+1 FAMC @F150@
+0 @I462@ INDI
+1 NAME Thị An /Nguyễn/
+1 SEX F
+1 FAMC @F150@
+0 @I463@ INDI
+1 NAME Thị Nội /Nguyễn/
+1 SEX F
+1 FAMC @F150@
+0 @I464@ INDI
+1 NAME Thị Hường /Nguyễn/
+1 SEX F
+1 FAMC @F150@
+0 @I465@ INDI
+1 NAME Thị Phương /Nguyễn/
+1 SEX F
+1 FAMC @F150@
+0 @I466@ INDI
+1 NAME Xuân Nguyên /Nguyễn/
+1 SEX M
+1 DEAT
+2 DATE 07 JUN 1947
+2 PLAC Xã Ái Quốc, Vietnam
+1 FAMC @F133@
+1 FAMS @F151@
+0 @I467@ INDI
+1 NAME Thị Nhiễu /Vũ/
+1 SEX F
+1 DEAT
+2 DATE 06 MAR 1950
+1 FAMS @F151@
+0 @I468@ INDI
+1 NAME Xuân Hải /Nguyễn/
+1 SEX M
+1 FAMC @F151@
+1 FAMS @F152@
+0 @I469@ INDI
+1 NAME Xuân Giang /Nguyễn/
+1 SEX M
+1 FAMC @F151@
+1 FAMS @F153@
+0 @I470@ INDI
+1 NAME Xuân Toản /Nguyễn/
+1 SEX M
+1 FAMC @F151@
+1 FAMS @F154@
+0 @I471@ INDI
+1 NAME Xuân Thiệp /Nguyễn/
+1 SEX M
+1 FAMC @F151@
+1 FAMS @F155@
+0 @I472@ INDI
+1 NAME Thị Thoa /Nguyễn/
+1 SEX F
+1 FAMC @F151@
+1 FAMS @F156@
+0 @I473@ INDI
+1 NAME Xuân Uyên /Nguyễn/
+1 SEX M
+1 FAMC @F151@
+0 @I474@ INDI
+1 NAME Thị Nghiêm /Lê/
+1 SEX F
+1 FAMS @F152@
+0 @I475@ INDI
+1 NAME Thị Tý /Đoàn/
+1 SEX F
+1 FAMS @F153@
+0 @I476@ INDI
+1 NAME Thị Thục /Thầm/
+1 SEX F
+1 FAMS @F154@
+0 @I477@ INDI
+1 NAME Thị Hợi /Đoàn/
+1 SEX F
+1 FAMS @F155@
+0 @I478@ INDI
+1 NAME Soan /Nguyễn/
+1 SEX M
+1 FAMS @F156@
+0 @I479@ INDI
+1 NAME Ngọc Dường /Phạm/
+1 SEX M
+1 FAMC @F157@
+1 FAMS @F86@
+0 @I480@ INDI
+1 NAME Thị Tâm /Lê/
+1 SEX M
+1 FAMS @F86@
+0 @I481@ INDI
+1 NAME Nhật Quý /Phạm/
+1 SEX M
+1 FAMC @F86@
+1 FAMS @F158@
+0 @I482@ INDI
+1 NAME Thị Lan /Phạm/
+1 SEX F
+1 FAMS @F158@
+0 @I483@ INDI
+1 NAME Thị Minh /Phạm/
+1 SEX F
+1 FAMC @F158@
+1 FAMS @F159@
+0 @I484@ INDI
+1 NAME Văn Tình /Nguyễn/
+1 SEX M
+1 FAMS @F159@
+0 @I485@ INDI
+1 NAME Thị Ân /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1887
+1 DEAT Y
+1 FAMC @F159@
+1 FAMS @F160@
+0 @I486@ INDI
+1 NAME Thị Ái /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1896
+1 DEAT Y
+1 FAMC @F159@
+1 FAMS @F161@
+0 @I487@ INDI
+1 NAME Tiến Đức /Nguyễn/
+1 SEX M
+1 BIRT
+2 DATE 1898
+1 DEAT Y
+1 FAMC @F159@
+1 FAMS @F162@
+0 @I488@ INDI
+1 NAME Phong Tô /Nguyễn/
+1 SEX M
+1 DEAT Y
+1 FAMS @F160@
+0 @I489@ INDI
+1 NAME Thị Nga /Nguyễn/
+1 SEX F
+1 FAMC @F160@
+0 @I490@ INDI
+1 NAME Thị Trình /Nguyễn/
+1 SEX F
+1 FAMC @F160@
+0 @I491@ INDI
+1 NAME Thị Diện /Nguyễn/
+1 SEX F
+1 FAMC @F160@
+0 @I492@ INDI
+1 NAME Thị Mão /Nguyễn/
+1 SEX F
+1 FAMC @F160@
+0 @I493@ INDI
+1 NAME Bằng /Nguyễn/
+1 SEX M
+1 DEAT Y
+1 OCCU Veterinaire
+1 FAMS @F161@
+0 @I494@ INDI
+1 NAME Thị Dương /Đặng/
+1 SEX F
+1 BIRT
+2 DATE 1898
+1 DEAT Y
+1 FAMS @F162@
+0 @I495@ INDI
+1 NAME Thị Tiến /Nguyễn/
+1 SEX F
+1 FAMC @F162@
+0 @I496@ INDI
+1 NAME Thị Nhuận /Nguyễn/
+1 SEX F
+1 FAMC @F162@
+0 @I497@ INDI
+1 NAME Thị Loan /Nguyễn/
+1 SEX F
+1 FAMC @F162@
+0 @I498@ INDI
+1 NAME Văn Mẫn /Nguyễn/
+1 SEX M
+1 BIRT
+2 DATE 1904
+2 SOUR Son with the second husband
+1 FAMC @F159@
+1 FAMS @F163@
+0 @I499@ INDI
+1 NAME Thị Kê /Nguyễn/
+1 SEX F
+1 FAMS @F163@
+0 @I500@ INDI
+1 NAME Nhật Vy /Phạm/
+1 SEX M
+1 FAMC @F86@
+1 FAMS @F164@
+0 @I501@ INDI
+1 NAME Thị Chiêu /Nguyễn/
+1 SEX F
+1 FAMS @F164@
+0 @I502@ INDI
+1 NAME Nhật Vỹ /Phạm/
+1 SEX M
+1 FAMC @F164@
+1 FAMS @F165@
+0 @I503@ INDI
+1 NAME Thị Cách /Dương/
+1 SEX F
+1 FAMS @F165@
+0 @I504@ INDI
+1 NAME Thị Nữ /Phạm/
+1 SEX F
+1 FAMC @F165@
+1 FAMS @F166@
+0 @I505@ INDI
+1 NAME Thị Với /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1883
+1 DEAT Y
+1 FAMC @F165@
+1 FAMS @F167@
+0 @I506@ INDI
+1 NAME Thị Vuốt /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1884
+1 DEAT Y
+1 FAMC @F165@
+1 FAMS @F168@
+0 @I507@ INDI
+1 NAME Đình Tích /Vũ/
+1 SEX M
+1 FAMS @F166@
+0 @I508@ INDI
+1 NAME Đình Tịch /Vũ/
+1 SEX M
+1 FAMC @F166@
+0 @I509@ INDI
+1 NAME Đình Tạc /Vũ/
+1 SEX M
+1 FAMC @F166@
+0 @I510@ INDI
+1 NAME Thị Thiệp /Vũ/
+1 SEX F
+1 FAMC @F166@
+0 @I511@ INDI
+1 NAME Thị Sự /Vũ/
+1 SEX F
+1 FAMC @F166@
+0 @I512@ INDI
+1 NAME Đình Thông /Lê/
+1 SEX M
+1 DEAT Y
+1 FAMS @F167@
+1 FAMS @F169@
+0 @I513@ INDI
+1 NAME Đình Lũng /Lê/
+1 SEX M
+1 FAMC @F167@
+1 FAMS @F170@
+0 @I514@ INDI
+1 NAME Đình Giảng /Lê/
+1 SEX M
+1 FAMC @F167@
+1 FAMS @F171@
+1 FAMS @F172@
+0 @I515@ INDI
+1 NAME Thị Dúm /Nguỵễn/
+1 SEX F
+1 FAMS @F170@
+0 @I516@ INDI
+1 NAME Đình Ngung /Lê/
+1 SEX M
+1 FAMC @F170@
+0 @I517@ INDI
+1 NAME Đình Vinh /Lê/
+1 SEX M
+1 FAMC @F170@
+0 @I518@ INDI
+1 NAME Thị Sòi /Lê/
+1 SEX F
+1 FAMC @F170@
+0 @I519@ INDI
+1 NAME Thị Nghinh /Lê/
+1 SEX F
+1 FAMC @F170@
+0 @I520@ INDI
+1 NAME Thị Dưỡng /Nguyễn/
+1 SEX F
+1 FAMS @F171@
+0 @I521@ INDI
+1 NAME Đình Cây /Lê/
+1 SEX M
+1 FAMC @F171@
+0 @I522@ INDI
+1 NAME Đình Giang /Lê/
+1 SEX M
+1 FAMC @F171@
+0 @I523@ INDI
+1 NAME Thị Hà /Lê/
+1 SEX F
+1 FAMC @F171@
+0 @I524@ INDI
+1 NAME Thị Thêm /Nguyễn/
+1 SEX F
+1 FAMS @F172@
+0 @I525@ INDI
+1 NAME Đình Kếu /Lê/
+1 SEX M
+1 FAMC @F172@
+0 @I526@ INDI
+1 NAME Đình Thiệu /Vũ/
+1 SEX M
+1 DEAT Y
+1 FAMS @F168@
+0 @I527@ INDI
+1 NAME Đình Kính /Vũ/
+1 SEX M
+1 FAMC @F168@
+1 FAMS @F173@
+0 @I528@ INDI
+1 NAME Đình Côn /Vũ/
+1 SEX M
+1 BIRT
+2 DATE 1911
+1 FAMC @F168@
+1 FAMS @F174@
+0 @I529@ INDI
+1 NAME Đình Bật /Vũ/
+1 SEX M
+1 BIRT
+2 DATE 1918
+1 FAMC @F168@
+1 FAMS @F175@
+1 FAMS @F176@
+0 @I530@ INDI
+1 NAME Thị Liễu /Nguyễn/
+1 SEX F
+1 FAMS @F173@
+0 @I531@ INDI
+1 NAME Đình Vận /Vũ/
+1 SEX M
+1 FAMC @F173@
+0 @I532@ INDI
+1 NAME Thị Cổn /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1916
+1 FAMS @F174@
+0 @I533@ INDI
+1 NAME Thị Uõn /Vũ/
+1 SEX F
+1 FAMC @F174@
+0 @I534@ INDI
+1 NAME Đình Tôn /Vũ/
+1 SEX M
+1 FAMC @F174@
+0 @I535@ INDI
+1 NAME Thị Tốn /Vũ/
+1 SEX F
+1 FAMC @F174@
+0 @I536@ INDI
+1 NAME Thị Minh /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1924
+1 FAMS @F175@
+0 @I537@ INDI
+1 NAME Đình Tất /Vũ/
+1 SEX M
+1 FAMC @F175@
+0 @I538@ INDI
+1 NAME Thị Ốc /Vũ/
+1 SEX F
+1 FAMC @F175@
+0 @I539@ INDI
+1 NAME Thị Nịu /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1928
+1 FAMS @F176@
+0 @I540@ INDI
+1 NAME Thị Dịu /Vũ/
+1 SEX F
+1 FAMC @F176@
+0 @I541@ INDI
+1 NAME Đình Dung /Vũ/
+1 SEX M
+1 FAMC @F176@
+0 @I542@ INDI
+1 NAME Thị Hơn /Vũ/
+1 SEX F
+1 FAMC @F176@
+0 @I543@ INDI
+1 NAME Thị Hờn /Vũ/
+1 SEX F
+1 FAMC @F176@
+0 @I544@ INDI
+1 NAME Nhật Cát /Phạm/
+1 SEX M
+1 FAMC @F86@
+1 FAMS @F177@
+0 @I545@ INDI
+1 NAME Thị Cam /Phạm/
+1 SEX F
+1 FAMS @F177@
+0 @I546@ INDI
+1 NAME Thị Phượng /Phạm/
+1 SEX F
+1 FAMC @F177@
+1 FAMS @F178@
+0 @I547@ INDI
+1 NAME Nhật Lễ /Phạm/
+1 SEX M
+1 FAMC @F177@
+1 FAMS @F179@
+1 FAMS @F180@
+0 @I548@ INDI
+1 NAME Văn Ngung /Vũ/
+1 SEX M
+1 FAMS @F178@
+0 @I549@ INDI
+1 NAME Linh Công /Vũ/
+1 SEX M
+1 FAMC @F178@
+1 FAMS @F181@
+0 @I550@ INDI
+1 NAME Văn Ngang /Vũ/
+1 SEX M
+1 FAMC @F178@
+1 FAMS @F182@
+0 @I551@ INDI
+1 NAME Thị Chích /Vũ/
+1 SEX F
+1 FAMS @F181@
+0 @I552@ INDI
+1 NAME Văn Tống /Vũ/
+1 SEX M
+1 FAMC @F181@
+1 FAMS @F183@
+0 @I553@ INDI
+1 NAME Văn Cung /Vũ/
+1 SEX M
+1 BIRT
+2 DATE 1909
+1 FAMC @F181@
+1 FAMS @F184@
+1 FAMS @F185@
+0 @I554@ INDI
+1 NAME Thị Chước /Bùi/
+1 SEX F
+1 BIRT
+2 DATE 1899
+1 FAMS @F183@
+0 @I555@ INDI
+1 NAME Đức Minh /Vũ/
+1 SEX M
+1 FAMC @F183@
+0 @I556@ INDI
+1 NAME Thị Dịu /Nguyễn/
+1 SEX F
+1 FAMS @F184@
+0 @I557@ INDI
+1 NAME Văn Hân /Vũ/
+1 SEX M
+1 DEAT Y
+1 FAMC @F184@
+0 @I558@ INDI
+1 NAME Văn Hoan /Vũ/
+1 SEX M
+1 FAMC @F184@
+0 @I559@ INDI
+1 NAME Thị Đỗ /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1914
+1 FAMS @F185@
+0 @I560@ INDI
+1 NAME Thị Hà /Vũ/
+1 SEX F
+1 FAMC @F185@
+0 @I561@ INDI
+1 NAME Thị Sang /Vũ/
+1 SEX F
+1 FAMC @F181@
+1 FAMS @F186@
+0 @I562@ INDI
+1 NAME Ngọc Quang /Bùi/
+1 SEX M
+1 FAMS @F186@
+0 @I563@ INDI
+1 NAME Thị Hồi /Bùi/
+1 SEX F
+1 FAMC @F186@
+0 @I564@ INDI
+1 NAME Thị Am /Bùi/
+1 SEX F
+1 FAMC @F186@
+0 @I565@ INDI
+1 NAME Thị Nái /Bùi/
+1 SEX F
+1 FAMC @F186@
+0 @I566@ INDI
+1 NAME Thị Sế /Vũ/
+1 SEX F
+1 FAMC @F181@
+1 FAMS @F187@
+0 @I567@ INDI
+1 NAME Văn Dáng /Bùi/
+1 SEX M
+1 FAMS @F187@
+0 @I568@ INDI
+1 NAME Văn Đính /Bùi/
+1 SEX M
+1 FAMC @F187@
+0 @I569@ INDI
+1 NAME Thị Sao /Bùi/
+1 SEX F
+1 FAMC @F187@
+0 @I570@ INDI
+1 NAME Thị Gái /Bùi/
+1 SEX F
+1 FAMS @F182@
+0 @I571@ INDI
+1 NAME Văn Tính /Vũ/
+1 SEX M
+1 BIRT
+2 DATE 1904
+1 FAMC @F182@
+1 FAMS @F188@
+1 FAMS @F189@
+0 @I572@ INDI
+1 NAME Văn Tình /Vũ/
+1 SEX M
+1 BIRT
+2 DATE 1906
+1 FAMC @F182@
+1 FAMS @F190@
+0 @I573@ INDI
+1 NAME Văn Trình /Vũ/
+1 SEX M
+1 BIRT
+2 DATE 1911
+1 FAMC @F182@
+1 FAMS @F191@
+0 @I574@ INDI
+1 NAME Văn Bình /Vũ/
+1 SEX M
+1 BIRT
+2 DATE 1918
+1 FAMC @F182@
+1 FAMS @F192@
+0 @I575@ INDI
+1 NAME Thị Sang /Vũ/
+1 SEX F
+1 BIRT
+2 DATE 1914
+1 FAMC @F182@
+1 FAMS @F193@
+0 @I576@ INDI
+1 NAME Thị Sấm /Vũ/
+1 SEX F
+1 FAMC @F182@
+1 FAMS @F194@
+0 @I577@ INDI
+1 NAME Thị Quyền /Vũ/
+1 SEX F
+1 BIRT
+2 DATE 1901
+1 FAMS @F188@
+0 @I578@ INDI
+1 NAME Thị Ngãi /Đào/
+1 SEX F
+1 BIRT
+2 DATE 1918
+1 FAMS @F189@
+0 @I579@ INDI
+1 NAME Thị Nhâm /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1906
+1 FAMS @F190@
+0 @I580@ INDI
+1 NAME Thị Nhân /Vũ/
+1 SEX F
+1 BIRT
+2 DATE 1913
+1 FAMS @F191@
+0 @I581@ INDI
+1 NAME Thị Tiêu /Đào/
+1 SEX F
+1 BIRT
+2 DATE 1917
+1 FAMS @F192@
+0 @I582@ INDI
+1 NAME Đình Sự /Đào/
+1 SEX M
+1 FAMS @F193@
+0 @I583@ INDI
+1 NAME Văn Đạt /Bùi/
+1 SEX M
+1 FAMS @F194@
+0 @I584@ INDI
+1 NAME Thị Thược /Nguyển/
+1 SEX F
+1 FAMS @F179@
+0 @I585@ INDI
+1 NAME Thị Ích /Lê/
+1 SEX F
+1 FAMS @F180@
+0 @I586@ INDI
+1 NAME Thị Sửu /Phạm/
+1 SEX F
+1 FAMC @F180@
+1 FAMS @F169@
+0 @I587@ INDI
+1 NAME Thị Dần /Phạm/
+1 SEX F
+1 FAMC @F180@
+1 FAMS @F195@
+0 @I588@ INDI
+1 NAME Nhật An /Phạm/
+1 SEX M
+1 FAMC @F180@
+1 FAMS @F196@
+1 FAMS @F197@
+0 @I589@ INDI
+1 NAME Nhật Xuất /Phạm/
+1 SEX M
+1 FAMC @F180@
+1 FAMS @F198@
+0 @I590@ INDI
+1 NAME Nhật Thuỵ /Phạm/
+1 SEX M
+1 FAMC @F180@
+1 FAMS @F199@
+0 @I591@ INDI
+1 NAME Nhật Tảnh /Phạm/
+1 SEX M
+1 FAMC @F180@
+1 FAMS @F200@
+0 @I592@ INDI
+1 NAME Thị Dũng /Lê/
+1 SEX F
+1 FAMC @F169@
+1 FAMS @F201@
+0 @I593@ INDI
+1 NAME Văn Ô /Vũ/
+1 SEX M
+1 FAMS @F201@
+0 @I594@ INDI
+1 NAME Văn Uy /Vũ/
+1 SEX M
+1 FAMC @F201@
+0 @I595@ INDI
+1 NAME Văn My /Vũ/
+1 SEX M
+1 FAMC @F201@
+0 @I596@ INDI
+1 NAME Văn Miếu /Vũ/
+1 SEX M
+1 FAMC @F201@
+0 @I597@ INDI
+1 NAME Thị Miều /Vũ/
+1 SEX F
+1 FAMC @F201@
+0 @I598@ INDI
+1 NAME Đình Mang /Nguyễn/
+1 SEX M
+1 FAMS @F195@
+0 @I599@ INDI
+1 NAME Thị Tâm /Phạm/
+1 SEX F
+1 FAMS @F196@
+0 @I600@ INDI
+1 NAME Thị Tỳ /Phạm/
+1 SEX F
+1 FAMC @F196@
+1 FAMS @F202@
+0 @I601@ INDI
+1 NAME Đình Giáp /Nguyễn/
+1 SEX M
+1 FAMS @F202@
+0 @I602@ INDI
+1 NAME Đình Ất /Nguyễn/
+1 SEX M
+1 BIRT
+2 DATE 1921
+1 FAMC @F202@
+1 FAMS @F203@
+0 @I603@ INDI
+1 NAME Đình Đính /Nguyễn/
+1 SEX M
+1 FAMC @F202@
+1 FAMS @F204@
+0 @I604@ INDI
+1 NAME Đình Út /Nguyễn/
+1 SEX M
+1 FAMC @F202@
+1 FAMS @F205@
+0 @I605@ INDI
+1 NAME Thị Tĩnh /Lê/
+1 SEX F
+1 FAMS @F203@
+0 @I606@ INDI
+1 NAME Đình Trị /Nguyễn/
+1 SEX M
+1 FAMC @F203@
+1 FAMS @F206@
+0 @I607@ INDI
+1 NAME Đình Dã /Nguyễn/
+1 SEX M
+1 FAMC @F203@
+1 FAMS @F207@
+0 @I608@ INDI
+1 NAME Đình Dở /Nguyễn/
+1 SEX M
+1 FAMC @F203@
+0 @I609@ INDI
+1 NAME Thị Thái /Nguyễn/
+1 SEX F
+1 FAMC @F203@
+0 @I610@ INDI
+1 NAME Thị Đái /Nguyễn/
+1 SEX F
+1 FAMC @F203@
+0 @I611@ INDI
+1 NAME Thị Hợi /Vũ/
+1 SEX F
+1 BIRT
+2 DATE 1940
+1 FAMS @F206@
+0 @I612@ INDI
+1 NAME Thị Nẻo /Nguyễn/
+1 SEX F
+1 FAMS @F207@
+0 @I613@ INDI
+1 NAME Thị Hài /Lê/
+1 SEX F
+1 FAMC @F208@
+1 FAMS @F204@
+0 @I614@ INDI
+1 NAME Thị San /Nguyễn/
+1 SEX F
+1 FAMC @F204@
+0 @I615@ INDI
+1 NAME Đình Xuân /Nguyễn/
+1 SEX M
+1 FAMC @F204@
+0 @I616@ INDI
+1 NAME Đình Thi /Nguyễn/
+1 SEX M
+1 FAMC @F204@
+0 @I617@ INDI
+1 NAME Thị Thủ /Nguyễn/
+1 SEX F
+1 FAMC @F204@
+0 @I618@ INDI
+1 NAME Thị Môn /Vũ/
+1 SEX F
+1 FAMS @F205@
+0 @I619@ INDI
+1 NAME Thị Cô /Lê/
+1 SEX F
+1 FAMS @F197@
+0 @I620@ INDI
+1 NAME Thị Phế /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1902
+1 FAMC @F197@
+1 FAMS @F209@
+0 @I621@ INDI
+1 NAME Thị Đảm /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1904
+1 FAMC @F197@
+1 FAMS @F210@
+0 @I622@ INDI
+1 NAME Nhật Can /Phạm/
+1 SEX M
+1 FAMC @F197@
+1 FAMS @F211@
+0 @I623@ INDI
+1 NAME Nhật Thân /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1898
+1 DEAT Y
+1 FAMC @F197@
+1 FAMS @F212@
+0 @I624@ INDI
+1 NAME Đình Trực /Vũ/
+1 SEX M
+1 FAMS @F209@
+0 @I625@ INDI
+1 NAME Thị Khúc /Vũ/
+1 SEX F
+1 BIRT
+2 DATE 1922
+1 FAMC @F209@
+1 FAMS @F213@
+0 @I626@ INDI
+1 NAME Thị Nừng /Vũ/
+1 SEX F
+1 BIRT
+2 DATE 1927
+1 FAMC @F209@
+1 FAMS @F214@
+0 @I627@ INDI
+1 NAME Thị Tý /Vũ/
+1 SEX F
+1 BIRT
+2 DATE 1936
+1 FAMC @F209@
+1 FAMS @F215@
+0 @I628@ INDI
+1 NAME Đình Bàn /Vũ/
+1 SEX M
+1 BIRT
+2 DATE 1940
+1 FAMC @F209@
+1 FAMS @F216@
+0 @I629@ INDI
+1 NAME Đình Quyền /Đào/
+1 SEX M
+1 FAMS @F213@
+0 @I630@ INDI
+1 NAME Thị Định /Đào/
+1 SEX F
+1 FAMC @F213@
+0 @I631@ INDI
+1 NAME Đình Hạnh /Đào/
+1 SEX M
+1 FAMC @F213@
+0 @I632@ INDI
+1 NAME THị Vinh /Đào/
+1 SEX F
+1 FAMC @F213@
+0 @I633@ INDI
+1 NAME Thị Dân /Đào/
+1 SEX F
+1 FAMC @F213@
+0 @I634@ INDI
+1 NAME Văn Biểu /Đỗ/
+1 SEX M
+1 BIRT
+2 DATE 1922
+1 FAMS @F214@
+0 @I635@ INDI
+1 NAME Văn Vũ /Đỗ/
+1 SEX M
+1 FAMC @F214@
+0 @I636@ INDI
+1 NAME Thịb Mùi /Đỗ/
+1 SEX F
+1 FAMC @F214@
+0 @I637@ INDI
+1 NAME Văn Thơm /Đỗ/
+1 SEX M
+1 FAMC @F214@
+0 @I638@ INDI
+1 NAME Thị Ngát /Đỗ/
+1 SEX F
+1 FAMC @F214@
+0 @I639@ INDI
+1 NAME Văn Tư /Nguyễn/
+1 SEX M
+1 BIRT
+2 DATE 1934
+1 FAMS @F215@
+0 @I640@ INDI
+1 NAME Thị Thơi /Nguyễn/
+1 SEX F
+1 FAMC @F215@
+0 @I641@ INDI
+1 NAME Văn Thơ /Nguyễn/
+1 SEX M
+1 FAMC @F215@
+0 @I642@ INDI
+1 NAME Thị Dàn /Vũ/
+1 SEX F
+1 BIRT
+2 DATE 1938
+1 FAMS @F216@
+0 @I643@ INDI
+1 NAME Thị Biên /Vũ/
+1 SEX F
+1 FAMC @F216@
+0 @I644@ INDI
+1 NAME Văn Hoà /Vũ/
+1 SEX M
+1 FAMC @F216@
+0 @I645@ INDI
+1 NAME Đình Tu /Nguyễn/
+1 SEX M
+1 FAMS @F210@
+0 @I646@ INDI
+1 NAME Thị Lớn /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1937
+1 FAMC @F210@
+1 FAMS @F217@
+0 @I647@ INDI
+1 NAME Thị Nhỡn /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 01 OCT 1939
+1 FAMC @F210@
+1 FAMS @F218@
+0 @I648@ INDI
+1 NAME Đình Tác /Nguyễn/
+1 SEX M
+1 BIRT
+2 DATE 1924
+1 FAMC @F210@
+1 FAMS @F219@
+0 @I649@ INDI
+1 NAME Đình Ngang /Nguyễn/
+1 SEX M
+1 BIRT
+2 DATE 1928
+1 FAMC @F210@
+1 FAMS @F220@
+0 @I650@ INDI
+1 NAME Đình Tạc /Nguyễn/
+1 SEX M
+1 BIRT
+2 DATE 1934
+1 FAMC @F210@
+1 FAMS @F221@
+0 @I651@ INDI
+1 NAME Đình Anh /Vũ/
+1 SEX M
+1 BIRT
+2 DATE 1932
+1 FAMS @F217@
+0 @I652@ INDI
+1 NAME Đình Dũng /Vũ/
+1 SEX M
+1 FAMC @F217@
+0 @I653@ INDI
+1 NAME Thị Tính /Vũ/
+1 SEX F
+1 FAMC @F217@
+0 @I654@ INDI
+1 NAME Văn Tiến /Hoàng/
+1 SEX M
+1 BIRT
+2 DATE 1932
+1 FAMS @F218@
+0 @I655@ INDI
+1 NAME Thị Nguyễn /Hoàng/
+1 SEX F
+1 FAMC @F218@
+0 @I656@ INDI
+1 NAME Thị Nghiệp /Hoàng/
+1 SEX F
+1 FAMC @F218@
+0 @I657@ INDI
+1 NAME Thị Tín /Vũ/
+1 SEX F
+1 BIRT
+2 DATE 1931
+1 FAMS @F219@
+0 @I658@ INDI
+1 NAME Đình Thái /Nguyễn/
+1 SEX M
+1 FAMC @F219@
+0 @I659@ INDI
+1 NAME Thị Lan /Nguyễn/
+1 SEX F
+1 FAMC @F219@
+0 @I660@ INDI
+1 NAME Thị Huệ /Nguyễn/
+1 SEX F
+1 FAMC @F219@
+0 @I661@ INDI
+1 NAME Thị Quân /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1943
+1 FAMS @F220@
+0 @I662@ INDI
+1 NAME Đình Thương /Nguyễn/
+1 SEX M
+1 FAMC @F220@
+0 @I663@ INDI
+1 NAME Thị Diễn /Vũ/
+1 SEX F
+1 FAMS @F221@
+0 @I664@ INDI
+1 NAME Thị Đoan /Nguyễn/
+1 SEX F
+1 FAMC @F221@
+0 @I665@ INDI
+1 NAME Thị Ngoan /Nguyễn/
+1 SEX F
+1 FAMC @F221@
+0 @I666@ INDI
+1 NAME Thị Tiểu /Lê/
+1 SEX F
+1 BIRT
+2 DATE 1894
+1 DEAT
+2 DATE 09 MAY 1974
+2 PLAC Đồng Chùa, Vietnam
+1 FAMS @F211@
+0 @I667@ INDI
+1 NAME Nhật Quy /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1918
+1 DEAT
+2 DATE 02 JAN 1993
+2 PLAC Đông Chùa, Vietnam
+1 FAMC @F211@
+1 FAMS @F222@
+0 @I668@ INDI
+1 NAME Nhật Mô /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1922
+1 FAMC @F211@
+1 FAMS @F223@
+0 @I669@ INDI
+1 NAME Nhật Củ /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1928
+1 FAMC @F211@
+1 FAMS @F224@
+0 @I670@ INDI
+1 NAME Nhật Dụ /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1932
+1 FAMC @F211@
+1 FAMS @F225@
+1 FAMS @F226@
+0 @I671@ INDI
+1 NAME Nhật Dẫn /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1937
+1 FAMC @F211@
+1 FAMS @F227@
+0 @I672@ INDI
+1 NAME Thị Bắc /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1924
+1 FAMS @F222@
+0 @I673@ INDI
+1 NAME Thị Thuật /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 30 MAY 1948
+1 FAMC @F222@
+1 FAMS @F228@
+0 @I674@ INDI
+1 NAME Thị Dược /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1950
+1 FAMC @F222@
+1 FAMS @F229@
+0 @I675@ INDI
+1 NAME Thị Dung /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1937
+1 FAMC @F222@
+1 FAMS @F230@
+0 @I676@ INDI
+1 NAME Thị Thường /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1955
+1 FAMC @F222@
+1 FAMS @F231@
+0 @I677@ INDI
+1 NAME Nhật Dị /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1957
+1 FAMC @F222@
+1 FAMS @F232@
+0 @I678@ INDI
+1 NAME Nhật Kỳ /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1959
+1 FAMC @F222@
+1 FAMS @F233@
+0 @I679@ INDI
+1 NAME Nhật Trung /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1962
+1 FAMC @F222@
+1 FAMS @F234@
+0 @I680@ INDI
+1 NAME Nhật Bộ /Phạm/
+1 SEX M
+1 FAMC @F222@
+0 @I681@ INDI
+1 NAME Nhật Đô /Phạm/
+1 SEX M
+1 FAMC @F222@
+0 @I682@ INDI
+1 NAME Đình Lương /Đào/
+1 SEX M
+1 FAMS @F228@
+0 @I683@ INDI
+1 NAME Thị Hường /Đào/
+1 SEX F
+1 FAMC @F228@
+0 @I684@ INDI
+1 NAME Đình Phương /Đào/
+1 SEX M
+1 FAMC @F228@
+0 @I685@ INDI
+1 NAME Đình Thằng /Đào/
+1 SEX M
+1 FAMC @F228@
+0 @I686@ INDI
+1 NAME Thị Châm /Đào/
+1 SEX F
+1 FAMC @F228@
+0 @I687@ INDI
+1 NAME Đình Quỳnh /Đào/
+1 SEX M
+1 FAMC @F228@
+0 @I688@ INDI
+1 NAME Thị Quyên /Đào/
+1 SEX F
+1 FAMC @F228@
+0 @I689@ INDI
+1 NAME Duy Thế /Nguyễn/
+1 SEX M
+1 FAMS @F229@
+0 @I690@ INDI
+1 NAME Văn Dương /Nguyễn/
+1 SEX M
+1 FAMC @F229@
+0 @I691@ INDI
+1 NAME Văn Long /Nguyễn/
+1 SEX M
+1 FAMC @F229@
+0 @I692@ INDI
+1 NAME Văn Trọng /Nguyễn/
+1 SEX M
+1 FAMC @F229@
+0 @I693@ INDI
+1 NAME Thị Thuỷ /Nguyễn/
+1 SEX F
+1 FAMC @F229@
+0 @I694@ INDI
+1 NAME Văn Văn /Nguyễn/
+1 SEX M
+1 FAMC @F229@
+0 @I695@ INDI
+1 NAME Đình Hoàn /Vũ/
+1 SEX M
+1 FAMS @F230@
+0 @I696@ INDI
+1 NAME Thị Lan /Vũ/
+1 SEX F
+1 FAMC @F230@
+0 @I697@ INDI
+1 NAME Đình Phong /Vũ/
+1 SEX M
+1 FAMC @F230@
+0 @I698@ INDI
+1 NAME Đình Minh /Vũ/
+1 SEX M
+1 FAMC @F230@
+0 @I699@ INDI
+1 NAME Đình Tuân /Vũ/
+1 SEX M
+1 FAMS @F231@
+0 @I700@ INDI
+1 NAME Đình Sơn /Vũ/
+1 SEX M
+1 FAMC @F231@
+0 @I701@ INDI
+1 NAME Đình Hải /Vũ/
+1 SEX M
+1 FAMC @F231@
+0 @I702@ INDI
+1 NAME Thị Thu /Nguyễn/
+1 SEX F
+1 FAMS @F232@
+0 @I703@ INDI
+1 NAME Thị Nguyệt /Phạm/
+1 SEX F
+1 FAMC @F232@
+0 @I704@ INDI
+1 NAME Nhật Chương /Phạm/
+1 SEX M
+1 FAMC @F232@
+0 @I705@ INDI
+1 NAME Nhật Phú /Phạm/
+1 SEX M
+1 FAMC @F232@
+0 @I706@ INDI
+1 NAME Thị Thơm /Đào/
+1 SEX F
+1 FAMS @F233@
+0 @I707@ INDI
+1 NAME Thị Thoa /Phạm/
+1 SEX F
+1 FAMC @F233@
+0 @I708@ INDI
+1 NAME Nhật Lợi /Phạm/
+1 SEX M
+1 FAMC @F233@
+0 @I709@ INDI
+1 NAME Nhật Lộc /Phạm/
+1 SEX M
+1 FAMC @F233@
+0 @I710@ INDI
+1 NAME Thị Hồng /Vũ/
+1 SEX F
+1 FAMS @F234@
+0 @I711@ INDI
+1 NAME Nhật Hiếu /Phạm/
+1 SEX M
+1 FAMC @F234@
+0 @I712@ INDI
+1 NAME Nhật Thảo /Phạm/
+1 SEX M
+1 FAMC @F234@
+0 @I713@ INDI
+1 NAME Thị Bùi /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1921
+1 FAMS @F223@
+0 @I714@ INDI
+1 NAME Thị Vỹ /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1954
+1 FAMC @F223@
+0 @I715@ INDI
+1 NAME Thị Thử /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1957
+1 FAMC @F223@
+0 @I716@ INDI
+1 NAME Thị Trách /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1960
+1 FAMC @F223@
+0 @I717@ INDI
+1 NAME Nhật Duy /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1948
+1 FAMC @F223@
+0 @I718@ INDI
+1 NAME Thị Đìch /Lê/
+1 SEX F
+1 BIRT
+2 DATE 1931
+1 FAMS @F224@
+0 @I719@ INDI
+1 NAME Thị Dung /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1957
+1 FAMC @F224@
+1 FAMS @F235@
+0 @I720@ INDI
+1 NAME Nhật Yên /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1955
+1 FAMC @F224@
+1 FAMS @F236@
+0 @I721@ INDI
+1 NAME Nhật Dinh /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1960
+1 FAMC @F224@
+1 FAMS @F237@
+0 @I722@ INDI
+1 NAME Nhật Đức /Phạm/
+1 SEX M
+1 FAMC @F224@
+0 @I723@ INDI
+1 NAME Thị Luy /Phạm/
+1 SEX F
+1 FAMC @F224@
+0 @I724@ INDI
+1 NAME Đình Vượng /Nguyễn/
+1 SEX M
+1 FAMS @F235@
+0 @I725@ INDI
+1 NAME Thị Chi /Nguyễn/
+1 SEX F
+1 FAMS @F236@
+0 @I726@ INDI
+1 NAME Thị Lực /Nguyễn/
+1 SEX F
+1 FAMS @F237@
+0 @I727@ INDI
+1 NAME Thị Tàu /Vũ/
+1 SEX F
+1 FAMS @F225@
+0 @I728@ INDI
+1 NAME Thị Kim Loan /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1963
+1 FAMC @F225@
+0 @I729@ INDI
+1 NAME Nhật Thái /Phạm/
+1 SEX M
+1 FAMC @F225@
+0 @I730@ INDI
+1 NAME Thị Bầy /Nguyễn/
+1 SEX F
+1 FAMS @F226@
+0 @I731@ INDI
+1 NAME Thị Hằng /Phạm/
+1 SEX F
+1 FAMC @F226@
+0 @I732@ INDI
+1 NAME Thị Hiền /Phạm/
+1 SEX F
+1 FAMC @F226@
+0 @I733@ INDI
+1 NAME Thị Hà /Phạm/
+1 SEX F
+1 FAMC @F226@
+0 @I734@ INDI
+1 NAME Thị Thành /Vũ/
+1 SEX F
+1 BIRT
+2 DATE 1944
+1 FAMS @F227@
+0 @I735@ INDI
+1 NAME Nhật Tiến /Phạm/
+1 SEX M
+1 FAMC @F227@
+0 @I736@ INDI
+1 NAME Nhật Hà /Phạm/
+1 SEX M
+1 FAMC @F227@
+0 @I737@ INDI
+1 NAME Thị Mai /Phạm/
+1 SEX F
+1 FAMC @F227@
+0 @I738@ INDI
+1 NAME Thị Hè /Nguyễn/
+1 SEX F
+1 FAMS @F212@
+0 @I739@ INDI
+1 NAME Thị Nạo /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1936
+1 FAMC @F212@
+1 FAMS @F238@
+0 @I740@ INDI
+1 NAME Nhật Nhân /Phạm/
+1 SEX M
+1 DEAT
+2 DATE 1946
+1 FAMC @F212@
+1 FAMS @F239@
+0 @I741@ INDI
+1 NAME Nhật Nhị /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1938
+1 FAMC @F212@
+1 FAMS @F240@
+0 @I742@ INDI
+1 NAME Nhật Thìch /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1931
+1 FAMC @F212@
+1 FAMS @F241@
+0 @I743@ INDI
+1 NAME Đình Kỳ /Đào/
+1 SEX M
+1 BIRT
+2 DATE 1926
+1 FAMS @F238@
+0 @I744@ INDI
+1 NAME Thị Cấp /Đào/
+1 SEX F
+1 BIRT
+2 DATE 1960
+1 FAMC @F238@
+0 @I745@ INDI
+1 NAME Đình Ninh /Đào/
+1 SEX M
+1 BIRT
+2 DATE 1958
+1 FAMC @F238@
+0 @I746@ INDI
+1 NAME Đình Niên /Đào/
+1 SEX M
+1 BIRT
+2 DATE 1964
+1 FAMC @F238@
+0 @I747@ INDI
+1 NAME Thị Nhàn /Vũ/
+1 SEX F
+1 FAMS @F239@
+0 @I748@ INDI
+1 NAME Thị Vĩnh /Vũ/
+1 SEX F
+1 BIRT
+2 DATE 1929
+1 FAMS @F240@
+0 @I749@ INDI
+1 NAME Thị Được /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1952
+1 FAMC @F240@
+0 @I750@ INDI
+1 NAME Nhật Tam /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1949
+1 FAMC @F240@
+0 @I751@ INDI
+1 NAME Thị Ngơi /Vũ/
+1 SEX F
+1 BIRT
+2 DATE 1936
+1 FAMS @F241@
+0 @I752@ INDI
+1 NAME Thị Ý /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 09 SEP 1957
+2 PLAC Hanoi Vietnam
+1 FAMC @F241@
+0 @I753@ INDI
+1 NAME Thị Nghĩa /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 09 DEC 1962
+1 FAMC @F241@
+0 @I754@ INDI
+1 NAME Thị Nhu /Lê/
+1 SEX F
+1 FAMS @F198@
+0 @I755@ INDI
+1 NAME Thị Nhì /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1897
+1 DEAT Y
+1 FAMC @F198@
+1 FAMS @F242@
+0 @I756@ INDI
+1 NAME Đình Chấn /Phạm/
+1 SEX M
+1 DEAT
+2 DATE 07 OCT 1956
+1 FAMS @F242@
+1 FAMS @F208@
+0 @I757@ INDI
+1 NAME Thị Diêm /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1921
+1 FAMC @F242@
+1 FAMS @F243@
+0 @I758@ INDI
+1 NAME Huynh /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1932
+1 FAMC @F242@
+1 FAMS @F244@
+0 @I759@ INDI
+1 NAME Đình Đán /Lê/
+1 SEX M
+1 DEAT
+2 DATE 15 MAR 1955
+1 FAMS @F243@
+0 @I760@ INDI
+1 NAME Đình Ngơi /Lê/
+1 SEX M
+1 FAMC @F243@
+0 @I761@ INDI
+1 NAME Thị Diên /Lê/
+1 SEX F
+1 FAMC @F243@
+0 @I762@ INDI
+1 NAME Đình Tường /Lê/
+1 SEX M
+1 FAMC @F243@
+0 @I763@ INDI
+1 NAME Thị Chớn /Vũ/
+1 SEX F
+1 BIRT
+2 DATE 1930
+2 PLAC Hoà Đàm, Vietnam
+1 FAMS @F244@
+0 @I764@ INDI
+1 NAME Thị Huệ /Phạm/
+1 SEX F
+1 FAMC @F244@
+0 @I765@ INDI
+1 NAME Thị Hường /Phạm/
+1 SEX F
+1 FAMC @F244@
+0 @I766@ INDI
+1 NAME Thị Cẩn /Lê/
+1 SEX F
+1 FAMS @F199@
+0 @I767@ INDI
+1 NAME Nhật Toàn /Phạm/
+1 SEX M
+1 FAMC @F199@
+1 FAMS @F245@
+0 @I768@ INDI
+1 NAME Nhật Toản /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1900
+1 FAMC @F199@
+1 FAMS @F246@
+0 @I769@ INDI
+1 NAME Thị Phú /Nguyễn/
+1 SEX F
+1 FAMS @F245@
+0 @I770@ INDI
+1 NAME Thị Ngoạn /Phạm/
+1 SEX F
+1 FAMC @F245@
+1 FAMS @F247@
+0 @I771@ INDI
+1 NAME Thị Thảo /Phạm/
+1 SEX F
+1 FAMC @F245@
+1 FAMS @F248@
+0 @I772@ INDI
+1 NAME Nhật Nghiêm /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1927
+1 FAMC @F245@
+1 FAMS @F249@
+0 @I773@ INDI
+1 NAME Nhật Uy /Phạm/
+1 SEX M
+1 FAMC @F245@
+1 FAMS @F250@
+0 @I774@ INDI
+1 NAME Đình Chè /Nguyễn/
+1 SEX M
+1 FAMS @F247@
+0 @I775@ INDI
+1 NAME Đình Bời /Nguyễn/
+1 SEX M
+1 BIRT
+2 DATE 1942
+1 FAMC @F247@
+1 FAMS @F251@
+0 @I776@ INDI
+1 NAME Thịb Sức /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1941
+1 FAMS @F251@
+0 @I777@ INDI
+1 NAME Đình Xu /Vũ/
+1 SEX M
+1 FAMS @F248@
+0 @I778@ INDI
+1 NAME Thị Thảo /Vũ/
+1 SEX F
+1 FAMC @F248@
+0 @I779@ INDI
+1 NAME Thị Doanh /Vũ/
+1 SEX F
+1 BIRT
+2 DATE 1921
+1 FAMS @F249@
+0 @I780@ INDI
+1 NAME Thị Từ /Phạm/
+1 SEX F
+1 FAMC @F249@
+0 @I781@ INDI
+1 NAME Nhật Thịnh /Phạm/
+1 SEX M
+1 FAMC @F249@
+0 @I782@ INDI
+1 NAME Nhật Vượng /Phạm/
+1 SEX M
+1 FAMC @F249@
+0 @I783@ INDI
+1 NAME Nhật Vững /Phạm/
+1 SEX M
+1 FAMC @F249@
+0 @I784@ INDI
+1 NAME Thị Tần /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1948
+2 PLAC Hanoi, VietNam
+1 FAMC @F250@
+0 @I785@ INDI
+1 NAME Thị Tảo /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1951
+1 FAMC @F250@
+0 @I786@ INDI
+1 NAME Thị Giáp /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1902
+1 FAMS @F246@
+0 @I787@ INDI
+1 NAME Thị Các /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1945
+1 FAMC @F246@
+0 @I788@ INDI
+1 NAME Thị Tiến /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1948
+1 FAMC @F246@
+0 @I789@ INDI
+1 NAME Nhật Trinh /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1934
+1 FAMC @F246@
+1 FAMS @F252@
+0 @I790@ INDI
+1 NAME Thị Thiều /Nguyễn/
+1 SEX F
+1 FAMS @F252@
+0 @I791@ INDI
+1 NAME Thị Nga /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1958
+1 FAMC @F252@
+0 @I792@ INDI
+1 NAME Thị Vạn /Phạm/
+1 SEX F
+1 FAMS @F200@
+0 @I793@ INDI
+1 NAME Thị Quý /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1902
+1 FAMC @F200@
+1 FAMS @F208@
+0 @I794@ INDI
+1 NAME Nhật Ký /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1904
+1 FAMC @F200@
+1 FAMS @F253@
+0 @I795@ INDI
+1 NAME Nhật Tuý /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1906
+1 DEAT
+2 DATE 27 JAN 1989
+1 FAMC @F200@
+1 FAMS @F254@
+0 @I796@ INDI
+1 NAME Thị Thiều /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1936
+1 FAMC @F208@
+1 FAMS @F255@
+0 @I797@ INDI
+1 NAME Đình Kiểm /Phạm/
+1 SEX M
+1 FAMC @F208@
+1 FAMS @F256@
+0 @I798@ INDI
+1 NAME Đình Tuệ /Phạm/
+1 SEX M
+1 FAMC @F208@
+0 @I799@ INDI
+1 NAME D(ình Hoành /Nguyễn/
+1 SEX M
+1 FAMS @F255@
+0 @I800@ INDI
+1 NAME Đình Quảng /Nguyễn/
+1 SEX M
+1 FAMC @F255@
+0 @I801@ INDI
+1 NAME Đình Quỳnh /Nguyễn/
+1 SEX M
+1 FAMC @F255@
+0 @I802@ INDI
+1 NAME Thị Oanh /Nguyễn/
+1 SEX F
+1 FAMC @F255@
+0 @I803@ INDI
+1 NAME Thị Uyên /Nguyễn/
+1 SEX F
+1 FAMC @F255@
+0 @I804@ INDI
+1 NAME Đình Huỳnh /Nguyễn/
+1 SEX M
+1 FAMC @F255@
+0 @I805@ INDI
+1 NAME Thị Nguyên /Nguyễn/
+1 SEX F
+1 FAMC @F255@
+0 @I806@ INDI
+1 NAME Thị Hoả /Vũ/
+1 SEX F
+1 FAMS @F256@
+0 @I807@ INDI
+1 NAME Đình Kiệm /Phạm/
+1 SEX M
+1 FAMC @F256@
+0 @I808@ INDI
+1 NAME Thị Tô /Phạm/
+1 SEX F
+1 FAMC @F256@
+0 @I809@ INDI
+1 NAME Thị Mít /Phạm/
+1 SEX F
+1 FAMC @F256@
+0 @I810@ INDI
+1 NAME Thị Tẽo /Nguyễn/
+1 SEX F
+1 FAMS @F253@
+0 @I811@ INDI
+1 NAME Thị Mỹ /Phạm/
+1 SEX F
+1 FAMC @F253@
+1 FAMS @F257@
+0 @I812@ INDI
+1 NAME Thị Hào /Phạm/
+1 SEX F
+1 FAMC @F253@
+1 FAMS @F258@
+0 @I813@ INDI
+1 NAME Thị Xành /Phạm/
+1 SEX F
+1 FAMC @F253@
+1 FAMS @F259@
+0 @I814@ INDI
+1 NAME Nhật Xuý /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 18 SEP 1924
+1 FAMC @F253@
+1 FAMS @F260@
+0 @I815@ INDI
+1 NAME Đình Hùng /Lê/
+1 SEX M
+1 FAMS @F257@
+0 @I816@ INDI
+1 NAME Thị Miếu /Lê/
+1 SEX F
+1 FAMC @F257@
+0 @I817@ INDI
+1 NAME Thị Miền /Lê/
+1 SEX F
+1 FAMC @F257@
+0 @I818@ INDI
+1 NAME Thị Miều /Lê/
+1 SEX F
+1 FAMC @F257@
+0 @I819@ INDI
+1 NAME Đình Tốt /Lê/
+1 SEX M
+1 FAMC @F257@
+0 @I820@ INDI
+1 NAME Đình Phi /Lê/
+1 SEX M
+1 FAMC @F257@
+0 @I821@ INDI
+1 NAME Đình Ba /Vũ/
+1 SEX M
+1 FAMS @F258@
+0 @I822@ INDI
+1 NAME Đình Khoa /Vũ/
+1 SEX M
+1 FAMC @F258@
+0 @I823@ INDI
+1 NAME Đình Khuê /Vũ/
+1 SEX M
+1 FAMC @F258@
+0 @I824@ INDI
+1 NAME Đình Tôn /Vũ/
+1 SEX M
+1 FAMC @F258@
+0 @I825@ INDI
+1 NAME Đình Kỳ /Vũ/
+1 SEX M
+1 FAMS @F259@
+0 @I826@ INDI
+1 NAME Thị Lời /Vũ/
+1 SEX F
+1 BIRT
+2 DATE 1922
+1 DEAT
+2 DATE 19 MAR 1976
+2 PLAC Đường Chùa, Vietnam
+1 FAMS @F260@
+0 @I827@ INDI
+1 NAME Thị Chuông /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1948
+1 DEAT
+2 DATE 25 JAN 1987
+2 PLAC Lộc Tử Kỳ ( quê chồng)
+1 FAMC @F260@
+1 FAMS @F261@
+0 @I828@ INDI
+1 NAME Tiến Chiếm /Nguyễn/
+1 SEX M
+1 DEAT
+2 DATE 13 MAR 1998
+1 FAMS @F261@
+0 @I829@ INDI
+1 NAME Phong /Nguyễn/
+1 SEX M
+1 FAMC @F261@
+0 @I830@ INDI
+1 NAME Phúc /Nguyễn/
+1 SEX M
+1 FAMC @F261@
+0 @I831@ INDI
+1 NAME Thị Thơm /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1958
+1 FAMC @F260@
+1 FAMS @F262@
+0 @I832@ INDI
+1 NAME Thị Ngát /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1961
+1 FAMC @F260@
+1 FAMS @F263@
+0 @I833@ INDI
+1 NAME Nhật Hành /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 13 SEP 1952
+1 FAMC @F260@
+1 FAMS @F264@
+0 @I834@ INDI
+1 NAME Nhật Nãi /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 03 MAR 1964
+1 FAMC @F260@
+1 FAMS @F265@
+0 @I835@ INDI
+1 NAME Đình Khoằn /Đào/
+1 SEX M
+1 FAMS @F262@
+0 @I836@ INDI
+1 NAME Thị Hiền /Đào/
+1 SEX F
+1 FAMC @F262@
+0 @I837@ INDI
+1 NAME Thị Hiếu /Đào/
+1 SEX F
+1 FAMC @F262@
+0 @I838@ INDI
+1 NAME Đình Hảo /Đào/
+1 SEX M
+1 FAMC @F262@
+0 @I839@ INDI
+1 NAME Ngọc Oánh /Vũ/
+1 SEX M
+1 FAMS @F263@
+0 @I840@ INDI
+1 NAME Thị Thuý /Vũ/
+1 SEX F
+1 FAMC @F263@
+0 @I841@ INDI
+1 NAME Thị Hường /Vũ/
+1 SEX F
+1 FAMC @F263@
+0 @I842@ INDI
+1 NAME Thị Mơ /Vũ/
+1 SEX F
+1 FAMC @F263@
+0 @I843@ INDI
+1 NAME Thành Đạt /Vũ/
+1 SEX M
+1 FAMC @F263@
+0 @I844@ INDI
+1 NAME Thị Luyện /Đào/
+1 SEX F
+1 FAMS @F264@
+0 @I845@ INDI
+1 NAME Thị Đình /Phạm/
+1 SEX F
+1 FAMC @F264@
+0 @I846@ INDI
+1 NAME Thị Tâm /Phạm/
+1 SEX F
+1 FAMC @F264@
+0 @I847@ INDI
+1 NAME Thị Châm /Phạm/
+1 SEX F
+1 FAMC @F264@
+0 @I848@ INDI
+1 NAME Thị Thơm /Vũ/
+1 SEX F
+1 FAMS @F265@
+0 @I849@ INDI
+1 NAME Thị Nhung /Phạm/
+1 SEX F
+1 FAMC @F265@
+0 @I850@ INDI
+1 NAME Nhật Tuyền /Phạm/
+1 SEX M
+1 FAMC @F265@
+0 @I851@ INDI
+1 NAME Thị Dậu /Lê/
+1 SEX F
+1 BIRT
+2 DATE 1903
+1 DEAT
+2 DATE 15 OCT 1979
+2 PLAC Đông Chùa, Vietnam
+1 FAMS @F254@
+0 @I852@ INDI
+1 NAME Thị Thuý /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1925
+1 FAMC @F254@
+1 FAMS @F266@
+0 @I853@ INDI
+1 NAME Thị Thuỳ /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1928
+1 FAMC @F254@
+1 FAMS @F267@
+0 @I854@ INDI
+1 NAME Nhật Tuỵ /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1923
+1 FAMC @F254@
+1 FAMS @F268@
+0 @I855@ INDI
+1 NAME Nhật Tụ /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1934
+1 FAMC @F254@
+1 FAMS @F269@
+0 @I856@ INDI
+1 NAME Nhật Tuy /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 1936
+1 FAMC @F254@
+1 FAMS @F270@
+0 @I857@ INDI
+1 NAME Đình Đôn /Vũ/
+1 SEX M
+1 BIRT
+2 DATE 1925
+1 FAMS @F266@
+0 @I858@ INDI
+1 NAME Đình Sao /Vũ/
+1 SEX M
+1 FAMC @F266@
+0 @I859@ INDI
+1 NAME Đình Đoàn /Vũ/
+1 SEX M
+1 FAMC @F266@
+0 @I860@ INDI
+1 NAME Đình Sử /Vũ/
+1 SEX M
+1 FAMC @F266@
+0 @I861@ INDI
+1 NAME Thị Biên /Vũ/
+1 SEX F
+1 FAMC @F266@
+0 @I862@ INDI
+1 NAME Thị Miên /Vũ/
+1 SEX F
+1 FAMC @F266@
+0 @I863@ INDI
+1 NAME Đức Khoan /Nguyễn/
+1 SEX M
+1 BIRT
+2 DATE 1926
+1 FAMS @F267@
+0 @I864@ INDI
+1 NAME Thị Khâm /Nguyễn/
+1 SEX F
+1 FAMC @F267@
+0 @I865@ INDI
+1 NAME Đức Huân /Nguyễn/
+1 SEX M
+1 FAMC @F267@
+0 @I866@ INDI
+1 NAME Đức Nghĩa /Nguyễn/
+1 SEX M
+1 FAMC @F267@
+0 @I867@ INDI
+1 NAME Đức Tình /Nguyễn/
+1 SEX M
+1 FAMC @F267@
+0 @I868@ INDI
+1 NAME Đức Thân /Nguyễn/
+1 SEX M
+1 FAMC @F267@
+0 @I869@ INDI
+1 NAME Đức Lân /Nguyễn/
+1 SEX M
+1 FAMC @F267@
+0 @I870@ INDI
+1 NAME Thị Hốt /Vũ/
+1 SEX F
+1 BIRT
+2 DATE 1930
+1 DEAT
+2 DATE 13 JUN 1999
+2 PLAC Đồng Chùa, Vietnam
+1 FAMS @F268@
+0 @I871@ INDI
+1 NAME Thị Đáp /Phạm/
+1 SEX F
+1 FAMC @F268@
+0 @I872@ INDI
+1 NAME Nhật Lĩnh /Phạm/
+1 SEX M
+1 FAMC @F268@
+0 @I873@ INDI
+1 NAME Thị Lương /Phạm/
+1 SEX F
+1 FAMC @F268@
+0 @I874@ INDI
+1 NAME Nhật Luật /Phạm/
+1 SEX M
+1 FAMC @F268@
+0 @I875@ INDI
+1 NAME Nhật Cương /Phạm/
+1 SEX M
+1 FAMC @F268@
+0 @I876@ INDI
+1 NAME Nhật Thường /Phạm/
+1 SEX M
+1 FAMC @F268@
+0 @I877@ INDI
+1 NAME Thị Quỳ /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1934
+1 FAMS @F269@
+0 @I878@ INDI
+1 NAME Thị Thành /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1955
+1 FAMC @F269@
+1 FAMS @F271@
+0 @I879@ INDI
+1 NAME Thị Tuyến /Phạm/
+1 SEX F
+1 DEAT
+2 DATE 1964
+1 FAMC @F269@
+1 FAMS @F272@
+0 @I880@ INDI
+1 NAME Nhật Bình /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 02 SEP 1960
+1 FAMC @F269@
+1 FAMS @F273@
+0 @I881@ INDI
+1 NAME Nhật Dũng /Phạm/
+1 SEX M
+1 FAMC @F269@
+0 @I882@ INDI
+1 NAME Thị Luyến /Phạm/
+1 SEX F
+1 FAMC @F269@
+0 @I883@ INDI
+1 NAME Thị Hiền /Phạm/
+1 SEX F
+1 FAMC @F269@
+0 @I884@ INDI
+1 NAME Thị Huyền /Phạm/
+1 SEX F
+1 FAMC @F269@
+0 @I885@ INDI
+1 NAME Tiến Luật /Đặng/
+1 SEX M
+1 BIRT
+2 DATE 1962
+1 FAMS @F271@
+0 @I886@ INDI
+1 NAME Thị Vân Anh /Đặng/
+1 SEX F
+1 FAMC @F271@
+0 @I887@ INDI
+1 NAME Thị Ngọc Anh /Đặng/
+1 SEX F
+1 FAMC @F271@
+0 @I888@ INDI
+1 NAME Viết Đức /Đặng/
+1 SEX M
+1 FAMC @F271@
+0 @I889@ INDI
+1 NAME Văn Biên /Vũ/
+1 SEX M
+1 BIRT
+2 DATE 1961
+1 DEAT
+2 DATE 29 SEP 1997
+1 FAMS @F272@
+0 @I890@ INDI
+1 NAME Thị Tuyến /Vũ/
+1 SEX F
+1 FAMC @F272@
+0 @I891@ INDI
+1 NAME Thị Duyên /Vũ/
+1 SEX F
+1 FAMC @F272@
+0 @I892@ INDI
+1 NAME Thị Uyên /Vũ/
+1 SEX F
+1 FAMC @F272@
+0 @I893@ INDI
+1 NAME Thị Thuyên /Vũ/
+1 SEX F
+1 FAMC @F272@
+0 @I894@ INDI
+1 NAME Thị Thuý /Đào/
+1 SEX F
+1 BIRT
+2 DATE 29 DEC 1961
+1 FAMS @F273@
+0 @I895@ INDI
+1 NAME Thị Quỳnh Như /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 27 FEB 1984
+1 FAMC @F273@
+0 @I896@ INDI
+1 NAME Thị Như Trang /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 29 MAR 1990
+1 FAMC @F273@
+0 @I897@ INDI
+1 NAME Văn Khoát /Phạm/
+1 SEX M
+1 BIRT
+2 DATE 08 JUN 1982
+1 FAMC @F273@
+0 @I898@ INDI
+1 NAME Thị Nhập /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1939
+1 FAMS @F270@
+0 @I899@ INDI
+1 NAME Thị Tiếp /Phạm/
+1 SEX F
+1 FAMC @F270@
+0 @I900@ INDI
+1 NAME Nhật Nhiên /Phạm/
+1 SEX M
+1 FAMC @F270@
+0 @I901@ INDI
+1 NAME Ngọc Tương /Phạm/
+1 SEX M
+1 DEAT Y
+1 FAMC @F274@
+1 FAMS @F275@
+1 FAMS @F157@
+0 @I902@ INDI
+1 NAME Thị Huý Thân /Trần/
+1 SEX F
+1 DEAT Y
+1 FAMS @F275@
+0 @I903@ INDI
+1 NAME Ngọc Thiều /Phạm/
+1 SEX M
+1 FAMC @F275@
+0 @I904@ INDI
+1 NAME Thị Diệu Khương /Vũ/
+1 SEX F
+1 DEAT Y
+1 FAMS @F157@
+0 @I905@ INDI
+1 NAME Huy Hào /Phạm/
+1 SEX M
+1 FAMC @F157@
+0 @I906@ INDI
+1 NAME Huy Đình Dũng /Phạm/
+1 SEX M
+1 DEAT Y
+1 FAMC @F276@
+1 FAMS @F274@
+0 @I907@ INDI
+1 NAME Thị Diệu Kính /Lương/
+1 SEX F
+1 DEAT Y
+1 FAMS @F274@
+0 @I908@ INDI
+1 NAME Thị Hoành /Phạm/
+1 SEX F
+1 FAMC @F274@
+0 @I909@ INDI
+1 NAME Thị Chẩn /Phạm/
+1 SEX F
+1 FAMC @F274@
+0 @I910@ INDI
+1 NAME Thị Trân /Phạm/
+1 SEX F
+1 FAMC @F274@
+0 @I911@ INDI
+1 NAME Pháp Châu /Phạm/
+1 SEX M
+1 DEAT Y
+1 FAMC @F277@
+1 FAMS @F276@
+0 @I912@ INDI
+1 NAME Thị Từ Minh /Nguyễn/
+1 SEX F
+1 DEAT Y
+1 FAMS @F276@
+0 @I913@ INDI
+1 NAME Tự Phúc Khánh /Phạm/
+1 SEX M
+1 FAMC @F276@
+0 @I914@ INDI
+1 NAME Tự Đôn Thân /Phạm/
+1 SEX M
+1 FAMC @F276@
+0 @I915@ INDI
+1 NAME Thị Huỳ Chiên /Phạm/
+1 SEX F
+1 FAMC @F276@
+0 @I916@ INDI
+1 NAME Thị Huý Chúc /Phạm/
+1 SEX F
+1 FAMC @F276@
+0 @I917@ INDI
+1 NAME Thị Huý Thiên /Phạm/
+1 SEX F
+1 FAMC @F276@
+0 @I918@ INDI
+1 NAME Thuỵ Phúc Lộc /Phạm/
+1 SEX M
+1 DEAT Y
+1 FAMC @F278@
+1 FAMS @F277@
+0 @I919@ INDI
+1 NAME Thị Từ Thuyên /Nguyễn/
+1 SEX F
+1 DEAT Y
+1 FAMS @F277@
+0 @I920@ INDI
+1 NAME Ngọc Thành /Phạm/
+1 SEX M
+1 DEAT Y
+1 FAMS @F278@
+1 NOTE First generation of the Phạm family.
+2 CONT Earned a Ph.D. (tiến sĩ  đệ nhị giáp) khoa Tân Mão.
+2 CONT 
+2 CONT Cụ Phạm Ngọc Thạnh (chữ Hán: 范玉盛), đỗ Đệ nhị giáp Tiến sĩ xuất thân (Ho
+2 CONC àng giáp) khoa Tân Mão, niên hiệu Vĩnh Thịnh năm thứ 7 (1711) dưới triề
+2 CONC u vua Lê Dụ Tông. Cụ là người xã Phù Lưu, huyện Đông Ngàn, phủ Từ Sơn, 
+2 CONC trấn Kinh Bắc (nay thuộc Bắc Ninh).
+2 CONT 
+2 CONT Cụ tổ đời thứ nhất là Phạm Ngọc Thành, thụy Trung Thứ theo nho học. Thi
+2 CONC  đố Tiên Sĩ Đệ Nhị Giáp vào năm khóa Tân Mão về nhà tiền Lê, được phong
+2 CONC  Hàn Lâm Thị Giảng kiêm Đông Các Học Sĩ, rồi thăng chức Lại Bộ Thượng T
+2 CONC hư.
+2 CONT 
+2 CONT Cụ mất ngày 16/06 âm lịch, táng tại trên thửa đất hình bông hoa sen, ở 
+2 CONC xứ Đông Khuyến, thuộc địa phận thôn Phúc Miếu, giáp phía đông huyện Cẩm
+2 CONC  Giàng, tỉnh Hải Dương, nay thuộc huyện Mỹ Hào, tỉnh Hưng Yên.
+0 @I921@ INDI
+1 NAME Thị Thuỵ Thục Nhan /Nguyễn/
+1 SEX F
+1 DEAT Y
+1 FAMS @F278@
+0 @I922@ INDI
+1 NAME Tuấn Anh /Lưu/
+1 SEX M
+1 FAMC @F93@
+0 @I923@ INDI
+1 NAME Lan Anh /Lưu/
+1 SEX F
+1 FAMC @F93@
+0 @I924@ INDI
+1 NAME Đạt Tiền /Nguyên/
+1 SEX M
+1 FAMC @F94@
+1 FAMS @F279@
+0 @I925@ INDI
+1 NAME Thị Tươi /Nguyên/
+1 SEX F
+1 FAMC @F94@
+1 FAMS @F280@
+0 @I926@ INDI
+1 NAME Ánh Ninh /Nguyễn/
+1 SEX F
+1 FAMS @F279@
+0 @I927@ INDI
+1 NAME Bảo Anh /Nguyên/
+1 SEX M
+1 FAMC @F279@
+0 @I928@ INDI
+1 NAME Bảo Ánh /Nguyên/
+1 SEX M
+1 FAMC @F279@
+0 @I929@ INDI
+1 NAME Hoàng Sơn /Lưu/
+1 SEX M
+1 FAMC @F95@
+0 @I930@ INDI
+1 NAME Mai Anh /Lưu/
+1 SEX F
+1 FAMC @F95@
+0 @I931@ INDI
+1 NAME Trí Quang /Lưu/
+1 SEX M
+1 FAMC @F96@
+0 @I932@ INDI
+1 NAME Thảo Trang /Lưu/
+1 SEX F
+1 FAMC @F96@
+0 @I933@ INDI
+1 NAME Văn Lâm /Chu/
+1 SEX M
+1 FAMS @F280@
+0 @I934@ INDI
+1 NAME Thị Quỳnh Trang /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1981
+1 FAMC @F67@
+0 @I935@ INDI
+1 NAME Phương Lan /Trần/
+1 SEX F
+1 BIRT
+2 DATE 1955
+1 FAMS @F102@
+0 @I936@ INDI
+1 NAME MạnhTuấn Stephen /Quách/
+1 SEX M
+1 BIRT
+2 DATE 1991
+1 FAMC @F102@
+1 FAMS @F281@
+0 @I937@ INDI
+1 NAME Catherine /Quách/
+1 SEX F
+1 BIRT
+2 DATE 1992
+1 FAMC @F102@
+0 @I938@ INDI
+1 NAME Thị  Vượng /Quan/
+1 SEX F
+1 BIRT
+2 DATE 1892
+1 DEAT Y
+1 FAMS @F8@
+0 @I939@ INDI
+1 NAME Vĩnh  Quỳ /Trần/
+1 NAME Pháp  danhh: Nguyên  Đức
+1 SEX M
+1 BIRT
+2 DATE 1917
+2 PLAC Nam Định, Vietnam
+1 DEAT
+2 DATE 27 MAR 2000
+2 PLAC San  Josee, California
+1 OCCU Colonel  in  Vietnamese  Army
+1 FAMC @F8@
+1 FAMS @F282@
+0 @I940@ INDI
+1 NAME Thị  Kim  Chi /Đào/
+1 NAME Pháp  danhh: Nguyên  Lang
+1 SEX F
+1 BIRT
+2 DATE 31 MAY 1935
+1 FAMS @F282@
+0 @I941@ INDI
+1 NAME Vinh  Minh  Phương /Trần/
+1 NAME Liên
+1 SEX F
+1 BIRT
+2 DATE 1962
+1 FAMC @F282@
+1 FAMS @F283@
+0 @I942@ INDI
+1 NAME Đình  Vượng /Trần/
+1 SEX M
+1 BIRT
+2 DATE 1961
+1 FAMS @F283@
+0 @I943@ INDI
+1 NAME Bảo  Châu  Jennifer /Trần/
+1 SEX F
+1 BIRT
+2 DATE 29 MAR 1995
+2 PLAC San Jose, CA, USA
+1 RESI
+2 DATE ABT AUG 2013
+2 PLAC Riverside, California, USA
+1 OCCU Pharmacist
+1 FAMC @F283@
+0 @I944@ INDI
+1 NAME Vinh Kim  Ngân /Trần/
+1 SEX F
+1 BIRT
+2 DATE 1964
+1 FAMC @F282@
+0 @I945@ INDI
+1 NAME Vinh  Hiển /Trần/
+1 SEX M
+1 BIRT
+2 DATE 1966
+1 FAMC @F282@
+1 FAMS @F284@
+0 @I946@ INDI
+1 NAME Thị  Thanh  Hoa /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1974
+1 FAMS @F284@
+0 @I947@ INDI
+1 NAME Vinh  Anh  Khoa /Trần/
+1 SEX M
+1 BIRT
+2 DATE 2010
+1 FAMC @F284@
+0 @I948@ INDI
+1 NAME Vinh  Hoàng  Anh /Trần/
+1 SEX F
+1 BIRT
+2 DATE 2012
+1 FAMC @F284@
+0 @I949@ INDI
+1 NAME Vinh  Kim  Hoa /Trần/
+1 SEX F
+1 BIRT
+2 DATE 1967
+1 FAMC @F282@
+0 @I950@ INDI
+1 NAME Vinh  Kim  Thoa /Trần/
+1 SEX F
+1 BIRT
+2 DATE 1969
+1 FAMC @F282@
+1 FAMS @F285@
+0 @I951@ INDI
+1 NAME Ngọc  Long /Đặng/
+1 SEX M
+1 BIRT
+2 DATE 1958
+1 FAMS @F285@
+0 @I952@ INDI
+1 NAME Ngọc  Nhi /Đặng/
+1 SEX F
+1 BIRT
+2 DATE 1995
+1 FAMC @F285@
+0 @I953@ INDI
+1 NAME Ngọc  Anh  Thư /Đặng/
+1 SEX F
+1 BIRT
+2 DATE 1996
+1 FAMC @F285@
+0 @I954@ INDI
+1 NAME Ngọc  Lan  Anh /Đặng/
+1 SEX F
+1 BIRT
+2 DATE 2000
+1 FAMC @F285@
+0 @I955@ INDI
+1 NAME Ngọc  Phương  Anh /Đặng/
+1 SEX F
+1 BIRT
+2 DATE 2002
+1 FAMC @F285@
+0 @I956@ INDI
+1 NAME Ngọc  Tân  Phước /Đặng/
+1 SEX M
+1 BIRT
+2 DATE 2011
+1 FAMC @F285@
+0 @I957@ INDI
+1 NAME Vinh  Kim  Anh /Trần/
+1 SEX F
+1 BIRT
+2 DATE 1972
+1 OCCU Pharmacist
+1 FAMC @F282@
+1 FAMS @F286@
+0 @I958@ INDI
+1 NAME Lê  Chí  Bảo /Phùng/
+1 SEX M
+1 BIRT
+2 DATE 1971
+1 OCCU Cardiologist
+1 FAMS @F286@
+0 @I959@ INDI
+1 NAME Trần  Tâm  Bảo /Phùng/
+1 SEX M
+1 BIRT
+2 DATE 2006
+1 FAMC @F286@
+0 @I960@ INDI
+1 NAME Trần  Vĩnh  Bảo /Phùng/
+1 SEX M
+1 BIRT
+2 DATE 2008
+1 FAMC @F286@
+0 @I961@ INDI
+1 NAME Trần  Thiên  Ân /Phùng/
+1 SEX F
+1 BIRT
+2 DATE 2011
+1 FAMC @F286@
+0 @I962@ INDI
+1 NAME Trần  Chân  Bảo /Phùng/
+1 SEX M
+1 BIRT
+2 DATE 2012
+1 FAMC @F286@
+0 @I963@ INDI
+1 NAME Thuần Phong /Lê/
+1 SEX M
+1 DEAT Y
+1 FAMS @F52@
+0 @I964@ INDI
+1 NAME Thuần Kiên /Lê/
+1 SEX M
+1 FAMC @F52@
+1 FAMS @F287@
+0 @I965@ INDI
+1 NAME Thuần Kim /Lê/
+1 SEX M
+1 FAMC @F52@
+1 FAMS @F288@
+0 @I966@ INDI
+1 NAME Thuần Oánh /Lê/
+1 SEX M
+1 FAMC @F52@
+1 FAMS @F289@
+0 @I967@ INDI
+1 NAME Thuần Thắng /Lê/
+1 SEX M
+1 FAMC @F52@
+1 FAMS @F290@
+0 @I968@ INDI
+1 NAME Lise /Lachance/
+1 SEX F
+1 FAMS @F97@
+0 @I969@ INDI
+1 NAME Thiệm Hồng /Bùi/
+1 SEX F
+1 FAMS @F98@
+0 @I970@ INDI
+1 NAME Bảo Hân /Quách/
+1 SEX F
+1 FAMC @F98@
+1 FAMS @F291@
+0 @I971@ INDI
+1 NAME Cao Minh /Quách/
+1 SEX M
+1 FAMC @F98@
+0 @I972@ INDI
+1 NAME Thúy Phượng /Nguyễn/
+1 SEX F
+1 FAMS @F99@
+0 @I973@ INDI
+1 NAME Bảo Trâm /Quách/
+1 SEX F
+1 FAMC @F99@
+0 @I974@ INDI
+1 NAME Mai Khanh /Quách/
+1 SEX F
+1 FAMC @F99@
+0 @I975@ INDI
+1 NAME Hữu Thích /Trần/
+1 SEX M
+1 FAMS @F100@
+0 @I976@ INDI
+1 NAME Chantal /Côté/
+1 SEX F
+1 FAMS @F101@
+0 @I977@ INDI
+1 NAME Yanik /Verville/
+1 SEX M
+1 FAMC @F101@
+1 FAMS @F292@
+0 @I978@ INDI
+1 NAME Kévin /Quách/
+1 SEX M
+1 FAMC @F101@
+1 FAMS @F293@
+0 @I979@ INDI
+1 NAME Maya /Quách/
+1 SEX F
+1 FAMC @F101@
+0 @I980@ INDI
+1 NAME Alice /Yueh/
+1 SEX F
+1 FAMS @F281@
+0 @I981@ INDI
+1 NAME Darren /Quách/
+1 SEX M
+1 FAMC @F281@
+0 @I982@ INDI
+1 NAME Hữu Nhân /Trần/
+1 SEX M
+1 FAMS @F103@
+0 @I983@ INDI
+1 NAME Marianne /Trần/
+1 SEX F
+1 FAMC @F103@
+0 @I984@ INDI
+1 NAME Vivianne /Trần/
+1 SEX F
+1 FAMC @F103@
+0 @I985@ INDI
+1 NAME David /Trần/
+1 SEX M
+1 FAMC @F103@
+0 @I986@ INDI
+1 NAME Loan /Nguyễn/
+1 SEX F
+1 FAMS @F104@
+0 @I987@ INDI
+1 NAME Lan Anh /Quách/
+1 SEX F
+1 FAMC @F104@
+0 @I988@ INDI
+1 NAME Bernie /Trần/
+1 SEX F
+1 FAMS @F287@
+0 @I989@ INDI
+1 NAME Ethan /Lê/
+1 SEX M
+1 FAMC @F287@
+0 @I990@ INDI
+1 NAME Jonathan /Lê/
+1 SEX M
+1 FAMC @F287@
+0 @I991@ INDI
+1 NAME Erin /??/
+1 SEX F
+1 FAMS @F288@
+0 @I992@ INDI
+1 NAME Makela /Lê/
+1 SEX F
+1 FAMC @F288@
+0 @I993@ INDI
+1 NAME Brandon /Lê/
+1 SEX M
+1 FAMC @F288@
+0 @I994@ INDI
+1 NAME Suzanna /??/
+1 SEX F
+1 FAMS @F289@
+0 @I995@ INDI
+1 NAME Jessica /??/
+1 SEX F
+1 FAMS @F290@
+0 @I996@ INDI
+1 NAME Jaden /Lê/
+1 SEX M
+1 FAMC @F290@
+0 @I997@ INDI
+1 NAME Kimberly /?/
+1 SEX F
+1 FAMS @F293@
+0 @I998@ INDI
+1 NAME Leo /Quách/
+1 SEX M
+1 FAMC @F293@
+0 @I999@ INDI
+1 NAME Carolina /? ?/
+1 SEX F
+1 FAMS @F292@
+0 @I1000@ INDI
+1 NAME Alec /Wright/
+1 SEX M
+1 FAMS @F291@
+0 @I1001@ INDI
+1 NAME Isabel /Wright/
+1 SEX F
+1 FAMC @F291@
+0 @I1002@ INDI
+1 NAME Văn ... (ông Hai) /Trần/
+1 SEX M
+1 BIRT
+2 DATE 1876
+1 DEAT Y
+1 FAMC @F7@
+1 FAMS @F294@
+0 @I1003@ INDI
+1 NAME Văn Định /Trần/
+1 SEX M
+1 FAMC @F294@
+0 @I1004@ INDI
+1 NAME Thị Nga /Trần/
+1 SEX F
+1 DEAT Y
+1 FAMC @F294@
+1 FAMS @F295@
+0 @I1005@ INDI
+1 NAME Văn...(ông Tham) /Trần/
+1 SEX M
+1 BIRT
+2 DATE 1877
+1 DEAT Y
+1 FAMC @F7@
+1 FAMS @F296@
+0 @I1006@ INDI
+1 NAME Thị Lý /Trần/
+1 SEX F
+1 DEAT Y
+1 FAMC @F296@
+0 @I1007@ INDI
+1 NAME Thị Vân /Trần/
+1 SEX F
+1 DEAT Y
+1 FAMC @F296@
+0 @I1008@ INDI
+1 NAME Thị Băng Tâm /Trần/
+1 SEX F
+1 DEAT Y
+1 FAMC @F296@
+0 @I1009@ INDI
+1 NAME Hữu /Nguyễn/
+1 SEX M
+1 DEAT Y
+1 OCCU M.D. , Professor in France
+1 FAMS @F295@
+0 @I1010@ INDI
+1 NAME Dung /Nguyễn/
+1 SEX F
+1 OCCU M.D. , lives in Paris
+1 FAMC @F295@
+0 @I1011@ INDI
+1 NAME Bích Vân /Nguyễn/
+1 SEX F
+1 OCCU Pharmacist in Canada
+1 FAMC @F295@
+0 @I1012@ INDI
+1 NAME Nick /Nguyễn/
+1 SEX M
+1 OCCU M.D in Tahiti
+1 FAMC @F295@
+0 @I1013@ INDI
+1 NAME Văn ... (ông Cả) /Trần/
+1 SEX M
+1 BIRT
+2 DATE 1874
+1 DEAT Y
+1 FAMC @F7@
+1 FAMS @F297@
+0 @I1014@ INDI
+1 NAME Thị Dưỡng /Trần/
+1 SEX F
+1 DEAT Y
+1 FAMC @F297@
+0 @I1015@ INDI
+1 NAME Văn  Hợi /Trần/
+2 SURN Nguyễn
+1 SEX M
+1 DEAT Y
+1 FAMC @F297@
+1 FAMS @F298@
+1 NOTE Changed name due to political reasons.
+0 @I1016@ INDI
+1 NAME Thị Kim Chi /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1957
+1 DEAT Y
+1 FAMC @F298@
+0 @I1017@ INDI
+1 NAME Thị Hương /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1959
+1 FAMC @F298@
+0 @I1018@ INDI
+1 NAME Thị Thùy Linh /Nguyễn/
+1 SEX F
+1 BIRT
+2 DATE 1961
+1 FAMC @F298@
+0 @I1019@ INDI
+1 NAME Hoàng /Nguyễn/
+1 SEX M
+1 BIRT
+2 DATE 1963
+1 FAMC @F298@
+0 @I1020@ INDI
+1 NAME Thị Yến /Phạm/
+1 SEX F
+1 BIRT
+2 DATE 1935
+1 DEAT Y
+1 FAMC @F60@
+0 @F2@ FAM
+1 MARR Y
+1 HUSB @I1@
+1 WIFE @I2@
+1 CHIL @I8@
+1 CHIL @I133@
+1 CHIL @I9@
+1 CHIL @I10@
+1 CHIL @I11@
+1 CHIL @I12@
+1 CHIL @I13@
+0 @F5@ FAM
+1 MARR Y
+1 WIFE @I3@
+0 @F1@ FAM
+1 MARR Y
+1 HUSB @I4@
+1 WIFE @I5@
+1 CHIL @I37@
+1 CHIL @I39@
+1 CHIL @I1@
+0 @F3@ FAM
+1 MARR Y
+1 HUSB @I6@
+1 WIFE @I7@
+1 CHIL @I2@
+1 CHIL @I40@
+1 CHIL @I60@
+1 CHIL @I61@
+1 CHIL @I122@
+1 CHIL @I62@
+1 CHIL @I63@
+1 CHIL @I64@
+1 CHIL @I65@
+0 @F12@ FAM
+1 MARR Y
+1 HUSB @I14@
+1 WIFE @I12@
+1 CHIL @I15@
+1 CHIL @I16@
+0 @F13@ FAM
+1 MARR Y
+1 HUSB @I17@
+1 WIFE @I13@
+1 CHIL @I18@
+1 CHIL @I19@
+1 CHIL @I20@
+1 CHIL @I21@
+0 @F11@ FAM
+1 MARR Y
+1 HUSB @I10@
+1 WIFE @I22@
+1 CHIL @I23@
+1 CHIL @I24@
+0 @F10@ FAM
+1 MARR Y
+1 HUSB @I25@
+1 WIFE @I8@
+1 CHIL @I26@
+1 CHIL @I27@
+0 @F16@ FAM
+1 MARR Y
+1 HUSB @I28@
+1 WIFE @I26@
+1 CHIL @I29@
+1 CHIL @I30@
+1 CHIL @I31@
+0 @F15@ FAM
+1 MARR Y
+1 HUSB @I23@
+1 WIFE @I32@
+1 CHIL @I33@
+0 @F17@ FAM
+1 MARR Y
+1 HUSB @I27@
+1 WIFE @I34@
+1 CHIL @I35@
+1 CHIL @I36@
+0 @F18@ FAM
+1 MARR Y
+1 HUSB @I37@
+1 WIFE @I38@
+1 CHIL @I116@
+1 CHIL @I118@
+1 CHIL @I117@
+1 CHIL @I120@
+1 CHIL @I119@
+1 CHIL @I121@
+0 @F21@ FAM
+1 MARR Y
+1 HUSB @I40@
+1 WIFE @I41@
+1 CHIL @I42@
+1 CHIL @I43@
+1 CHIL @I44@
+1 CHIL @I45@
+1 CHIL @I46@
+0 @F22@ FAM
+1 MARR Y
+1 HUSB @I42@
+1 WIFE @I47@
+1 CHIL @I48@
+1 CHIL @I49@
+1 CHIL @I50@
+0 @F23@ FAM
+1 MARR Y
+1 HUSB @I43@
+1 WIFE @I51@
+1 CHIL @I52@
+1 CHIL @I53@
+0 @F24@ FAM
+1 MARR Y
+1 HUSB @I44@
+1 WIFE @I54@
+1 CHIL @I55@
+1 CHIL @I56@
+0 @F25@ FAM
+1 MARR Y
+1 HUSB @I46@
+1 WIFE @I57@
+1 CHIL @I58@
+1 CHIL @I59@
+0 @F27@ FAM
+1 MARR Y
+1 HUSB @I66@
+1 WIFE @I60@
+1 CHIL @I67@
+1 CHIL @I68@
+1 CHIL @I69@
+1 CHIL @I70@
+0 @F28@ FAM
+1 MARR Y
+1 WIFE @I61@
+1 CHIL @I71@
+1 CHIL @I72@
+0 @F29@ FAM
+1 MARR Y
+1 HUSB @I73@
+1 WIFE @I62@
+1 CHIL @I74@
+1 CHIL @I75@
+1 CHIL @I76@
+0 @F30@ FAM
+1 MARR Y
+1 HUSB @I77@
+1 WIFE @I64@
+1 CHIL @I78@
+1 CHIL @I79@
+0 @F37@ FAM
+1 MARR Y
+1 HUSB @I80@
+1 WIFE @I78@
+1 CHIL @I81@
+1 CHIL @I82@
+0 @F31@ FAM
+1 MARR Y
+1 HUSB @I65@
+1 WIFE @I83@
+1 CHIL @I84@
+1 CHIL @I85@
+0 @F32@ FAM
+1 MARR Y
+1 HUSB @I68@
+1 WIFE @I86@
+1 CHIL @I87@
+1 CHIL @I88@
+0 @F33@ FAM
+1 MARR Y
+1 HUSB @I89@
+1 WIFE @I70@
+1 CHIL @I90@
+0 @F38@ FAM
+1 MARR Y
+1 HUSB @I91@
+1 WIFE @I79@
+1 CHIL @I92@
+1 CHIL @I93@
+0 @F34@ FAM
+1 MARR Y
+1 HUSB @I74@
+1 WIFE @I94@
+1 CHIL @I95@
+1 CHIL @I96@
+1 CHIL @I97@
+0 @F39@ FAM
+1 MARR Y
+1 HUSB @I98@
+1 WIFE @I95@
+1 CHIL @I99@
+0 @F35@ FAM
+1 MARR Y
+1 HUSB @I100@
+1 WIFE @I75@
+1 CHIL @I101@
+1 CHIL @I102@
+1 CHIL @I103@
+0 @F36@ FAM
+1 MARR Y
+1 HUSB @I76@
+1 WIFE @I104@
+1 CHIL @I105@
+1 CHIL @I106@
+0 @F20@ FAM
+1 MARR Y
+1 HUSB @I107@
+1 WIFE @I39@
+1 CHIL @I108@
+1 CHIL @I109@
+1 CHIL @I110@
+1 CHIL @I111@
+0 @F19@ FAM
+1 MARR
+2 SOUR 3rd wife
+1 HUSB @I37@
+1 WIFE @I112@
+1 CHIL @I113@
+1 CHIL @I114@
+1 CHIL @I115@
+0 @F14@ FAM
+1 MARR
+2 DATE 16 AUG 2025
+2 PLAC Naperville, IL, USA
+1 HUSB @I123@
+1 WIFE @I20@
+0 @F4@ FAM
+1 MARR Y
+1 HUSB @I124@
+1 WIFE @I125@
+1 CHIL @I3@
+0 @F9@ FAM
+1 MARR Y
+1 HUSB @I126@
+1 WIFE @I127@
+1 CHIL @I134@
+1 CHIL @I167@
+1 CHIL @I7@
+1 CHIL @I205@
+1 CHIL @I247@
+1 CHIL @I253@
+1 CHIL @I140@
+1 CHIL @I258@
+0 @F6@ FAM
+1 MARR Y
+1 HUSB @I128@
+1 CHIL @I4@
+0 @F26@ FAM
+1 MARR Y
+1 HUSB @I129@
+1 WIFE @I130@
+1 CHIL @I51@
+0 @F40@ FAM
+1 ENGA Y
+1 HUSB @I131@
+1 WIFE @I103@
+1 NOTE To be married 2027
+0 @F48@ FAM
+1 MARR Y
+1 WIFE @I132@
+0 @F49@ FAM
+1 MARR Y
+1 HUSB @I133@
+1 WIFE @I132@
+0 @F50@ FAM
+1 MARR Y
+1 HUSB @I135@
+1 WIFE @I134@
+1 CHIL @I137@
+1 CHIL @I136@
+0 @F51@ FAM
+1 MARR Y
+1 HUSB @I137@
+1 WIFE @I138@
+1 CHIL @I139@
+1 CHIL @I289@
+1 CHIL @I290@
+1 CHIL @I291@
+1 CHIL @I292@
+1 CHIL @I293@
+1 CHIL @I294@
+1 CHIL @I295@
+1 CHIL @I296@
+1 CHIL @I297@
+0 @F53@ FAM
+1 MARR Y
+1 HUSB @I141@
+1 WIFE @I140@
+1 CHIL @I142@
+1 CHIL @I143@
+1 CHIL @I144@
+1 CHIL @I145@
+1 CHIL @I146@
+1 CHIL @I147@
+1 CHIL @I148@
+1 CHIL @I149@
+0 @F54@ FAM
+1 MARR Y
+1 HUSB @I144@
+1 WIFE @I150@
+1 CHIL @I151@
+1 CHIL @I152@
+1 CHIL @I153@
+0 @F55@ FAM
+1 MARR Y
+1 HUSB @I154@
+1 WIFE @I145@
+1 CHIL @I155@
+1 CHIL @I156@
+0 @F56@ FAM
+1 MARR Y
+1 HUSB @I146@
+1 WIFE @I157@
+0 @F57@ FAM
+1 MARR Y
+1 HUSB @I147@
+1 WIFE @I158@
+1 CHIL @I159@
+1 CHIL @I160@
+0 @F58@ FAM
+1 MARR Y
+1 HUSB @I148@
+1 WIFE @I161@
+1 CHIL @I162@
+1 CHIL @I163@
+0 @F59@ FAM
+1 MARR Y
+1 HUSB @I164@
+1 WIFE @I149@
+1 CHIL @I165@
+1 CHIL @I166@
+0 @F60@ FAM
+1 MARR Y
+1 HUSB @I167@
+1 WIFE @I168@
+1 CHIL @I177@
+1 CHIL @I1020@
+1 CHIL @I184@
+1 CHIL @I190@
+1 CHIL @I195@
+0 @F62@ FAM
+1 MARR Y
+1 HUSB @I277@
+1 WIFE @I169@
+1 CHIL @I170@
+1 CHIL @I171@
+1 CHIL @I172@
+1 CHIL @I173@
+1 CHIL @I174@
+1 CHIL @I175@
+1 CHIL @I176@
+0 @F63@ FAM
+1 MARR Y
+1 HUSB @I177@
+1 WIFE @I178@
+1 CHIL @I179@
+1 CHIL @I180@
+1 CHIL @I181@
+1 CHIL @I182@
+1 CHIL @I183@
+0 @F64@ FAM
+1 MARR Y
+1 HUSB @I184@
+1 WIFE @I185@
+1 CHIL @I186@
+1 CHIL @I187@
+0 @F65@ FAM
+1 MARR Y
+1 HUSB @I186@
+1 WIFE @I188@
+1 CHIL @I189@
+0 @F66@ FAM
+1 MARR Y
+1 HUSB @I190@
+1 WIFE @I191@
+1 CHIL @I192@
+1 CHIL @I193@
+1 CHIL @I194@
+0 @F67@ FAM
+1 MARR Y
+1 HUSB @I195@
+1 WIFE @I196@
+1 CHIL @I934@
+1 CHIL @I198@
+0 @F61@ FAM
+1 MARR Y
+1 HUSB @I167@
+1 WIFE @I199@
+1 CHIL @I200@
+1 CHIL @I201@
+0 @F68@ FAM
+1 MARR Y
+1 HUSB @I201@
+1 WIFE @I202@
+1 CHIL @I203@
+1 CHIL @I204@
+0 @F69@ FAM
+1 MARR Y
+1 HUSB @I205@
+1 WIFE @I206@
+1 CHIL @I209@
+1 CHIL @I207@
+1 CHIL @I221@
+0 @F71@ FAM
+1 MARR Y
+1 HUSB @I208@
+1 WIFE @I207@
+0 @F72@ FAM
+1 MARR Y
+1 HUSB @I209@
+1 WIFE @I210@
+1 CHIL @I211@
+0 @F70@ FAM
+1 MARR Y
+1 HUSB @I205@
+1 WIFE @I212@
+1 CHIL @I213@
+1 CHIL @I222@
+1 CHIL @I226@
+1 CHIL @I231@
+1 CHIL @I240@
+1 CHIL @I235@
+1 CHIL @I236@
+1 CHIL @I244@
+0 @F74@ FAM
+1 MARR Y
+1 HUSB @I214@
+1 WIFE @I213@
+1 CHIL @I215@
+0 @F73@ FAM
+1 MARR Y
+1 HUSB @I209@
+1 WIFE @I216@
+1 CHIL @I219@
+1 CHIL @I220@
+1 CHIL @I217@
+1 CHIL @I218@
+0 @F75@ FAM
+1 MARR Y
+1 HUSB @I223@
+1 WIFE @I222@
+1 CHIL @I224@
+1 CHIL @I225@
+0 @F76@ FAM
+1 MARR Y
+1 HUSB @I227@
+1 WIFE @I226@
+1 CHIL @I228@
+1 CHIL @I229@
+1 CHIL @I230@
+0 @F77@ FAM
+1 MARR Y
+1 HUSB @I232@
+1 WIFE @I231@
+1 CHIL @I233@
+1 CHIL @I234@
+0 @F78@ FAM
+1 MARR Y
+1 HUSB @I237@
+1 WIFE @I236@
+1 CHIL @I238@
+1 CHIL @I239@
+0 @F79@ FAM
+1 MARR Y
+1 HUSB @I240@
+1 WIFE @I241@
+1 CHIL @I242@
+1 CHIL @I243@
+0 @F80@ FAM
+1 MARR Y
+1 HUSB @I244@
+1 WIFE @I245@
+1 CHIL @I246@
+0 @F81@ FAM
+1 MARR Y
+1 HUSB @I247@
+1 WIFE @I248@
+1 CHIL @I249@
+1 CHIL @I250@
+1 CHIL @I251@
+1 CHIL @I252@
+0 @F82@ FAM
+1 MARR Y
+1 HUSB @I253@
+1 WIFE @I254@
+0 @F83@ FAM
+1 MARR Y
+1 HUSB @I253@
+1 WIFE @I255@
+1 CHIL @I256@
+0 @F84@ FAM
+1 MARR Y
+1 HUSB @I256@
+1 WIFE @I257@
+0 @F85@ FAM
+1 MARR Y
+1 HUSB @I259@
+1 WIFE @I258@
+1 CHIL @I260@
+1 CHIL @I261@
+1 CHIL @I262@
+1 CHIL @I263@
+1 CHIL @I264@
+1 CHIL @I265@
+1 CHIL @I266@
+0 @F47@ FAM
+1 MARR Y
+1 HUSB @I267@
+1 WIFE @I268@
+1 CHIL @I269@
+1 CHIL @I271@
+1 CHIL @I270@
+1 CHIL @I272@
+1 CHIL @I126@
+0 @F42@ FAM
+1 MARR Y
+1 HUSB @I108@
+1 WIFE @I273@
+0 @F43@ FAM
+1 MARR Y
+1 HUSB @I274@
+1 WIFE @I109@
+0 @F44@ FAM
+1 MARR Y
+1 HUSB @I275@
+1 WIFE @I110@
+0 @F45@ FAM
+1 MARR Y
+1 HUSB @I111@
+1 WIFE @I276@
+1 CHIL @I277@
+1 CHIL @I279@
+1 CHIL @I281@
+1 CHIL @I283@
+0 @F93@ FAM
+1 MARR Y
+1 HUSB @I277@
+1 WIFE @I278@
+1 CHIL @I922@
+1 CHIL @I923@
+0 @F94@ FAM
+1 MARR Y
+1 HUSB @I280@
+1 WIFE @I279@
+1 CHIL @I924@
+1 CHIL @I925@
+0 @F95@ FAM
+1 MARR Y
+1 HUSB @I281@
+1 WIFE @I282@
+1 CHIL @I929@
+1 CHIL @I930@
+0 @F96@ FAM
+1 MARR Y
+1 HUSB @I283@
+1 WIFE @I284@
+1 CHIL @I931@
+1 CHIL @I932@
+0 @F41@ FAM
+1 MARR Y
+1 HUSB @I107@
+1 WIFE @I285@
+0 @F46@ FAM
+1 MARR Y
+1 HUSB @I286@
+1 WIFE @I120@
+1 CHIL @I287@
+1 CHIL @I288@
+0 @F90@ FAM
+1 MARR Y
+1 HUSB @I272@
+1 WIFE @I298@
+1 CHIL @I299@
+0 @F105@ FAM
+1 MARR Y
+1 HUSB @I300@
+1 WIFE @I299@
+1 CHIL @I301@
+1 CHIL @I302@
+1 CHIL @I303@
+1 CHIL @I304@
+0 @F106@ FAM
+1 MARR Y
+1 HUSB @I303@
+1 WIFE @I305@
+1 CHIL @I306@
+1 CHIL @I307@
+1 CHIL @I308@
+1 CHIL @I309@
+0 @F107@ FAM
+1 MARR Y
+1 HUSB @I310@
+1 WIFE @I304@
+1 CHIL @I311@
+1 CHIL @I312@
+1 CHIL @I313@
+1 CHIL @I314@
+1 CHIL @I315@
+0 @F91@ FAM
+1 MARR Y
+1 HUSB @I272@
+1 WIFE @I316@
+1 CHIL @I317@
+1 CHIL @I318@
+0 @F108@ FAM
+1 MARR Y
+1 HUSB @I319@
+1 WIFE @I317@
+1 CHIL @I320@
+1 CHIL @I321@
+1 CHIL @I322@
+1 CHIL @I323@
+1 CHIL @I324@
+1 CHIL @I325@
+0 @F110@ FAM
+1 MARR Y
+1 HUSB @I320@
+1 WIFE @I326@
+1 CHIL @I327@
+1 CHIL @I328@
+1 CHIL @I329@
+1 CHIL @I330@
+1 CHIL @I331@
+1 CHIL @I332@
+0 @F111@ FAM
+1 MARR Y
+1 HUSB @I321@
+1 WIFE @I333@
+1 CHIL @I334@
+1 CHIL @I335@
+1 CHIL @I336@
+1 CHIL @I337@
+1 CHIL @I338@
+0 @F112@ FAM
+1 MARR Y
+1 HUSB @I322@
+1 WIFE @I339@
+1 CHIL @I340@
+1 CHIL @I341@
+0 @F113@ FAM
+1 MARR Y
+1 HUSB @I323@
+1 WIFE @I342@
+1 CHIL @I343@
+1 CHIL @I344@
+1 CHIL @I345@
+1 CHIL @I346@
+1 CHIL @I347@
+1 CHIL @I348@
+0 @F114@ FAM
+1 MARR Y
+1 HUSB @I349@
+1 WIFE @I324@
+1 CHIL @I350@
+1 CHIL @I351@
+1 CHIL @I352@
+0 @F115@ FAM
+1 MARR Y
+1 HUSB @I353@
+1 WIFE @I325@
+1 CHIL @I354@
+1 CHIL @I355@
+0 @F109@ FAM
+1 MARR Y
+1 HUSB @I356@
+1 WIFE @I318@
+1 CHIL @I357@
+1 CHIL @I359@
+1 CHIL @I358@
+0 @F116@ FAM
+1 MARR Y
+1 HUSB @I358@
+1 WIFE @I360@
+1 CHIL @I361@
+1 CHIL @I362@
+1 CHIL @I363@
+1 CHIL @I364@
+1 CHIL @I365@
+0 @F117@ FAM
+1 MARR Y
+1 HUSB @I366@
+1 WIFE @I359@
+1 CHIL @I367@
+1 CHIL @I368@
+0 @F92@ FAM
+1 MARR Y
+1 HUSB @I272@
+1 WIFE @I369@
+1 CHIL @I370@
+1 CHIL @I372@
+1 CHIL @I371@
+0 @F118@ FAM
+1 MARR Y
+1 HUSB @I373@
+1 WIFE @I370@
+1 CHIL @I374@
+1 CHIL @I375@
+1 CHIL @I376@
+0 @F119@ FAM
+1 MARR Y
+1 HUSB @I377@
+1 WIFE @I371@
+0 @F120@ FAM
+1 MARR Y
+1 HUSB @I372@
+1 WIFE @I378@
+1 CHIL @I379@
+1 CHIL @I380@
+0 @F121@ FAM
+1 MARR Y
+1 HUSB @I372@
+1 WIFE @I381@
+1 CHIL @I382@
+1 CHIL @I383@
+1 CHIL @I384@
+1 CHIL @I385@
+1 CHIL @I386@
+1 CHIL @I387@
+0 @F123@ FAM
+1 MARR Y
+1 HUSB @I379@
+1 WIFE @I388@
+1 CHIL @I389@
+0 @F125@ FAM
+1 MARR Y
+1 HUSB @I390@
+1 WIFE @I389@
+0 @F124@ FAM
+1 MARR Y
+1 HUSB @I379@
+1 WIFE @I391@
+1 CHIL @I392@
+0 @F122@ FAM
+1 MARR Y
+1 HUSB @I372@
+1 WIFE @I393@
+1 CHIL @I394@
+0 @F88@ FAM
+1 MARR Y
+1 HUSB @I395@
+1 WIFE @I270@
+0 @F7@ FAM
+1 MARR Y
+1 CHIL @I1013@
+1 CHIL @I1002@
+1 CHIL @I1005@
+1 CHIL @I396@
+1 CHIL @I6@
+0 @F89@ FAM
+1 MARR Y
+1 HUSB @I271@
+1 WIFE @I397@
+1 CHIL @I398@
+1 CHIL @I399@
+0 @F126@ FAM
+1 MARR Y
+1 HUSB @I399@
+1 WIFE @I400@
+1 CHIL @I401@
+1 CHIL @I402@
+1 CHIL @I403@
+1 CHIL @I404@
+1 CHIL @I409@
+0 @F127@ FAM
+1 MARR Y
+1 HUSB @I405@
+1 WIFE @I404@
+1 CHIL @I406@
+1 CHIL @I407@
+1 CHIL @I408@
+0 @F128@ FAM
+1 MARR Y
+1 HUSB @I409@
+1 WIFE @I410@
+1 CHIL @I412@
+1 CHIL @I411@
+1 CHIL @I414@
+0 @F129@ FAM
+1 MARR Y
+1 HUSB @I412@
+1 WIFE @I413@
+1 CHIL @I415@
+1 CHIL @I416@
+1 CHIL @I417@
+0 @F130@ FAM
+1 MARR Y
+1 HUSB @I412@
+1 WIFE @I418@
+1 CHIL @I419@
+1 CHIL @I420@
+1 CHIL @I421@
+1 CHIL @I422@
+0 @F87@ FAM
+1 MARR Y
+1 HUSB @I423@
+1 WIFE @I269@
+1 CHIL @I424@
+0 @F131@ FAM
+1 MARR Y
+1 HUSB @I425@
+1 WIFE @I424@
+1 CHIL @I426@
+1 CHIL @I427@
+0 @F132@ FAM
+1 MARR Y
+1 HUSB @I427@
+1 WIFE @I428@
+1 CHIL @I432@
+0 @F133@ FAM
+1 MARR Y
+1 HUSB @I427@
+1 WIFE @I429@
+1 CHIL @I454@
+1 CHIL @I458@
+1 CHIL @I466@
+0 @F134@ FAM
+1 MARR Y
+1 HUSB @I427@
+1 WIFE @I430@
+0 @F135@ FAM
+1 MARR Y
+1 HUSB @I427@
+1 WIFE @I431@
+0 @F136@ FAM
+1 MARR Y
+1 HUSB @I432@
+1 WIFE @I433@
+1 CHIL @I434@
+1 CHIL @I435@
+1 CHIL @I436@
+1 CHIL @I437@
+1 CHIL @I438@
+0 @F140@ FAM
+1 MARR Y
+1 HUSB @I439@
+1 WIFE @I434@
+0 @F141@ FAM
+1 MARR Y
+1 HUSB @I435@
+1 WIFE @I440@
+0 @F142@ FAM
+1 MARR Y
+1 HUSB @I436@
+1 WIFE @I441@
+0 @F143@ FAM
+1 MARR Y
+1 HUSB @I437@
+1 WIFE @I442@
+0 @F144@ FAM
+1 MARR Y
+1 HUSB @I438@
+1 WIFE @I443@
+0 @F137@ FAM
+1 MARR Y
+1 HUSB @I432@
+1 WIFE @I444@
+1 CHIL @I445@
+0 @F145@ FAM
+1 MARR Y
+1 HUSB @I446@
+1 WIFE @I445@
+0 @F138@ FAM
+1 MARR Y
+1 HUSB @I432@
+1 WIFE @I447@
+1 CHIL @I448@
+1 CHIL @I449@
+0 @F146@ FAM
+1 MARR Y
+1 HUSB @I450@
+1 WIFE @I449@
+0 @F139@ FAM
+1 MARR Y
+1 HUSB @I432@
+1 WIFE @I451@
+1 CHIL @I452@
+1 CHIL @I453@
+0 @F147@ FAM
+1 MARR Y
+1 HUSB @I454@
+1 WIFE @I455@
+0 @F148@ FAM
+1 MARR Y
+1 HUSB @I454@
+1 WIFE @I456@
+0 @F149@ FAM
+1 MARR Y
+1 HUSB @I454@
+1 WIFE @I457@
+0 @F150@ FAM
+1 MARR Y
+1 HUSB @I458@
+1 WIFE @I459@
+1 CHIL @I460@
+1 CHIL @I461@
+1 CHIL @I462@
+1 CHIL @I463@
+1 CHIL @I464@
+1 CHIL @I465@
+0 @F151@ FAM
+1 MARR Y
+1 HUSB @I466@
+1 WIFE @I467@
+1 CHIL @I468@
+1 CHIL @I469@
+1 CHIL @I470@
+1 CHIL @I471@
+1 CHIL @I472@
+1 CHIL @I473@
+0 @F152@ FAM
+1 MARR Y
+1 HUSB @I468@
+1 WIFE @I474@
+0 @F153@ FAM
+1 MARR Y
+1 HUSB @I469@
+1 WIFE @I475@
+0 @F154@ FAM
+1 MARR Y
+1 HUSB @I470@
+1 WIFE @I476@
+0 @F155@ FAM
+1 MARR Y
+1 HUSB @I471@
+1 WIFE @I477@
+0 @F156@ FAM
+1 MARR Y
+1 HUSB @I478@
+1 WIFE @I472@
+0 @F86@ FAM
+1 MARR Y
+1 HUSB @I479@
+1 WIFE @I480@
+1 CHIL @I267@
+1 CHIL @I481@
+1 CHIL @I500@
+1 CHIL @I544@
+0 @F158@ FAM
+1 MARR Y
+1 HUSB @I481@
+1 WIFE @I482@
+1 CHIL @I483@
+0 @F159@ FAM
+1 MARR Y
+1 HUSB @I484@
+1 WIFE @I483@
+1 CHIL @I485@
+1 CHIL @I486@
+1 CHIL @I487@
+1 CHIL @I498@
+0 @F160@ FAM
+1 MARR Y
+1 HUSB @I488@
+1 WIFE @I485@
+1 CHIL @I489@
+1 CHIL @I490@
+1 CHIL @I491@
+1 CHIL @I492@
+0 @F161@ FAM
+1 MARR Y
+1 HUSB @I493@
+1 WIFE @I486@
+0 @F162@ FAM
+1 MARR Y
+1 HUSB @I487@
+1 WIFE @I494@
+1 CHIL @I495@
+1 CHIL @I496@
+1 CHIL @I497@
+0 @F163@ FAM
+1 MARR Y
+1 HUSB @I498@
+1 WIFE @I499@
+0 @F164@ FAM
+1 MARR Y
+1 HUSB @I500@
+1 WIFE @I501@
+1 CHIL @I502@
+0 @F165@ FAM
+1 MARR Y
+1 HUSB @I502@
+1 WIFE @I503@
+1 CHIL @I504@
+1 CHIL @I505@
+1 CHIL @I506@
+0 @F166@ FAM
+1 MARR Y
+1 HUSB @I507@
+1 WIFE @I504@
+1 CHIL @I508@
+1 CHIL @I509@
+1 CHIL @I510@
+1 CHIL @I511@
+0 @F167@ FAM
+1 MARR Y
+1 HUSB @I512@
+1 WIFE @I505@
+1 CHIL @I513@
+1 CHIL @I514@
+0 @F170@ FAM
+1 MARR Y
+1 HUSB @I513@
+1 WIFE @I515@
+1 CHIL @I516@
+1 CHIL @I517@
+1 CHIL @I518@
+1 CHIL @I519@
+0 @F171@ FAM
+1 MARR Y
+1 HUSB @I514@
+1 WIFE @I520@
+1 CHIL @I521@
+1 CHIL @I522@
+1 CHIL @I523@
+0 @F172@ FAM
+1 MARR Y
+1 HUSB @I514@
+1 WIFE @I524@
+1 CHIL @I525@
+0 @F168@ FAM
+1 MARR Y
+1 HUSB @I526@
+1 WIFE @I506@
+1 CHIL @I527@
+1 CHIL @I528@
+1 CHIL @I529@
+0 @F173@ FAM
+1 MARR Y
+1 HUSB @I527@
+1 WIFE @I530@
+1 CHIL @I531@
+0 @F174@ FAM
+1 MARR Y
+1 HUSB @I528@
+1 WIFE @I532@
+1 CHIL @I533@
+1 CHIL @I534@
+1 CHIL @I535@
+0 @F175@ FAM
+1 MARR Y
+1 HUSB @I529@
+1 WIFE @I536@
+1 CHIL @I537@
+1 CHIL @I538@
+0 @F176@ FAM
+1 MARR Y
+1 HUSB @I529@
+1 WIFE @I539@
+1 CHIL @I540@
+1 CHIL @I541@
+1 CHIL @I542@
+1 CHIL @I543@
+0 @F177@ FAM
+1 MARR Y
+1 HUSB @I544@
+1 WIFE @I545@
+1 CHIL @I546@
+1 CHIL @I547@
+0 @F178@ FAM
+1 MARR Y
+1 HUSB @I548@
+1 WIFE @I546@
+1 CHIL @I549@
+1 CHIL @I550@
+0 @F181@ FAM
+1 MARR Y
+1 HUSB @I549@
+1 WIFE @I551@
+1 CHIL @I552@
+1 CHIL @I553@
+1 CHIL @I561@
+1 CHIL @I566@
+0 @F183@ FAM
+1 MARR Y
+1 HUSB @I552@
+1 WIFE @I554@
+1 CHIL @I555@
+0 @F184@ FAM
+1 MARR Y
+1 HUSB @I553@
+1 WIFE @I556@
+1 CHIL @I557@
+1 CHIL @I558@
+0 @F185@ FAM
+1 MARR Y
+1 HUSB @I553@
+1 WIFE @I559@
+1 CHIL @I560@
+0 @F186@ FAM
+1 MARR Y
+1 HUSB @I562@
+1 WIFE @I561@
+1 CHIL @I563@
+1 CHIL @I564@
+1 CHIL @I565@
+0 @F187@ FAM
+1 MARR Y
+1 HUSB @I567@
+1 WIFE @I566@
+1 CHIL @I568@
+1 CHIL @I569@
+0 @F182@ FAM
+1 MARR Y
+1 HUSB @I550@
+1 WIFE @I570@
+1 CHIL @I571@
+1 CHIL @I572@
+1 CHIL @I573@
+1 CHIL @I575@
+1 CHIL @I574@
+1 CHIL @I576@
+0 @F188@ FAM
+1 MARR Y
+1 HUSB @I571@
+1 WIFE @I577@
+0 @F189@ FAM
+1 MARR Y
+1 HUSB @I571@
+1 WIFE @I578@
+0 @F190@ FAM
+1 MARR Y
+1 HUSB @I572@
+1 WIFE @I579@
+0 @F191@ FAM
+1 MARR Y
+1 HUSB @I573@
+1 WIFE @I580@
+0 @F192@ FAM
+1 MARR Y
+1 HUSB @I574@
+1 WIFE @I581@
+0 @F193@ FAM
+1 MARR Y
+1 HUSB @I582@
+1 WIFE @I575@
+0 @F194@ FAM
+1 MARR Y
+1 HUSB @I583@
+1 WIFE @I576@
+0 @F179@ FAM
+1 MARR Y
+1 HUSB @I547@
+1 WIFE @I584@
+0 @F180@ FAM
+1 MARR Y
+1 HUSB @I547@
+1 WIFE @I585@
+1 CHIL @I586@
+1 CHIL @I587@
+1 CHIL @I588@
+1 CHIL @I589@
+1 CHIL @I590@
+1 CHIL @I591@
+0 @F169@ FAM
+1 MARR Y
+1 HUSB @I512@
+1 WIFE @I586@
+1 CHIL @I592@
+0 @F201@ FAM
+1 MARR Y
+1 HUSB @I593@
+1 WIFE @I592@
+1 CHIL @I594@
+1 CHIL @I595@
+1 CHIL @I596@
+1 CHIL @I597@
+0 @F195@ FAM
+1 MARR Y
+1 HUSB @I598@
+1 WIFE @I587@
+0 @F196@ FAM
+1 MARR Y
+1 HUSB @I588@
+1 WIFE @I599@
+1 CHIL @I600@
+0 @F202@ FAM
+1 MARR Y
+1 HUSB @I601@
+1 WIFE @I600@
+1 CHIL @I602@
+1 CHIL @I603@
+1 CHIL @I604@
+0 @F203@ FAM
+1 MARR Y
+1 HUSB @I602@
+1 WIFE @I605@
+1 CHIL @I606@
+1 CHIL @I607@
+1 CHIL @I608@
+1 CHIL @I609@
+1 CHIL @I610@
+0 @F206@ FAM
+1 MARR Y
+1 HUSB @I606@
+1 WIFE @I611@
+0 @F207@ FAM
+1 MARR Y
+1 HUSB @I607@
+1 WIFE @I612@
+0 @F204@ FAM
+1 MARR Y
+1 HUSB @I603@
+1 WIFE @I613@
+1 CHIL @I614@
+1 CHIL @I615@
+1 CHIL @I616@
+1 CHIL @I617@
+0 @F205@ FAM
+1 MARR Y
+1 HUSB @I604@
+1 WIFE @I618@
+0 @F197@ FAM
+1 MARR Y
+1 HUSB @I588@
+1 WIFE @I619@
+1 CHIL @I622@
+1 CHIL @I623@
+1 CHIL @I620@
+1 CHIL @I621@
+0 @F209@ FAM
+1 MARR Y
+1 HUSB @I624@
+1 WIFE @I620@
+1 CHIL @I625@
+1 CHIL @I626@
+1 CHIL @I627@
+1 CHIL @I628@
+0 @F213@ FAM
+1 MARR Y
+1 HUSB @I629@
+1 WIFE @I625@
+1 CHIL @I630@
+1 CHIL @I631@
+1 CHIL @I632@
+1 CHIL @I633@
+0 @F214@ FAM
+1 MARR Y
+1 HUSB @I634@
+1 WIFE @I626@
+1 CHIL @I635@
+1 CHIL @I636@
+1 CHIL @I637@
+1 CHIL @I638@
+0 @F215@ FAM
+1 MARR Y
+1 HUSB @I639@
+1 WIFE @I627@
+1 CHIL @I640@
+1 CHIL @I641@
+0 @F216@ FAM
+1 MARR Y
+1 HUSB @I628@
+1 WIFE @I642@
+1 CHIL @I643@
+1 CHIL @I644@
+0 @F210@ FAM
+1 MARR Y
+1 HUSB @I645@
+1 WIFE @I621@
+1 CHIL @I648@
+1 CHIL @I649@
+1 CHIL @I650@
+1 CHIL @I646@
+1 CHIL @I647@
+0 @F217@ FAM
+1 MARR Y
+1 HUSB @I651@
+1 WIFE @I646@
+1 CHIL @I652@
+1 CHIL @I653@
+0 @F218@ FAM
+1 MARR Y
+1 HUSB @I654@
+1 WIFE @I647@
+1 CHIL @I655@
+1 CHIL @I656@
+0 @F219@ FAM
+1 MARR Y
+1 HUSB @I648@
+1 WIFE @I657@
+1 CHIL @I658@
+1 CHIL @I659@
+1 CHIL @I660@
+0 @F220@ FAM
+1 MARR Y
+1 HUSB @I649@
+1 WIFE @I661@
+1 CHIL @I662@
+0 @F221@ FAM
+1 MARR Y
+1 HUSB @I650@
+1 WIFE @I663@
+1 CHIL @I664@
+1 CHIL @I665@
+0 @F211@ FAM
+1 MARR Y
+1 HUSB @I622@
+1 WIFE @I666@
+1 CHIL @I667@
+1 CHIL @I668@
+1 CHIL @I669@
+1 CHIL @I670@
+1 CHIL @I671@
+0 @F222@ FAM
+1 MARR Y
+1 HUSB @I667@
+1 WIFE @I672@
+1 CHIL @I675@
+1 CHIL @I673@
+1 CHIL @I674@
+1 CHIL @I676@
+1 CHIL @I677@
+1 CHIL @I678@
+1 CHIL @I679@
+1 CHIL @I680@
+1 CHIL @I681@
+0 @F228@ FAM
+1 MARR Y
+1 HUSB @I682@
+1 WIFE @I673@
+1 CHIL @I683@
+1 CHIL @I684@
+1 CHIL @I685@
+1 CHIL @I686@
+1 CHIL @I687@
+1 CHIL @I688@
+0 @F229@ FAM
+1 MARR Y
+1 HUSB @I689@
+1 WIFE @I674@
+1 CHIL @I690@
+1 CHIL @I691@
+1 CHIL @I692@
+1 CHIL @I693@
+1 CHIL @I694@
+0 @F230@ FAM
+1 MARR Y
+1 HUSB @I695@
+1 WIFE @I675@
+1 CHIL @I696@
+1 CHIL @I697@
+1 CHIL @I698@
+0 @F231@ FAM
+1 MARR Y
+1 HUSB @I699@
+1 WIFE @I676@
+1 CHIL @I700@
+1 CHIL @I701@
+0 @F232@ FAM
+1 MARR Y
+1 HUSB @I677@
+1 WIFE @I702@
+1 CHIL @I703@
+1 CHIL @I704@
+1 CHIL @I705@
+0 @F233@ FAM
+1 MARR Y
+1 HUSB @I678@
+1 WIFE @I706@
+1 CHIL @I707@
+1 CHIL @I708@
+1 CHIL @I709@
+0 @F234@ FAM
+1 MARR Y
+1 HUSB @I679@
+1 WIFE @I710@
+1 CHIL @I711@
+1 CHIL @I712@
+0 @F223@ FAM
+1 MARR Y
+1 HUSB @I668@
+1 WIFE @I713@
+1 CHIL @I717@
+1 CHIL @I714@
+1 CHIL @I715@
+1 CHIL @I716@
+0 @F224@ FAM
+1 MARR Y
+1 HUSB @I669@
+1 WIFE @I718@
+1 CHIL @I720@
+1 CHIL @I719@
+1 CHIL @I721@
+1 CHIL @I722@
+1 CHIL @I723@
+0 @F235@ FAM
+1 MARR Y
+1 HUSB @I724@
+1 WIFE @I719@
+0 @F236@ FAM
+1 MARR Y
+1 HUSB @I720@
+1 WIFE @I725@
+0 @F237@ FAM
+1 MARR Y
+1 HUSB @I721@
+1 WIFE @I726@
+0 @F225@ FAM
+1 MARR Y
+1 HUSB @I670@
+1 WIFE @I727@
+1 CHIL @I728@
+1 CHIL @I729@
+0 @F226@ FAM
+1 MARR Y
+1 HUSB @I670@
+1 WIFE @I730@
+1 CHIL @I731@
+1 CHIL @I732@
+1 CHIL @I733@
+0 @F227@ FAM
+1 MARR Y
+1 HUSB @I671@
+1 WIFE @I734@
+1 CHIL @I735@
+1 CHIL @I736@
+1 CHIL @I737@
+0 @F212@ FAM
+1 MARR Y
+1 HUSB @I623@
+1 WIFE @I738@
+1 CHIL @I740@
+1 CHIL @I742@
+1 CHIL @I739@
+1 CHIL @I741@
+0 @F238@ FAM
+1 MARR Y
+1 HUSB @I743@
+1 WIFE @I739@
+1 CHIL @I745@
+1 CHIL @I744@
+1 CHIL @I746@
+0 @F239@ FAM
+1 MARR Y
+1 HUSB @I740@
+1 WIFE @I747@
+0 @F240@ FAM
+1 MARR Y
+1 HUSB @I741@
+1 WIFE @I748@
+1 CHIL @I750@
+1 CHIL @I749@
+0 @F241@ FAM
+1 MARR Y
+1 HUSB @I742@
+1 WIFE @I751@
+1 CHIL @I752@
+1 CHIL @I753@
+0 @F198@ FAM
+1 MARR Y
+1 HUSB @I589@
+1 WIFE @I754@
+1 CHIL @I755@
+0 @F242@ FAM
+1 MARR Y
+1 HUSB @I756@
+1 WIFE @I755@
+1 CHIL @I757@
+1 CHIL @I758@
+0 @F243@ FAM
+1 MARR Y
+1 HUSB @I759@
+1 WIFE @I757@
+1 CHIL @I760@
+1 CHIL @I761@
+1 CHIL @I762@
+0 @F244@ FAM
+1 MARR Y
+1 HUSB @I758@
+1 WIFE @I763@
+1 CHIL @I764@
+1 CHIL @I765@
+0 @F199@ FAM
+1 MARR Y
+1 HUSB @I590@
+1 WIFE @I766@
+1 CHIL @I767@
+1 CHIL @I768@
+0 @F245@ FAM
+1 MARR Y
+1 HUSB @I767@
+1 WIFE @I769@
+1 CHIL @I770@
+1 CHIL @I771@
+1 CHIL @I772@
+1 CHIL @I773@
+0 @F247@ FAM
+1 MARR Y
+1 HUSB @I774@
+1 WIFE @I770@
+1 CHIL @I775@
+0 @F251@ FAM
+1 MARR Y
+1 HUSB @I775@
+1 WIFE @I776@
+0 @F248@ FAM
+1 MARR Y
+1 HUSB @I777@
+1 WIFE @I771@
+1 CHIL @I778@
+0 @F249@ FAM
+1 MARR Y
+1 HUSB @I772@
+1 WIFE @I779@
+1 CHIL @I780@
+1 CHIL @I781@
+1 CHIL @I782@
+1 CHIL @I783@
+0 @F250@ FAM
+1 MARR Y
+1 HUSB @I773@
+1 CHIL @I784@
+1 CHIL @I785@
+0 @F246@ FAM
+1 MARR Y
+1 HUSB @I768@
+1 WIFE @I786@
+1 CHIL @I789@
+1 CHIL @I787@
+1 CHIL @I788@
+0 @F252@ FAM
+1 MARR Y
+1 HUSB @I789@
+1 WIFE @I790@
+1 CHIL @I791@
+0 @F200@ FAM
+1 MARR Y
+1 HUSB @I591@
+1 WIFE @I792@
+1 CHIL @I793@
+1 CHIL @I794@
+1 CHIL @I795@
+0 @F208@ FAM
+1 MARR Y
+1 HUSB @I756@
+1 WIFE @I793@
+1 CHIL @I613@
+1 CHIL @I796@
+1 CHIL @I797@
+1 CHIL @I798@
+0 @F255@ FAM
+1 MARR Y
+1 HUSB @I799@
+1 WIFE @I796@
+1 CHIL @I800@
+1 CHIL @I801@
+1 CHIL @I802@
+1 CHIL @I803@
+1 CHIL @I804@
+1 CHIL @I805@
+0 @F256@ FAM
+1 MARR Y
+1 HUSB @I797@
+1 WIFE @I806@
+1 CHIL @I807@
+1 CHIL @I808@
+1 CHIL @I809@
+0 @F253@ FAM
+1 MARR Y
+1 HUSB @I794@
+1 WIFE @I810@
+1 CHIL @I811@
+1 CHIL @I812@
+1 CHIL @I813@
+1 CHIL @I814@
+0 @F257@ FAM
+1 MARR Y
+1 HUSB @I815@
+1 WIFE @I811@
+1 CHIL @I816@
+1 CHIL @I817@
+1 CHIL @I818@
+1 CHIL @I819@
+1 CHIL @I820@
+0 @F258@ FAM
+1 MARR Y
+1 HUSB @I821@
+1 WIFE @I812@
+1 CHIL @I822@
+1 CHIL @I823@
+1 CHIL @I824@
+0 @F259@ FAM
+1 MARR Y
+1 HUSB @I825@
+1 WIFE @I813@
+0 @F260@ FAM
+1 MARR Y
+1 HUSB @I814@
+1 WIFE @I826@
+1 CHIL @I827@
+1 CHIL @I833@
+1 CHIL @I831@
+1 CHIL @I832@
+1 CHIL @I834@
+0 @F261@ FAM
+1 MARR Y
+1 HUSB @I828@
+1 WIFE @I827@
+1 CHIL @I829@
+1 CHIL @I830@
+0 @F262@ FAM
+1 MARR Y
+1 HUSB @I835@
+1 WIFE @I831@
+1 CHIL @I836@
+1 CHIL @I837@
+1 CHIL @I838@
+0 @F263@ FAM
+1 MARR Y
+1 HUSB @I839@
+1 WIFE @I832@
+1 CHIL @I840@
+1 CHIL @I841@
+1 CHIL @I842@
+1 CHIL @I843@
+0 @F264@ FAM
+1 MARR Y
+1 HUSB @I833@
+1 WIFE @I844@
+1 CHIL @I845@
+1 CHIL @I846@
+1 CHIL @I847@
+0 @F265@ FAM
+1 MARR Y
+1 HUSB @I834@
+1 WIFE @I848@
+1 CHIL @I849@
+1 CHIL @I850@
+0 @F254@ FAM
+1 MARR Y
+1 HUSB @I795@
+1 WIFE @I851@
+1 CHIL @I854@
+1 CHIL @I852@
+1 CHIL @I853@
+1 CHIL @I855@
+1 CHIL @I856@
+0 @F266@ FAM
+1 MARR Y
+1 HUSB @I857@
+1 WIFE @I852@
+1 CHIL @I858@
+1 CHIL @I859@
+1 CHIL @I860@
+1 CHIL @I861@
+1 CHIL @I862@
+0 @F267@ FAM
+1 MARR Y
+1 HUSB @I863@
+1 WIFE @I853@
+1 CHIL @I864@
+1 CHIL @I865@
+1 CHIL @I866@
+1 CHIL @I867@
+1 CHIL @I868@
+1 CHIL @I869@
+0 @F268@ FAM
+1 MARR Y
+1 HUSB @I854@
+1 WIFE @I870@
+1 CHIL @I871@
+1 CHIL @I872@
+1 CHIL @I873@
+1 CHIL @I874@
+1 CHIL @I875@
+1 CHIL @I876@
+0 @F269@ FAM
+1 MARR Y
+1 HUSB @I855@
+1 WIFE @I877@
+1 CHIL @I878@
+1 CHIL @I879@
+1 CHIL @I880@
+1 CHIL @I881@
+1 CHIL @I882@
+1 CHIL @I883@
+1 CHIL @I884@
+0 @F271@ FAM
+1 MARR Y
+1 HUSB @I885@
+1 WIFE @I878@
+1 CHIL @I886@
+1 CHIL @I887@
+1 CHIL @I888@
+0 @F272@ FAM
+1 MARR Y
+1 HUSB @I889@
+1 WIFE @I879@
+1 CHIL @I890@
+1 CHIL @I891@
+1 CHIL @I892@
+1 CHIL @I893@
+0 @F273@ FAM
+1 MARR Y
+1 HUSB @I880@
+1 WIFE @I894@
+1 CHIL @I897@
+1 CHIL @I895@
+1 CHIL @I896@
+0 @F270@ FAM
+1 MARR Y
+1 HUSB @I856@
+1 WIFE @I898@
+1 CHIL @I899@
+1 CHIL @I900@
+0 @F275@ FAM
+1 MARR Y
+1 HUSB @I901@
+1 WIFE @I902@
+1 CHIL @I903@
+0 @F157@ FAM
+1 MARR Y
+1 HUSB @I901@
+1 WIFE @I904@
+1 CHIL @I905@
+1 CHIL @I479@
+0 @F274@ FAM
+1 MARR Y
+1 HUSB @I906@
+1 WIFE @I907@
+1 CHIL @I901@
+1 CHIL @I908@
+1 CHIL @I909@
+1 CHIL @I910@
+0 @F276@ FAM
+1 MARR Y
+1 HUSB @I911@
+1 WIFE @I912@
+1 CHIL @I906@
+1 CHIL @I913@
+1 CHIL @I914@
+1 CHIL @I915@
+1 CHIL @I916@
+1 CHIL @I917@
+0 @F277@ FAM
+1 MARR Y
+1 HUSB @I918@
+1 WIFE @I919@
+1 CHIL @I911@
+0 @F278@ FAM
+1 MARR Y
+1 HUSB @I920@
+1 WIFE @I921@
+1 CHIL @I918@
+0 @F279@ FAM
+1 MARR Y
+1 HUSB @I924@
+1 WIFE @I926@
+1 CHIL @I927@
+1 CHIL @I928@
+0 @F280@ FAM
+1 MARR Y
+1 HUSB @I933@
+1 WIFE @I925@
+0 @F102@ FAM
+1 MARR Y
+1 HUSB @I295@
+1 WIFE @I935@
+1 CHIL @I936@
+1 CHIL @I937@
+0 @F8@ FAM
+1 MARR Y
+1 HUSB @I6@
+1 WIFE @I938@
+1 CHIL @I939@
+0 @F282@ FAM
+1 MARR Y
+1 HUSB @I939@
+1 WIFE @I940@
+1 CHIL @I941@
+1 CHIL @I944@
+1 CHIL @I945@
+1 CHIL @I949@
+1 CHIL @I950@
+1 CHIL @I957@
+0 @F283@ FAM
+1 MARR Y
+1 HUSB @I942@
+1 WIFE @I941@
+1 CHIL @I943@
+0 @F284@ FAM
+1 MARR Y
+1 HUSB @I945@
+1 WIFE @I946@
+1 CHIL @I947@
+1 CHIL @I948@
+0 @F285@ FAM
+1 MARR Y
+1 HUSB @I951@
+1 WIFE @I950@
+1 CHIL @I952@
+1 CHIL @I953@
+1 CHIL @I954@
+1 CHIL @I955@
+1 CHIL @I956@
+0 @F286@ FAM
+1 MARR Y
+1 HUSB @I958@
+1 WIFE @I957@
+1 CHIL @I959@
+1 CHIL @I960@
+1 CHIL @I961@
+1 CHIL @I962@
+0 @F52@ FAM
+1 MARR Y
+1 HUSB @I963@
+1 WIFE @I139@
+1 CHIL @I964@
+1 CHIL @I965@
+1 CHIL @I966@
+1 CHIL @I967@
+0 @F97@ FAM
+1 MARR Y
+1 HUSB @I289@
+1 WIFE @I968@
+0 @F98@ FAM
+1 MARR Y
+1 HUSB @I290@
+1 WIFE @I969@
+1 CHIL @I970@
+1 CHIL @I971@
+0 @F99@ FAM
+1 MARR Y
+1 HUSB @I291@
+1 WIFE @I972@
+1 CHIL @I973@
+1 CHIL @I974@
+0 @F100@ FAM
+1 MARR Y
+1 HUSB @I975@
+1 WIFE @I293@
+0 @F101@ FAM
+1 MARR Y
+1 HUSB @I294@
+1 WIFE @I976@
+1 CHIL @I977@
+1 CHIL @I978@
+1 CHIL @I979@
+0 @F281@ FAM
+1 MARR Y
+1 HUSB @I936@
+1 WIFE @I980@
+1 CHIL @I981@
+0 @F103@ FAM
+1 MARR Y
+1 HUSB @I982@
+1 WIFE @I296@
+1 CHIL @I983@
+1 CHIL @I984@
+1 CHIL @I985@
+0 @F104@ FAM
+1 MARR Y
+1 HUSB @I297@
+1 WIFE @I986@
+1 CHIL @I987@
+0 @F287@ FAM
+1 MARR Y
+1 HUSB @I964@
+1 WIFE @I988@
+1 CHIL @I989@
+1 CHIL @I990@
+0 @F288@ FAM
+1 MARR Y
+1 HUSB @I965@
+1 WIFE @I991@
+1 CHIL @I992@
+1 CHIL @I993@
+0 @F289@ FAM
+1 MARR Y
+1 HUSB @I966@
+1 WIFE @I994@
+0 @F290@ FAM
+1 MARR Y
+1 HUSB @I967@
+1 WIFE @I995@
+1 CHIL @I996@
+0 @F293@ FAM
+1 MARR Y
+1 HUSB @I978@
+1 WIFE @I997@
+1 CHIL @I998@
+0 @F292@ FAM
+1 MARR Y
+1 HUSB @I977@
+1 WIFE @I999@
+0 @F291@ FAM
+1 MARR Y
+1 HUSB @I1000@
+1 WIFE @I970@
+1 CHIL @I1001@
+0 @F294@ FAM
+1 MARR Y
+1 HUSB @I1002@
+1 CHIL @I1003@
+1 CHIL @I1004@
+0 @F296@ FAM
+1 MARR Y
+1 HUSB @I1005@
+1 CHIL @I1006@
+1 CHIL @I1007@
+1 CHIL @I1008@
+0 @F299@ FAM
+1 MARR Y
+0 @F295@ FAM
+1 MARR Y
+1 HUSB @I1009@
+1 WIFE @I1004@
+1 CHIL @I1010@
+1 CHIL @I1011@
+1 CHIL @I1012@
+0 @F297@ FAM
+1 MARR Y
+1 HUSB @I1013@
+1 CHIL @I1014@
+1 CHIL @I1015@
+0 @F298@ FAM
+1 MARR Y
+1 HUSB @I1015@
+1 CHIL @I1016@
+1 CHIL @I1017@
+1 CHIL @I1018@
+1 CHIL @I1019@
+0 TRLR
