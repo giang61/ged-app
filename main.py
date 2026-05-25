@@ -6,6 +6,7 @@
 # Kinship terms:     relationships.py
 
 import json
+import os
 import unicodedata
 from html import escape
 
@@ -25,7 +26,7 @@ DEFAULT_GED = "data/nguyen.ged"
 
 @st.cache_resource
 def get_gedcom_data():
-    ged_path = st.secrets.get("ged_file", DEFAULT_GED)
+    ged_path = os.environ.get("GED_FILE", DEFAULT_GED)
     return load_gedcom(ged_path)
 
 G_full, G_anc, names, genders, birth_years, sib_order = get_gedcom_data()
