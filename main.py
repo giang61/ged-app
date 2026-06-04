@@ -18,7 +18,7 @@ from ged_parser import load_gedcom
 from graph_utils import blood_anchor, common_ancestor, expand_with_spouses, find_blood_spouse, find_spouse, is_blood_related
 from relationships import compute_vietnamese_kinship
 
-
+import re
 # ----------------------------
 # Load GEDCOM
 # ----------------------------
@@ -42,7 +42,12 @@ def normalize(text):
     text = text.replace("đ", "d")
     return text
 
-search_names = {pid: normalize(name) for pid, name in names.items()}
+def extract_searchable(name):
+    parens = " ".join(re.findall(r"\(([^)]+)\)", name))
+    base = re.sub(r"\(.*?\)", "", name)
+    return normalize(base + " " + parens)
+
+search_names = {pid: extract_searchable(name) for pid, name in names.items()}
 
 def find_person(query):
     q_words = normalize(query).split()
