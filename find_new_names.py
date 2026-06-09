@@ -34,6 +34,7 @@ import unicodedata
 import argparse
 from pathlib import Path
 from collections import defaultdict, Counter
+from functools import lru_cache
 
 try:
     import pdfplumber
@@ -90,6 +91,31 @@ _PARTICLE_RE = re.compile(
 # 3. GEDCOM LOADING
 # ═══════════════════════════════════════════════════════════════════════════════
 
+def _parse_name_tag(raw_value: str):
+    """
+    Robustly extract (given, surname) from a raw GEDCOM NAME tag value.
+
+    python-gedcom's get_name() silently drops text that follows the closing
+    slash when the surname comes first (e.g. '/Dương/ Công Kiên' → given='').
+    This function always recovers all words regardless of slash placement:
+
+      'Công Kiên /Dương/'   → given='Công Kiên',  surname='Dương'
+      '/Dương/ Công Kiên'   → given='Công Kiên',  surname='Dương'
+      'Công Kiên Dương'     → given='Kiên Dương',  surname='Công'  (first-word fallback)
+    """
+    raw = (raw_value or "").strip()
+    m = re.search(r'/([^/]*)/', raw)
+    if m:
+        surname = m.group(1).strip()
+        given   = re.sub(r'/[^/]*/', '', raw).strip()
+    else:
+        # No slashes: infer surname as first word (Vietnamese convention)
+        parts   = raw.split()
+        surname = parts[0] if parts else ""
+        given   = " ".join(parts[1:]) if len(parts) > 1 else ""
+    return given, surname
+
+
 def load_ged_names(ged_path: str) -> list:
     parser = Parser()
     parser.parse_file(ged_path, strict=False)
@@ -97,12 +123,16 @@ def load_ged_names(ged_path: str) -> list:
     for element in parser.get_element_list():
         if not isinstance(element, IndividualElement):
             continue
-        name_tuple = element.get_name()
-        given   = (name_tuple[0] or "").strip()
-        surname = (name_tuple[1] or "").strip()
-        full    = f"{given} {surname}".strip()
-        if not full:
+        # Use raw NAME tag value instead of get_name() which drops text
+        # after the closing slash when the surname appears first.
+        given, surname = "", ""
+        for child in element.get_child_elements():
+            if child.get_tag() == "NAME":
+                given, surname = _parse_name_tag(child.get_value())
+                break
+        if not given and not surname:
             continue
+        full = f"{given} {surname}".strip()
         birth_data = element.get_birth_data()
         birth_year = ""
         if birth_data and birth_data[0]:
@@ -223,44 +253,108 @@ STRONG = "✅ Strong match"
 WEAK   = "⚠️  Weak match — review"
 NEW    = "🔴 New — add to GED"
 
+# ── Fuzzy token matching ──────────────────────────────────────────────────────
+
+_FUZZY_MIN_LEN = 5   # only apply edit-distance to tokens >= 5 chars;
+                     # shorter tokens (thi, van, le…) are too ambiguous
+
+@lru_cache(maxsize=65536)
+def _edit_distance(a: str, b: str) -> int:
+    """Levenshtein edit distance, cached (same token pairs repeat across all names)."""
+    if a == b:
+        return 0
+    if len(a) < len(b):
+        a, b = b, a
+    if len(a) - len(b) > 1:   # length gap > 1 → distance must be > 1, skip DP
+        return 2
+    prev = list(range(len(b) + 1))
+    for ca in a:
+        curr = [prev[0] + 1]
+        for j, cb in enumerate(b, 1):
+            curr.append(min(prev[j] + 1, curr[j - 1] + 1, prev[j - 1] + (ca != cb)))
+        prev = curr
+    return prev[-1]
+
+def _fuzzy_token_match(a: str, b: str) -> bool:
+    """True if two tokens are equal or within edit distance 1 (long tokens only)."""
+    if a == b:
+        return True
+    if len(a) >= _FUZZY_MIN_LEN and len(b) >= _FUZZY_MIN_LEN:
+        return _edit_distance(a, b) <= 1
+    return False
+
+def _fuzzy_subtract(tokens: set, reference: set) -> set:
+    """
+    Return tokens from `tokens` that have NO fuzzy match in `reference`.
+    Used to compute 'extras' that truly differ between two name token sets.
+    """
+    unmatched = set()
+    for tok in tokens:
+        if not any(_fuzzy_token_match(tok, ref) for ref in reference):
+            unmatched.add(tok)
+    return unmatched
+
+def _fuzzy_intersect(set_a: set, set_b: set) -> bool:
+    """True if at least one token in set_a fuzzy-matches any token in set_b."""
+    return any(_fuzzy_token_match(a, b) for a in set_a for b in set_b)
+
+def _fuzzy_surname_overlap(pdf_tok: set, ged_surname_tokens: set) -> bool:
+    """True if pdf_tok contains a fuzzy match for at least one surname token."""
+    return _fuzzy_intersect(pdf_tok, ged_surname_tokens)
+
+def _fuzzy_matched_surname_tokens(pdf_tok: set, ged_surname_tokens: set) -> set:
+    """Return the subset of pdf_tok that fuzzy-matches any GED surname token."""
+    return {pt for pt in pdf_tok
+            if any(_fuzzy_token_match(pt, st) for st in ged_surname_tokens)}
+
+
 def _score_pair(pdf_given: set, ged_given: set) -> str:
     """
     Given two qualifying given-token sets (common tokens already removed),
     return STRONG, WEAK, or None (no match).
+
+    Uses fuzzy token matching so single-character typos (e.g. Cexilia/Cecilia)
+    are tolerated for tokens of 5+ characters.
     """
-    intersection = pdf_given & ged_given
-    if not intersection:
+    # If both sets are empty after common-token removal, all differentiating
+    # tokens were common — the surname match alone is sufficient (Strong).
+    if not pdf_given and not ged_given:
+        return STRONG
+
+    if not _fuzzy_intersect(pdf_given, ged_given):
         return None
 
-    pdf_extra = pdf_given - ged_given   # tokens in PDF not in GED
-    ged_extra = ged_given - pdf_given   # tokens in GED not in PDF
+    pdf_extra = _fuzzy_subtract(pdf_given, ged_given)
+    ged_extra = _fuzzy_subtract(ged_given, pdf_given)
 
     if not pdf_extra and not ged_extra:
-        return STRONG                   # perfect given-name match
+        return STRONG
     if len(pdf_extra) <= 1 and len(ged_extra) <= 1:
-        return WEAK                     # at most 1 token differs on each side
-    return None                         # too different
+        return WEAK
+    return None
 
 
 def find_best_match(pdf_name: str, ged_people: list, common_given: set) -> dict:
     """
     Find the best GED match for a PDF bold name.
     Priority: STRONG > WEAK > NEW.
+    Surname overlap and given-name scoring both use fuzzy matching so that
+    single-character typos in long tokens do not block a valid match.
     """
     pdf_tok   = token_set(pdf_name)
-    pdf_given = pdf_tok - common_given  # we subtract surname per-candidate below
 
     best_status = None
     best_person = None
 
     for p in ged_people:
-        # Step 1: surname must overlap
-        if not (pdf_tok & p["_surname_tokens"]):
+        # Step 1: surname must fuzzy-overlap
+        if not _fuzzy_surname_overlap(pdf_tok, p["_surname_tokens"]):
             continue
 
-        # Step 2: compute qualifying given tokens (remove surname + common)
-        pdf_given_q = pdf_tok - p["_surname_tokens"] - common_given
-        ged_given_q = p["_given_tokens"] - common_given
+        # Step 2: remove the surname-matching tokens from pdf side, then common
+        matched_sur  = _fuzzy_matched_surname_tokens(pdf_tok, p["_surname_tokens"])
+        pdf_given_q  = pdf_tok - matched_sur - common_given
+        ged_given_q  = p["_given_tokens"] - common_given
 
         tier = _score_pair(pdf_given_q, ged_given_q)
         if tier is None:
@@ -273,6 +367,31 @@ def find_best_match(pdf_name: str, ged_people: list, common_given: set) -> dict:
 
         if best_status == STRONG:
             break   # can't do better
+
+    if best_status == STRONG:
+        return {"status": best_status, "best_match": best_person["full"]}
+
+    # ── Pass 2: subset fallback ────────────────────────────────────────────────────────
+    # Handles PDF “Nguyễn Bá Minh Triết” vs GED “An Phong Sô Bá Minh Triết Nguyễn”:
+    # _score_pair fails because ged_extra has 3 tokens (an, phong, so).
+    # But pdf_extra is empty — every PDF token IS in the GED name.
+    #   pdf ⊆ ged  →  STRONG  (PDF is a short form of a longer GED name)
+    #   ged ⊆ pdf  →  WEAK    (GED entry suspiciously short — flag for review)
+    for p in ged_people:
+        ged_all = p["_given_tokens"] | p["_surname_tokens"]
+        pdf_not_in_ged = _fuzzy_subtract(pdf_tok, ged_all)
+        ged_not_in_pdf = _fuzzy_subtract(ged_all, pdf_tok)
+        if not pdf_not_in_ged:
+            tier = STRONG
+        elif not ged_not_in_pdf:
+            tier = WEAK
+        else:
+            continue
+        if best_status is None or (tier == STRONG and best_status != STRONG):
+            best_status = tier
+            best_person = p
+        if best_status == STRONG:
+            break
 
     if best_person:
         return {"status": best_status, "best_match": best_person["full"]}
