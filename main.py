@@ -516,6 +516,24 @@ if st.session_state.id1 and st.session_state.id2 and st.button(T["find_btn"]):
         else:
             kinship_ego = id1
 
+        ca = common_ancestor(kinship_ego, kinship_target, G_full, G_anc, names=names, birth_years=birth_years)
+        if ca:
+            ca_name  = names.get(ca, ca)
+            ca_label = f"{ca_name} ({birth_years[ca]})" if birth_years.get(ca) else ca_name
+            st.subheader(T["common_anc"])
+            st.write(ca_label)
+            draw_id1     = kinship_ego    if kinship_ego    != id1 else id1
+            draw_id2     = kinship_target if kinship_target != id2 else id2
+            overlay_id1  = id1 if kinship_ego    != id1 else None
+            overlay_id2  = id2 if kinship_target != id2 else None
+            overlay = overlay_id1 or overlay_id2
+            print(f"[DRAW] draw_id1={draw_id1} draw_id2={draw_id2} overlay={overlay} ca={ca}")
+            if overlay:
+                print(f"[DRAW] find_blood_spouse(overlay)={find_blood_spouse(overlay, G_full, G_anc)}")
+            draw_family_graph(draw_id1, draw_id2, ca, ego_id=id1, spouse_overlay=overlay)
+        else:
+            st.info(T["no_ancestor"])
+
         # --- First cousins (children of ego's parents' siblings) ---
         def get_first_cousins(ego, side_gender):
             cousins = []
@@ -561,21 +579,3 @@ if st.session_state.id1 and st.session_state.id2 and st.button(T["find_btn"]):
                     st.write(fmt_cousin(c))
             else:
                 st.write(T["no_cousins"])
-
-        ca = common_ancestor(kinship_ego, kinship_target, G_full, G_anc, names=names, birth_years=birth_years)
-        if ca:
-            ca_name  = names.get(ca, ca)
-            ca_label = f"{ca_name} ({birth_years[ca]})" if birth_years.get(ca) else ca_name
-            st.subheader(T["common_anc"])
-            st.write(ca_label)
-            draw_id1     = kinship_ego    if kinship_ego    != id1 else id1
-            draw_id2     = kinship_target if kinship_target != id2 else id2
-            overlay_id1  = id1 if kinship_ego    != id1 else None
-            overlay_id2  = id2 if kinship_target != id2 else None
-            overlay = overlay_id1 or overlay_id2
-            print(f"[DRAW] draw_id1={draw_id1} draw_id2={draw_id2} overlay={overlay} ca={ca}")
-            if overlay:
-                print(f"[DRAW] find_blood_spouse(overlay)={find_blood_spouse(overlay, G_full, G_anc)}")
-            draw_family_graph(draw_id1, draw_id2, ca, ego_id=id1, spouse_overlay=overlay)
-        else:
-            st.info(T["no_ancestor"])
