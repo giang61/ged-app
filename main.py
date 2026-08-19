@@ -410,11 +410,12 @@ def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlay=None):
 
       // Tell Streamlit's iframe wrapper to resize itself to match, via the
       // same postMessage protocol Streamlit components use internally.
-      // This is more reliable across browsers (including mobile) than
-      // touching window.frameElement directly, which can behave
-      // inconsistently depending on how the iframe is sandboxed.
+      // NOTE: the isStreamlitMessage flag is required — without it
+      // Streamlit's frontend silently ignores the message and the iframe
+      // stays at its initial (desktop-sized) height estimate, which is
+      // exactly what was causing the big gap on narrower/mobile screens.
       window.parent.postMessage(
-        {{ type: "streamlit:setFrameHeight", height: h + 40 }},
+        {{ isStreamlitMessage: true, type: "streamlit:setFrameHeight", height: h + 40 }},
         "*"
       );
     }}
