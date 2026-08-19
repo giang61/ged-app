@@ -401,16 +401,22 @@ def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlay=None):
     // especially noticeable on narrow/mobile screens where the box width
     // shrinks but a fixed height would leave a tall empty gap).
     var aspectRatio = {aspect_ratio};
-    var fittedHeight = Math.round(container.offsetWidth * aspectRatio);
-    fittedHeight = Math.max(220, Math.min(650, fittedHeight));
-    container.style.height = fittedHeight + "px";
 
-    // components.html() embeds this page in a same-origin iframe with a
-    // fixed height set from the Python side. Resize that iframe itself to
-    // match the fitted box (plus a little padding for the print button and
-    // border), so Streamlit doesn't reserve extra blank space below it.
-    if (window.frameElement) {{
-      window.frameElement.style.height = (fittedHeight + 40) + "px";
+    function fitHeight() {{
+      var w = container.offsetWidth || 1;
+      var h = Math.round(w * aspectRatio);
+      h = Math.max(220, Math.min(650, h));
+      container.style.height = h + "px";
+
+      // Tell Streamlit's iframe wrapper to resize itself to match, via the
+      // same postMessage protocol Streamlit components use internally.
+      // This is more reliable across browsers (including mobile) than
+      // touching window.frameElement directly, which can behave
+      // inconsistently depending on how the iframe is sandboxed.
+      window.parent.postMessage(
+        {{ type: "streamlit:setFrameHeight", height: h + 40 }},
+        "*"
+      );
     }}
 
     var options = {{
@@ -420,7 +426,13 @@ def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlay=None):
       interaction: {{ dragNodes: true, zoomView: true, dragView: true }}
     }};
     var network = new vis.Network(container, {{ nodes: nodes, edges: edges }}, options);
+
+    fitHeight();
     network.fit();
+    // Re-check shortly after load in case the iframe's initial width
+    // wasn't final yet (common on mobile), and on orientation/resize.
+    setTimeout(function() {{ fitHeight(); network.fit(); }}, 150);
+    window.addEventListener("resize", function() {{ fitHeight(); network.fit(); }});
   </script>
 </body>
 </html>
