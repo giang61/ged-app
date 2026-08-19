@@ -405,6 +405,14 @@ def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlay=None):
     fittedHeight = Math.max(220, Math.min(650, fittedHeight));
     container.style.height = fittedHeight + "px";
 
+    // components.html() embeds this page in a same-origin iframe with a
+    // fixed height set from the Python side. Resize that iframe itself to
+    // match the fitted box (plus a little padding for the print button and
+    // border), so Streamlit doesn't reserve extra blank space below it.
+    if (window.frameElement) {{
+      window.frameElement.style.height = (fittedHeight + 40) + "px";
+    }}
+
     var options = {{
       physics: {{ enabled: false }},
       nodes: {{ margin: 10 }},
@@ -417,7 +425,11 @@ def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlay=None):
 </body>
 </html>
 """
-    components.html(html, height=670)
+    # Rough initial iframe height estimate (JS will correct it to the exact
+    # fitted size right after render); avoids a big flash of empty space
+    # before the resize script runs.
+    initial_height = max(220, min(650, round(650 * aspect_ratio))) + 40
+    components.html(html, height=initial_height)
 
 
 # ----------------------------
