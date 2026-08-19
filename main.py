@@ -356,7 +356,7 @@ def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlay=None):
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css">
   <style>
     body {{ margin: 0; padding: 0; }}
-    #network {{ width: 100%; height: 650px; border: 1px solid #ddd; background: #fff; }}
+    #network {{ width: 90%; max-width: 650px; margin: 0 auto; height: 650px; border: 1px solid #ddd; background: #fff; }}
     #print-btn {{
   position: absolute;
   top: 8px;
