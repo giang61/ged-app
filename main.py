@@ -425,14 +425,27 @@ def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlay=None):
       edges: {{ smooth: {{ enabled: false }} }},
       interaction: {{ dragNodes: true, zoomView: true, dragView: true }}
     }};
-    var network = new vis.Network(container, {{ nodes: nodes, edges: edges }}, options);
 
+    // IMPORTANT: set the container's height BEFORE creating the vis.js
+    // Network. vis.js sizes its internal canvas from the container's
+    // dimensions at construction time and does not automatically notice
+    // later height changes, so creating the network first (against a
+    // collapsed/zero-height container) was causing it to zoom in on a
+    // tiny viewport instead of showing the whole tree.
     fitHeight();
+    var network = new vis.Network(container, {{ nodes: nodes, edges: edges }}, options);
     network.fit();
+
     // Re-check shortly after load in case the iframe's initial width
     // wasn't final yet (common on mobile), and on orientation/resize.
-    setTimeout(function() {{ fitHeight(); network.fit(); }}, 150);
-    window.addEventListener("resize", function() {{ fitHeight(); network.fit(); }});
+    function refit() {{
+      fitHeight();
+      network.setSize(container.offsetWidth + "px", container.offsetHeight + "px");
+      network.redraw();
+      network.fit();
+    }}
+    setTimeout(refit, 150);
+    window.addEventListener("resize", refit);
   </script>
 </body>
 </html>
