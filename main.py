@@ -347,6 +347,16 @@ def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlay=None):
     nodes_json = json.dumps(vis_nodes)
     edges_json = json.dumps(vis_edges)
 
+    # Compute the graph's content aspect ratio (height/width in graph units,
+    # including a margin for node box size) so the on-screen box can be
+    # resized to just fit the content, instead of a fixed tall box.
+    node_box_w, node_box_h = 200, 100  # roughly matches widthConstraint + node height
+    xs = [x_positions[pid] for pid in all_nodes]
+    ys = [y_positions[pid] for pid in all_nodes]
+    content_w = (max(xs) - min(xs)) + node_box_w
+    content_h = (max(ys) - min(ys)) + node_box_h
+    aspect_ratio = content_h / content_w  # height / width
+
     html = f"""
 <!DOCTYPE html>
 <html>
@@ -356,7 +366,7 @@ def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlay=None):
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css">
   <style>
     body {{ margin: 0; padding: 0; }}
-    #network {{ width: 90%; max-width: 650px; margin: 0 auto; height: 650px; border: 1px solid #ddd; background: #fff; }}
+    #network {{ width: 90%; max-width: 650px; margin: 0 auto; border: 1px solid #ddd; background: #fff; }}
     #print-btn {{
   position: absolute;
   top: 8px;
@@ -385,6 +395,16 @@ def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlay=None):
     var nodes = new vis.DataSet({nodes_json});
     var edges = new vis.DataSet({edges_json});
     var container = document.getElementById("network");
+
+    // Size the box to fit the graph's own aspect ratio, so it hugs the
+    // content instead of leaving a lot of empty space below it (this is
+    // especially noticeable on narrow/mobile screens where the box width
+    // shrinks but a fixed height would leave a tall empty gap).
+    var aspectRatio = {aspect_ratio};
+    var fittedHeight = Math.round(container.offsetWidth * aspectRatio);
+    fittedHeight = Math.max(220, Math.min(650, fittedHeight));
+    container.style.height = fittedHeight + "px";
+
     var options = {{
       physics: {{ enabled: false }},
       nodes: {{ margin: 10 }},
