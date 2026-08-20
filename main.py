@@ -374,8 +374,17 @@ def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlay=None):
     content_w = (max(xs) - min(xs)) + node_box_w
     content_h = (max(ys) - min(ys)) + node_box_h
     aspect_ratio = content_h / content_w  # height / width
-    max_box_width = 650
-    box_height = max(220, min(900, round(max_box_width * aspect_ratio)))
+
+    # This same number is used for BOTH the CSS max-width below and the
+    # height reservation, so they can never disagree. It's set close to a
+    # typical phone's content width (rather than a desktop width like 650)
+    # because on a phone, "90% of screen width" lands very close to this
+    # value already -- so the box's real rendered width will be close to
+    # what this height calculation assumed, leaving little to no gap.
+    # Desktop screens are wide enough that the box simply centers at this
+    # same width with empty space on both sides, same as before.
+    BOX_MAX_WIDTH = 420
+    box_height = max(220, min(900, round(BOX_MAX_WIDTH * aspect_ratio)))
 
     html = f"""
 <!DOCTYPE html>
@@ -387,7 +396,7 @@ def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlay=None):
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css">
   <style>
     body {{ margin: 0; padding: 0; }}
-    #network {{ width: 90%; max-width: 650px; aspect-ratio: {content_w} / {content_h}; max-height: {box_height}px; margin: 0 auto; border: 1px solid #ddd; background: #fff; }}
+    #network {{ width: 90%; max-width: {BOX_MAX_WIDTH}px; aspect-ratio: {content_w} / {content_h}; max-height: {box_height}px; margin: 0 auto; border: 1px solid #ddd; background: #fff; }}
     #print-btn {{
   position: absolute;
   top: 8px;
@@ -458,6 +467,7 @@ STRINGS = {
         "find_btn":     "Find relationship",
         "no_path":      "No relationship found",
         "rel_path":     "First Cousins",
+        "choose_side":  "Side",
         "paternal":     "Paternal side",
         "maternal":     "Maternal side",
         "no_cousins":   "No cousins found.",
@@ -476,6 +486,7 @@ STRINGS = {
         "find_btn":     "Tìm mối quan hệ",
         "no_path":      "Không tìm được mối quan hệ",
         "rel_path":     "Anh Chị Em Họ",
+        "choose_side":  "Bên",
         "paternal":     "Họ nội",
         "maternal":     "Họ ngoại",
         "no_cousins":   "Không có anh chị em họ.",
@@ -528,6 +539,51 @@ if st.session_state.id1 and st.session_state.id2 and st.button(T["find_btn"]):
     id1 = st.session_state.id1
     id2 = st.session_state.id2
 
+    # --- First cousins (children of ego's parents' siblings) ---
+    # Shown above the graph, as a side-picker dropdown, so it's visible
+    # right away on mobile without scrolling past the (possibly tall)
+    # graph box first.
+    def get_first_cousins(ego, side_gender):
+        cousins = []
+        ego_parents = list(G_anc.predecessors(ego))
+        side_parent = next(
+            (p for p in ego_parents if genders.get(p) == side_gender), None
+        )
+        if side_parent is None:
+            return cousins
+        grandparents = list(G_anc.predecessors(side_parent))
+        aunts_uncles = set()
+        for gp in grandparents:
+            for child in G_anc.successors(gp):
+                if child != side_parent:
+                    aunts_uncles.add(child)
+        for au in aunts_uncles:
+            for cousin in G_anc.successors(au):
+                cousins.append(cousin)
+        cousins.sort(key=lambda p: (birth_years.get(p) is None, birth_years.get(p)))
+        return cousins
+
+    def fmt_cousin(pid):
+        name = names.get(pid, pid)
+        year = birth_years.get(pid)
+        return f"{name} ({year})" if year else name
+
+    paternal_cousins = get_first_cousins(id1, "M")
+    maternal_cousins = get_first_cousins(id1, "F")
+
+    st.subheader(T["rel_path"])
+    side_choice = st.selectbox(
+        T["choose_side"],
+        [T["paternal"], T["maternal"]],
+        key="cousins_side_select",
+    )
+    cousins_to_show = paternal_cousins if side_choice == T["paternal"] else maternal_cousins
+    if cousins_to_show:
+        for c in cousins_to_show:
+            st.markdown(f"- {fmt_cousin(c)}")
+    else:
+        st.write(T["no_cousins"])
+
     try:
         path = nx.shortest_path(G_full.to_undirected(), id1, id2)
     except nx.NetworkXNoPath:
@@ -574,48 +630,3 @@ if st.session_state.id1 and st.session_state.id2 and st.button(T["find_btn"]):
         else:
             st.info(T["no_ancestor"])
 
-        # --- First cousins (children of ego's parents' siblings) ---
-        def get_first_cousins(ego, side_gender):
-            cousins = []
-            ego_parents = list(G_anc.predecessors(ego))
-            side_parent = next(
-                (p for p in ego_parents if genders.get(p) == side_gender), None
-            )
-            if side_parent is None:
-                return cousins
-            grandparents = list(G_anc.predecessors(side_parent))
-            aunts_uncles = set()
-            for gp in grandparents:
-                for child in G_anc.successors(gp):
-                    if child != side_parent:
-                        aunts_uncles.add(child)
-            for au in aunts_uncles:
-                for cousin in G_anc.successors(au):
-                    cousins.append(cousin)
-            cousins.sort(key=lambda p: (birth_years.get(p) is None, birth_years.get(p)))
-            return cousins
-
-        def fmt_cousin(pid):
-            name = names.get(pid, pid)
-            year = birth_years.get(pid)
-            return f"{name} ({year})" if year else name
-
-        paternal_cousins = get_first_cousins(id1, "M")
-        maternal_cousins = get_first_cousins(id1, "F")
-
-        st.subheader(T["rel_path"])
-        col_pat, col_mat = st.columns(2)
-        with col_pat:
-            st.markdown(f"**{T['paternal']}**")
-            if paternal_cousins:
-                for c in paternal_cousins:
-                    st.write(fmt_cousin(c))
-            else:
-                st.write(T["no_cousins"])
-        with col_mat:
-            st.markdown(f"**{T['maternal']}**")
-            if maternal_cousins:
-                for c in maternal_cousins:
-                    st.write(fmt_cousin(c))
-            else:
-                st.write(T["no_cousins"])
