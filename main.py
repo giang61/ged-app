@@ -347,15 +347,27 @@ def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlay=None):
     nodes_json = json.dumps(vis_nodes)
     edges_json = json.dumps(vis_edges)
 
-    # Compute the graph's content aspect ratio (height/width in graph units,
-    # including a margin for node box size) so the on-screen box can be
-    # resized to just fit the content, instead of a fixed tall box.
-    node_box_w, node_box_h = 200, 100  # roughly matches widthConstraint + node height
-    xs = [x_positions[pid] for pid in all_nodes]
+    # Compute the box height directly from the graph's own content (number
+    # of generation levels), instead of from screen width.
+    #
+    # Earlier attempts derived height from width * aspect_ratio and then
+    # tried to dynamically shrink Streamlit's reserved iframe space to
+    # match via JS (window.frameElement / postMessage). Neither works
+    # because st.components.v1.html() renders through Streamlit's plain
+    # "IFrame" element, which -- unlike a full custom component built with
+    # declare_component() -- does not listen for any resize signal; its
+    # height is fixed at render time from the Python side, permanently.
+    # That mismatch (a width-dependent box height inside a fixed-height
+    # iframe) is exactly what produced the leftover gap on mobile.
+    #
+    # Using a width-independent height sidesteps the problem entirely: the
+    # same number is used for both the CSS box height and the
+    # components.html() height parameter below, so they can never
+    # disagree, on any device.
+    node_box_h = 100  # roughly matches node height + margin
     ys = [y_positions[pid] for pid in all_nodes]
-    content_w = (max(xs) - min(xs)) + node_box_w
     content_h = (max(ys) - min(ys)) + node_box_h
-    aspect_ratio = content_h / content_w  # height / width
+    box_height = max(220, min(650, content_h))
 
     html = f"""
 <!DOCTYPE html>
@@ -363,10 +375,11 @@ def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlay=None):
 <head>
   <meta charset="utf-8">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css">
   <style>
     body {{ margin: 0; padding: 0; }}
-    #network {{ width: 90%; max-width: 650px; margin: 0 auto; border: 1px solid #ddd; background: #fff; }}
+    #network {{ width: 90%; max-width: 650px; height: {box_height}px; margin: 0 auto; border: 1px solid #ddd; background: #fff; }}
     #print-btn {{
   position: absolute;
   top: 8px;
@@ -396,66 +409,27 @@ def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlay=None):
     var edges = new vis.DataSet({edges_json});
     var container = document.getElementById("network");
 
-    // Size the box to fit the graph's own aspect ratio, so it hugs the
-    // content instead of leaving a lot of empty space below it (this is
-    // especially noticeable on narrow/mobile screens where the box width
-    // shrinks but a fixed height would leave a tall empty gap).
-    var aspectRatio = {aspect_ratio};
-
-    function fitHeight() {{
-      var w = container.offsetWidth || 1;
-      var h = Math.round(w * aspectRatio);
-      h = Math.max(220, Math.min(650, h));
-      container.style.height = h + "px";
-
-      // Tell Streamlit's iframe wrapper to resize itself to match, via the
-      // same postMessage protocol Streamlit components use internally.
-      // NOTE: the isStreamlitMessage flag is required — without it
-      // Streamlit's frontend silently ignores the message and the iframe
-      // stays at its initial (desktop-sized) height estimate, which is
-      // exactly what was causing the big gap on narrower/mobile screens.
-      window.parent.postMessage(
-        {{ isStreamlitMessage: true, type: "streamlit:setFrameHeight", height: h + 40 }},
-        "*"
-      );
-    }}
-
     var options = {{
       physics: {{ enabled: false }},
       nodes: {{ margin: 10 }},
       edges: {{ smooth: {{ enabled: false }} }},
       interaction: {{ dragNodes: true, zoomView: true, dragView: true }}
     }};
-
-    // IMPORTANT: set the container's height BEFORE creating the vis.js
-    // Network. vis.js sizes its internal canvas from the container's
-    // dimensions at construction time and does not automatically notice
-    // later height changes, so creating the network first (against a
-    // collapsed/zero-height container) was causing it to zoom in on a
-    // tiny viewport instead of showing the whole tree.
-    fitHeight();
     var network = new vis.Network(container, {{ nodes: nodes, edges: edges }}, options);
     network.fit();
 
-    // Re-check shortly after load in case the iframe's initial width
-    // wasn't final yet (common on mobile), and on orientation/resize.
-    function refit() {{
-      fitHeight();
-      network.setSize(container.offsetWidth + "px", container.offsetHeight + "px");
-      network.redraw();
-      network.fit();
-    }}
-    setTimeout(refit, 150);
-    window.addEventListener("resize", refit);
+    // Re-fit on orientation change / resize (the box's CSS height is fixed
+    // and no longer needs to change, but re-fitting keeps the zoom level
+    // sensible if the width changes).
+    window.addEventListener("resize", function() {{ network.fit(); }});
   </script>
 </body>
 </html>
 """
-    # Rough initial iframe height estimate (JS will correct it to the exact
-    # fitted size right after render); avoids a big flash of empty space
-    # before the resize script runs.
-    initial_height = max(220, min(650, round(650 * aspect_ratio))) + 40
-    components.html(html, height=initial_height)
+    # Same box_height value used for the CSS box above, plus a small
+    # allowance for the border and print button, so Streamlit's reserved
+    # iframe space always matches the box exactly -- on every device.
+    components.html(html, height=box_height + 40)
 
 
 # ----------------------------
