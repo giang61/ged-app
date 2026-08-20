@@ -376,14 +376,14 @@ def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlay=None):
     aspect_ratio = content_h / content_w  # height / width
 
     # This same number is used for BOTH the CSS max-width below and the
-    # height reservation, so they can never disagree. It's set close to a
-    # typical phone's content width (rather than a desktop width like 650)
-    # because on a phone, "90% of screen width" lands very close to this
-    # value already -- so the box's real rendered width will be close to
-    # what this height calculation assumed, leaving little to no gap.
-    # Desktop screens are wide enough that the box simply centers at this
-    # same width with empty space on both sides, same as before.
-    BOX_MAX_WIDTH = 420
+    # height reservation, so they can never disagree. Larger values make
+    # the box bigger overall (as requested), at the cost of a bit more
+    # empty space potentially appearing below the box on narrower phones
+    # (where 90% of the screen renders below this max-width, so the box's
+    # real height -- via aspect-ratio -- ends up a bit shorter than the
+    # space reserved for it). Desktop always renders at exactly this
+    # width, so it never has that gap.
+    BOX_MAX_WIDTH = 650
     box_height = max(220, min(900, round(BOX_MAX_WIDTH * aspect_ratio)))
 
     html = f"""
@@ -572,15 +572,31 @@ if st.session_state.id1 and st.session_state.id2 and st.button(T["find_btn"]):
     maternal_cousins = get_first_cousins(id1, "F")
 
     st.subheader(T["rel_path"])
-    side_choice = st.selectbox(
-        T["choose_side"],
-        [T["paternal"], T["maternal"]],
-        key="cousins_side_select",
-    )
-    cousins_to_show = paternal_cousins if side_choice == T["paternal"] else maternal_cousins
+
+    if "cousins_side" not in st.session_state:
+        st.session_state.cousins_side = "paternal"
+
+    col_btn_pat, col_btn_mat = st.columns(2)
+    with col_btn_pat:
+        if st.button(T["paternal"], key="btn_paternal", use_container_width=True):
+            st.session_state.cousins_side = "paternal"
+    with col_btn_mat:
+        if st.button(T["maternal"], key="btn_maternal", use_container_width=True):
+            st.session_state.cousins_side = "maternal"
+
+    if st.session_state.cousins_side == "paternal":
+        cousins_to_show = paternal_cousins
+        side_label = T["paternal"]
+    else:
+        cousins_to_show = maternal_cousins
+        side_label = T["maternal"]
+
     if cousins_to_show:
-        for c in cousins_to_show:
-            st.markdown(f"- {fmt_cousin(c)}")
+        st.selectbox(
+            side_label,
+            [fmt_cousin(c) for c in cousins_to_show],
+            key=f"cousins_list_{st.session_state.cousins_side}",
+        )
     else:
         st.write(T["no_cousins"])
 
