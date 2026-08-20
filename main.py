@@ -347,27 +347,35 @@ def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlay=None):
     nodes_json = json.dumps(vis_nodes)
     edges_json = json.dumps(vis_edges)
 
-    # Compute the box height directly from the graph's own content (number
-    # of generation levels), instead of from screen width.
+    # Let the box's height be derived automatically from its own rendered
+    # width via CSS aspect-ratio, matching the tree's true proportions on
+    # any device -- no JS required.
     #
-    # Earlier attempts derived height from width * aspect_ratio and then
-    # tried to dynamically shrink Streamlit's reserved iframe space to
-    # match via JS (window.frameElement / postMessage). Neither works
-    # because st.components.v1.html() renders through Streamlit's plain
-    # "IFrame" element, which -- unlike a full custom component built with
-    # declare_component() -- does not listen for any resize signal; its
-    # height is fixed at render time from the Python side, permanently.
-    # That mismatch (a width-dependent box height inside a fixed-height
-    # iframe) is exactly what produced the leftover gap on mobile.
+    # A prior version computed a single width-independent pixel height
+    # from the tree's content. That caused letterboxing (empty bands above
+    # and below the diagram) on mobile: the box was narrower there than on
+    # desktop, so vis.js's fit() shrank the whole diagram further to fit
+    # that width, leaving the fixed-height box only partially filled.
     #
-    # Using a width-independent height sidesteps the problem entirely: the
-    # same number is used for both the CSS box height and the
-    # components.html() height parameter below, so they can never
-    # disagree, on any device.
-    node_box_h = 100  # roughly matches node height + margin
+    # CSS aspect-ratio fixes that (height always matches actual width, so
+    # content always fills the box, on any device). The one remaining
+    # constraint is that Streamlit's components.html() needs a single
+    # fixed pixel height reserved from Python *before* it knows the
+    # client's actual screen width (its plain "IFrame" element can't
+    # dynamically resize after the fact -- see prior comments/history).
+    # We reserve enough for the box's height at its largest possible
+    # rendered width (the 650px cap below); narrower screens render a
+    # proportionally shorter, still-correctly-filled box within that
+    # reserved space, which may leave a small gap below it but never
+    # letterboxing or clipping.
+    node_box_w, node_box_h = 200, 100  # roughly matches node width/height + margin
+    xs = [x_positions[pid] for pid in all_nodes]
     ys = [y_positions[pid] for pid in all_nodes]
+    content_w = (max(xs) - min(xs)) + node_box_w
     content_h = (max(ys) - min(ys)) + node_box_h
-    box_height = max(220, min(650, content_h))
+    aspect_ratio = content_h / content_w  # height / width
+    max_box_width = 650
+    box_height = max(220, min(900, round(max_box_width * aspect_ratio)))
 
     html = f"""
 <!DOCTYPE html>
@@ -379,7 +387,7 @@ def draw_family_graph(id1, id2, ca, ego_id=None, spouse_overlay=None):
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css">
   <style>
     body {{ margin: 0; padding: 0; }}
-    #network {{ width: 90%; max-width: 650px; height: {box_height}px; margin: 0 auto; border: 1px solid #ddd; background: #fff; }}
+    #network {{ width: 90%; max-width: 650px; aspect-ratio: {content_w} / {content_h}; max-height: {box_height}px; margin: 0 auto; border: 1px solid #ddd; background: #fff; }}
     #print-btn {{
   position: absolute;
   top: 8px;
