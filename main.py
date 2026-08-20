@@ -507,6 +507,8 @@ st.subheader(T["subtitle"])
 for key in ["id1", "id2"]:
     if key not in st.session_state:
         st.session_state[key] = None
+if "show_relationship" not in st.session_state:
+    st.session_state.show_relationship = False
 
 # Person 1
 name1_input = st.text_input(T["person1"])
@@ -516,7 +518,10 @@ if name1_input:
         options1 = [f"{names[p]} ({birth_years[p]})" if birth_years[p] else names[p]
                     for p in matches1]
         sel1 = st.selectbox(T["select1"], options1)
-        st.session_state.id1 = matches1[options1.index(sel1)]
+        new_id1 = matches1[options1.index(sel1)]
+        if new_id1 != st.session_state.id1:
+            st.session_state.show_relationship = False
+        st.session_state.id1 = new_id1
     else:
         st.warning(T["no_match1"])
         st.session_state.id1 = None
@@ -529,13 +534,20 @@ if name2_input:
         options2 = [f"{names[p]} ({birth_years[p]})" if birth_years[p] else names[p]
                     for p in matches2]
         sel2 = st.selectbox(T["select2"], options2)
-        st.session_state.id2 = matches2[options2.index(sel2)]
+        new_id2 = matches2[options2.index(sel2)]
+        if new_id2 != st.session_state.id2:
+            st.session_state.show_relationship = False
+        st.session_state.id2 = new_id2
     else:
         st.warning(T["no_match2"])
         st.session_state.id2 = None
 
 # Find relationship
-if st.session_state.id1 and st.session_state.id2 and st.button(T["find_btn"]):
+if st.session_state.id1 and st.session_state.id2:
+    if st.button(T["find_btn"]):
+        st.session_state.show_relationship = True
+
+if st.session_state.id1 and st.session_state.id2 and st.session_state.show_relationship:
     id1 = st.session_state.id1
     id2 = st.session_state.id2
 
